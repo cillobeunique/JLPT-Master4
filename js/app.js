@@ -1,6 +1,4 @@
-﻿import { KANJI_DATA } from './data/kanji.js';
-import { VOCAB_DATA } from './data/vocab.js';
-/**
+﻿/**
  * JLPT N4 Master - Main Application Orchestrator
  */
 import { storage } from './storage.js';
@@ -31,13 +29,13 @@ class App {
 
     const themeToggleBtn = document.getElementById('theme-toggle-btn');
     if (themeToggleBtn) {
-      themeToggleBtn.textContent = settings.theme === 'light' ? '嫌 Dark' : '減 Light';
+      themeToggleBtn.textContent = settings.theme === 'light' ? '🌙 Dark' : '🌸 Light';
       themeToggleBtn.addEventListener('click', () => {
         const current = document.documentElement.getAttribute('data-theme');
         const nextTheme = current === 'light' ? 'dark' : 'light';
         document.documentElement.setAttribute('data-theme', nextTheme);
         storage.saveSettings({ theme: nextTheme });
-        themeToggleBtn.textContent = nextTheme === 'light' ? '嫌 Dark' : '減 Light';
+        themeToggleBtn.textContent = nextTheme === 'light' ? '🌙 Dark' : '🌸 Light';
       });
     }
   }
@@ -191,7 +189,7 @@ class App {
   }
 
   updateDashboardStats() {
-    const stats = storage.getStats(100, 800);
+    const stats = storage.getStats(200, 208);
 
     const streakEl = document.getElementById('stat-streak-val');
     const comboEl = document.getElementById('stat-highest-combo');
@@ -204,9 +202,9 @@ class App {
     const totalReviewsEl = document.getElementById('stat-total-reviews');
 
     if (streakEl) streakEl.textContent = `${stats.streak} Day${stats.streak === 1 ? '' : 's'}`;
-    if (comboEl) comboEl.textContent = `${stats.highestCombo}x 櫨`;
+    if (comboEl) comboEl.textContent = `${stats.highestCombo}x 🔥`;
     if (blitzEl) blitzEl.textContent = `${stats.blitzHighScore} Pts`;
-    if (kanjiMasteredEl) kanjiMasteredEl.textContent = `${stats.kanjiMastered} / 100 (${stats.kanjiPercent}%)`;
+    if (kanjiMasteredEl) kanjiMasteredEl.textContent = `${stats.kanjiMastered} / 200 (${stats.kanjiPercent}%)`;
     if (kanjiBarEl) kanjiBarEl.style.width = `${stats.kanjiPercent}%`;
     if (vocabMasteredEl) vocabMasteredEl.textContent = `${stats.vocabMastered} / 800 (${stats.vocabPercent}%)`;
     if (vocabBarEl) vocabBarEl.style.width = `${stats.vocabPercent}%`;
@@ -478,4 +476,3 @@ class App {
 document.addEventListener('DOMContentLoaded', () => {
   window.app = new App();
 });
-

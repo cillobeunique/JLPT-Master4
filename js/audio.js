@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Audio Engine for Japanese Text-to-Speech (Web Speech API)
  * & Synthesized Sound Effects (Web Audio API)
  */

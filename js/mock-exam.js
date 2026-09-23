@@ -1,14 +1,14 @@
 ﻿/**
- * JLPT N4 Official Mock Certification Exam Controller
+ * JLPT N5 Official Mock Certification Exam Controller
  * Full Exam Lifecycle, Section Jumping, Audio Prompt Player, Official JLPT 180-Point Scoring & Analysis
  */
-import { JLPT_N4_MOCK_EXAM } from './data/mock-exam.js';
+import { JLPT_N5_MOCK_EXAM } from './data/mock-exam.js';
 import { audio } from './audio.js';
 import { storage } from './storage.js';
 
 export class MockExamController {
   constructor() {
-    this.exam = JLPT_N4_MOCK_EXAM;
+    this.exam = JLPT_N5_MOCK_EXAM;
     this.currentSectionIndex = 0;
     this.currentQuestionIndex = 0;
     this.answers = {}; // key: question.id -> selectedOptionIndex or value
@@ -162,7 +162,7 @@ export class MockExamController {
     if (!this.timerDisplay) return;
     const mins = Math.floor(this.timerSeconds / 60);
     const secs = this.timerSeconds % 60;
-    this.timerDisplay.textContent = `竢ｱ・・${mins}:${secs < 10 ? '0' : ''}${secs}`;
+    this.timerDisplay.textContent = `⏱️ ${mins}:${secs < 10 ? '0' : ''}${secs}`;
 
     if (this.timerSeconds <= 300) { // 5 mins left
       this.timerDisplay.style.color = 'var(--accent-red)';
@@ -242,7 +242,7 @@ export class MockExamController {
     const section = this.getCurrentSection();
 
     // Part Badge & Instruction
-    if (this.qPartBadge) this.qPartBadge.textContent = `${section.nameEn} 窶｢ ${q.part}`;
+    if (this.qPartBadge) this.qPartBadge.textContent = `${section.nameEn} • ${q.part}`;
     if (this.qInstruction) this.qInstruction.textContent = q.instruction;
 
     // Passage handling
@@ -256,7 +256,7 @@ export class MockExamController {
     // Audio Prompt Handling
     if (q.speakPrompt) {
       if (this.qAudioBox) this.qAudioBox.classList.remove('hidden');
-      if (this.qAudioStatus) this.qAudioStatus.textContent = "Click 矧 to play dialogue audio";
+      if (this.qAudioStatus) this.qAudioStatus.textContent = "Click 🔊 to play dialogue audio";
     } else {
       if (this.qAudioBox) this.qAudioBox.classList.add('hidden');
     }
@@ -310,7 +310,7 @@ export class MockExamController {
     const q = this.getCurrentQuestion();
     if (!q || !this.qFlagBtn) return;
     const isFlagged = !!this.flags[q.id];
-    this.qFlagBtn.textContent = isFlagged ? '圸 Flagged' : '承・・Flag for Review';
+    this.qFlagBtn.textContent = isFlagged ? '🚩 Flagged' : '🏳️ Flag for Review';
     this.qFlagBtn.classList.toggle('active', isFlagged);
   }
 
@@ -335,7 +335,7 @@ export class MockExamController {
   }
 
   playListeningAudio(text) {
-    if (this.qAudioStatus) this.qAudioStatus.textContent = "矧 Playing Japanese audio...";
+    if (this.qAudioStatus) this.qAudioStatus.textContent = "🔊 Playing Japanese audio...";
     if (this.qAudioPlayBtn) this.qAudioPlayBtn.disabled = true;
 
     audio.speak(text, null, () => {
@@ -390,7 +390,7 @@ export class MockExamController {
 
     // Render Hero Badge & Score
     if (this.resStatusBadge) {
-      this.resStatusBadge.textContent = isPassedOverall ? '脂 PASSED (蜷域ｼ)' : '笞・・FAILED (荳榊粋譬ｼ)';
+      this.resStatusBadge.textContent = isPassedOverall ? '🎉 PASSED (合格)' : '⚠️ FAILED (不合格)';
       this.resStatusBadge.className = `results-hero-badge ${isPassedOverall ? 'pass' : 'fail'}`;
     }
 
@@ -400,8 +400,8 @@ export class MockExamController {
 
     if (this.resPassingNotice) {
       this.resPassingNotice.innerHTML = `
-        JLPT N4 Passing Standard: <strong>${this.exam.passingScore}/${this.exam.totalPoints}</strong> points with at least <strong>${this.exam.sectionPassingScore}/60</strong> points in every section.<br>
-        ${isPassedOverall ? '検 Congratulations! You have met all requirements to pass the JLPT N4 Certification.' : '潮 Keep practicing! Review your missed questions below to strengthen weak areas.'}
+        JLPT N5 Passing Standard: <strong>${this.exam.passingScore}/${this.exam.totalPoints}</strong> points with at least <strong>${this.exam.sectionPassingScore}/60</strong> points in every section.<br>
+        ${isPassedOverall ? '🌟 Congratulations! You have met all requirements to pass the JLPT N5 Certification.' : '💪 Keep practicing! Review your missed questions below to strengthen weak areas.'}
       `;
     }
 
@@ -449,7 +449,7 @@ export class MockExamController {
             <div class="exam-review-item ${isCorrect ? 'correct' : 'wrong'}">
               <div class="review-item-header">
                 <span class="review-q-num">Q${idx + 1} (${q.part})</span>
-                <span class="review-badge ${isCorrect ? 'correct' : 'wrong'}">${isCorrect ? '笨・Correct' : '笶・Incorrect'}</span>
+                <span class="review-badge ${isCorrect ? 'correct' : 'wrong'}">${isCorrect ? '✅ Correct' : '❌ Incorrect'}</span>
               </div>
               <div class="review-q-body">
                 ${q.questionLead ? `<div>${q.questionLead}</div>` : `<div>${q.questionText || ''}</div>`}
@@ -475,4 +475,3 @@ export class MockExamController {
     });
   }
 }
-

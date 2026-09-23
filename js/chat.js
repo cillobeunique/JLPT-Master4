@@ -1,5 +1,5 @@
 ﻿/**
- * Conversational Japanese Chatbot Controller ("AI Sensei - 莨夊ｩｱ")
+ * Conversational Japanese Chatbot Controller ("AI Sensei - 会話")
  * Web Speech API Voice Recognition + Native TTS Speech Synthesis + Furigana, Grammar & Particle Tutorials
  */
 import { CHAT_SCENARIOS, PARTICLE_TUTORIAL_DATA, generateSmartBotResponse } from './data/chat-scenarios.js';
@@ -9,7 +9,7 @@ export class ChatController {
   constructor() {
     this.scenarios = CHAT_SCENARIOS;
     this.particleTutorials = PARTICLE_TUTORIAL_DATA;
-    this.currentScenarioId = this.scenarios[0]?.id || 'station_transfer';
+    this.currentScenarioId = 'restaurant';
     this.currentMode = 'conversation'; // 'conversation' | 'guide'
     this.messages = []; // array of { sender: 'user'|'bot', jp, romaji, en, furigana, breakdown, showBreakdown, timestamp }
     this.showRomaji = true;
@@ -105,7 +105,7 @@ export class ChatController {
     if (this.romajiToggleBtn) {
       this.romajiToggleBtn.addEventListener('click', () => {
         this.showRomaji = !this.showRomaji;
-        this.romajiToggleBtn.textContent = this.showRomaji ? '・ Romaji / Furigana: ON' : '・ Romaji / Furigana: OFF';
+        this.romajiToggleBtn.textContent = this.showRomaji ? '🈁 Romaji / Furigana: ON' : '🈁 Romaji / Furigana: OFF';
         this.romajiToggleBtn.classList.toggle('active', this.showRomaji);
         this.renderMessages();
       });
@@ -157,7 +157,7 @@ export class ChatController {
       this.activeScenarioTitle.textContent = `${scenario.icon} ${scenario.title} (${scenario.titleJp})`;
     }
     if (this.activeScenarioRole) {
-      this.activeScenarioRole.textContent = `Partner: ${scenario.role} 窶｢ ${scenario.description}`;
+      this.activeScenarioRole.textContent = `Partner: ${scenario.role} • ${scenario.description}`;
     }
 
     // Reset messages with starter message
@@ -215,21 +215,21 @@ export class ChatController {
 
         const grammarTipHtml = m.breakdown.grammarTip ? `
           <div class="grammar-tip-box">
-            <span>庁 <strong>Pattern Tip:</strong> ${m.breakdown.grammarTip}</span>
+            <span>💡 <strong>Pattern Tip:</strong> ${m.breakdown.grammarTip}</span>
           </div>
         ` : '';
 
         breakdownHtml = `
           <div class="chat-breakdown-card">
             <div class="breakdown-header">
-              <span>庁 Sensei's Grammar & Particle Breakdown</span>
+              <span>💡 Sensei's Grammar & Particle Breakdown</span>
             </div>
             ${particlesHtml ? `
-              <div class="breakdown-section-title">蜉ｩ隧・(Particles Used & Why)</div>
+              <div class="breakdown-section-title">助詞 (Particles Used & Why)</div>
               <div class="breakdown-particles-list">${particlesHtml}</div>
             ` : ''}
             ${vocabHtml ? `
-              <div class="breakdown-section-title" style="margin-top: 0.35rem;">隱槫ｽ・(Vocabulary Choice & Nuance)</div>
+              <div class="breakdown-section-title" style="margin-top: 0.35rem;">語彙 (Vocabulary Choice & Nuance)</div>
               <div class="breakdown-vocab-list">${vocabHtml}</div>
             ` : ''}
             ${grammarTipHtml}
@@ -239,7 +239,7 @@ export class ChatController {
 
       return `
         <div class="chat-msg-row ${isBot ? 'bot' : 'user'}">
-          ${isBot ? '<div class="chat-avatar bot">減</div>' : ''}
+          ${isBot ? '<div class="chat-avatar bot">🌸</div>' : ''}
           <div class="chat-bubble ${isBot ? 'bot' : 'user'}">
             <div class="chat-text-main">
               ${this.showRomaji && m.furigana ? m.furigana : m.jp}
@@ -256,18 +256,18 @@ export class ChatController {
             <div class="chat-meta">
               <span class="chat-time">${m.timestamp}</span>
               ${isBot ? `
-                <button class="chat-speak-btn" data-msgidx="${idx}" title="Listen Pronunciation">矧</button>
+                <button class="chat-speak-btn" data-msgidx="${idx}" title="Listen Pronunciation">🔊</button>
               ` : ''}
               ${hasBreakdown ? `
                 <button class="chat-breakdown-btn" data-breakdownidx="${idx}" title="View why particles and vocab were chosen">
-                  ${m.showBreakdown ? '笆ｲ Hide Breakdown' : '庁 Breakdown (Particles & Vocab)'}
+                  ${m.showBreakdown ? '▲ Hide Breakdown' : '💡 Breakdown (Particles & Vocab)'}
                 </button>
               ` : ''}
             </div>
 
             ${breakdownHtml}
           </div>
-          ${!isBot ? '<div class="chat-avatar user">側</div>' : ''}
+          ${!isBot ? '<div class="chat-avatar user">👤</div>' : ''}
         </div>
       `;
     }).join('');
@@ -339,10 +339,10 @@ export class ChatController {
             <div class="particle-example-box">
               <div style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="particle-ex-jp">${ex.jp}</div>
-                <button class="icon-btn guide-speak-btn" data-text="${ex.jp.replace(/<[^>]+>/g, '')}" title="Listen Pronunciation" style="padding: 0.2rem 0.45rem; font-size: 0.75rem;">矧</button>
+                <button class="icon-btn guide-speak-btn" data-text="${ex.jp.replace(/<[^>]+>/g, '')}" title="Listen Pronunciation" style="padding: 0.2rem 0.45rem; font-size: 0.75rem;">🔊</button>
               </div>
-              <div class="particle-ex-en">${ex.romaji} 窶｢ ${ex.en}</div>
-              <div class="particle-ex-note">庁 ${ex.breakdown}</div>
+              <div class="particle-ex-en">${ex.romaji} • ${ex.en}</div>
+              <div class="particle-ex-note">💡 ${ex.breakdown}</div>
             </div>
           `).join('')}
         </div>
@@ -358,7 +358,7 @@ export class ChatController {
             <div class="particle-card-icon">${tut.icon}</div>
             <div>
               <div class="particle-card-title">${tut.title}</div>
-              <div class="particle-card-sub">${tut.subtitle} 窶｢ <span style="color: var(--accent-primary);">${tut.difficulty}</span></div>
+              <div class="particle-card-sub">${tut.subtitle} • <span style="color: var(--accent-primary);">${tut.difficulty}</span></div>
             </div>
           </div>
 
@@ -371,7 +371,7 @@ export class ChatController {
           </div>
 
           <div style="margin-top: 0.5rem; border-top: 1px dashed var(--border-color); padding-top: 0.6rem;">
-            <div style="font-weight: 700; font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 0.25rem;">笞｡ Sensei's Memory Hooks & Golden Rules:</div>
+            <div style="font-weight: 700; font-size: 0.8rem; color: var(--accent-gold); margin-bottom: 0.25rem;">⚡ Sensei's Memory Hooks & Golden Rules:</div>
             <div class="particle-quick-tips-list">
               ${tipsHtml}
             </div>
@@ -438,7 +438,7 @@ export class ChatController {
     typingRow.className = 'chat-msg-row bot typing-indicator-row';
     typingRow.id = 'chat-typing-indicator';
     typingRow.innerHTML = `
-      <div class="chat-avatar bot">減</div>
+      <div class="chat-avatar bot">🌸</div>
       <div class="chat-bubble bot typing-bubble">
         <span class="typing-dot"></span>
         <span class="typing-dot"></span>
@@ -472,7 +472,7 @@ export class ChatController {
       this.isListeningVoice = true;
       if (this.micBtn) {
         this.micBtn.classList.add('recording');
-        this.micBtn.textContent = '閥 Listening...';
+        this.micBtn.textContent = '🔴 Listening...';
       }
       this.speechRecognition.start();
     } catch (e) {
@@ -485,11 +485,10 @@ export class ChatController {
     this.isListeningVoice = false;
     if (this.micBtn) {
       this.micBtn.classList.remove('recording');
-      this.micBtn.textContent = '痔 Speak (JP)';
+      this.micBtn.textContent = '🎤 Speak (JP)';
     }
     try {
       if (this.speechRecognition) this.speechRecognition.stop();
     } catch (e) {}
   }
 }
-

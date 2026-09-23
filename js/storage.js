@@ -1,5 +1,5 @@
-/**
- * LocalStorage Manager for JLPT N4 Master App
+﻿/**
+ * LocalStorage Manager for JLPT N5 Master App
  * Handles SRS levels, bookmarks, quiz history, streak counter, 30-day activity heatmap, and settings.
  */
 
@@ -144,6 +144,7 @@ class StorageManager {
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
 
       if (diffDays > 1) {
+        // Streak broken
         streak.count = 0;
         localStorage.setItem(STORAGE_KEYS.STREAK_DATA, JSON.stringify(streak));
       }
@@ -158,7 +159,7 @@ class StorageManager {
       totalQuizzesTaken: 0,
       highestCombo: 0,
       blitzHighScore: 0,
-      dailyActivity: {}
+      dailyActivity: {} // { 'YYYY-MM-DD': count }
     };
     return JSON.parse(localStorage.getItem(STORAGE_KEYS.STREAK_DATA) || JSON.stringify(defaultData));
   }
@@ -166,7 +167,7 @@ class StorageManager {
   logActivity(type = 'review', count = 1) {
     const streak = this.getStreakData();
     const todayStr = new Date().toDateString();
-    const dateKey = new Date().toISOString().slice(0, 10);
+    const dateKey = new Date().toISOString().slice(0, 10); // 'YYYY-MM-DD'
 
     if (streak.lastActiveDate !== todayStr) {
       streak.count = (streak.count || 0) + 1;
@@ -235,7 +236,7 @@ class StorageManager {
   // --- Settings ---
   getSettings() {
     return JSON.parse(localStorage.getItem(STORAGE_KEYS.APP_SETTINGS) || JSON.stringify({
-      theme: 'dark',
+      theme: 'dark', // 'dark' (Neo-Tokyo) or 'light' (Sakura)
       audioSpeed: 0.9,
       autoPlayAudio: true,
       sfxEnabled: true,
@@ -252,7 +253,7 @@ class StorageManager {
   }
 
   // --- Overall Stats Summary ---
-  getStats(totalKanji = 200, totalVocab = 750) {
+  getStats(totalKanji = 100, totalVocab = 800) {
     const kanjiSRS = this.getKanjiSRS();
     const vocabSRS = this.getVocabSRS();
     const history = this.getQuizHistory();
@@ -290,11 +291,11 @@ class StorageManager {
       kanjiMastered,
       kanjiLearning,
       kanjiTotal: totalKanji,
-      kanjiPercent: totalKanji > 0 ? Math.round((kanjiMastered / totalKanji) * 100) : 0,
+      kanjiPercent: Math.round((kanjiMastered / totalKanji) * 100),
       vocabMastered,
       vocabLearning,
       vocabTotal: totalVocab,
-      vocabPercent: totalVocab > 0 ? Math.round((vocabMastered / totalVocab) * 100) : 0,
+      vocabPercent: Math.round((vocabMastered / totalVocab) * 100),
       quizzesTaken: history.length,
       averageAccuracy,
       totalReviews: streak.totalCardsReviewed || 0

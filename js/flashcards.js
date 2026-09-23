@@ -284,13 +284,13 @@ export class FlashcardController {
     const customDecks = storage.getCustomDecks();
 
     let html = `
-      <option value="kanji" ${this.type === 'kanji' ? 'selected' : ''}>200 N4 Kanji</option>
-      <option value="vocab" ${this.type === 'vocab' ? 'selected' : ''}>N4 Vocabulary</option>
+      <option value="kanji" ${this.type === 'kanji' ? 'selected' : ''}>100 N5 Kanji</option>
+      <option value="vocab" ${this.type === 'vocab' ? 'selected' : ''}>800 N5 Vocabulary</option>
       <option value="grammar" ${this.type === 'grammar' ? 'selected' : ''}>Grammar Points</option>
     `;
 
     if (customDecks.length > 0) {
-      html += `<optgroup label="踏 Imported Custom Decks">`;
+      html += `<optgroup label="📥 Imported Custom Decks">`;
       customDecks.forEach(d => {
         const val = `custom_${d.id}`;
         html += `<option value="${val}" ${this.type === val ? 'selected' : ''}>${d.name} (${d.cards.length} cards)</option>`;
@@ -331,7 +331,7 @@ export class FlashcardController {
           <strong>${d.name}</strong> <span style="color: var(--text-muted);">(${d.cards.length} cards)</span>
         </div>
         <button class="delete-deck-btn" data-deckid="${d.id}" style="background: none; border: none; color: var(--accent-red); cursor: pointer; padding: 0.2rem 0.4rem; font-size: 0.85rem;" title="Delete Deck">
-          卵・・Delete
+          🗑️ Delete
         </button>
       </div>
     `).join('');
@@ -453,7 +453,7 @@ export class FlashcardController {
 
     if (cards.length > 0) {
       this.previewBox.classList.remove('hidden');
-      this.previewCount.textContent = `笨・${cards.length} cards detected`;
+      this.previewCount.textContent = `✓ ${cards.length} cards detected`;
     } else {
       this.previewBox.classList.add('hidden');
     }
@@ -493,7 +493,7 @@ export class FlashcardController {
     document.body.classList.toggle('zen-focus-mode', this.isZenMode);
     if (this.zenBtn) {
       this.zenBtn.classList.toggle('active', this.isZenMode);
-      this.zenBtn.innerHTML = this.isZenMode ? '笨・Exit Zen Mode' : 'ｧ・Zen Mode';
+      this.zenBtn.innerHTML = this.isZenMode ? '✕ Exit Zen Mode' : '🧘 Zen Mode';
     }
   }
 
@@ -620,7 +620,7 @@ export class FlashcardController {
 
       this.cardFront.innerHTML = `
         <div class="empty-deck-notice">
-          <span class="empty-icon">雫</span>
+          <span class="empty-icon">🎴</span>
           <h3>No cards found in this filter</h3>
           <p>Try selecting a different category, SRS filter, or import custom cards.</p>
         </div>
@@ -654,7 +654,7 @@ export class FlashcardController {
     const isBookmarked = storage.isBookmarked(this.type, item.id);
     if (this.bookmarkBtn) {
       this.bookmarkBtn.classList.toggle('active', isBookmarked);
-      this.bookmarkBtn.innerHTML = isBookmarked ? '箝・ : '笘・;
+      this.bookmarkBtn.innerHTML = isBookmarked ? '⭐' : '☆';
     }
 
     // Build Front & Back content depending on Card Type
@@ -677,7 +677,7 @@ export class FlashcardController {
   }
 
   renderKanjiCard(item) {
-    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">煤 Reviewing Missed</span>` : '';
+    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">🔁 Reviewing Missed</span>` : '';
     
     // Front
     this.cardFront.innerHTML = `
@@ -710,10 +710,10 @@ export class FlashcardController {
 
     const onDisplay = item.onyomi
       ? `${item.onyomi} ${item.onyomiRomaji ? '<span style="opacity:0.8; font-size:0.85em;">(' + item.onyomiRomaji + ')</span>' : ''}`
-      : '窶・;
+      : '—';
     const kunDisplay = item.kunyomi
       ? `${item.kunyomi} ${item.kunyomiRomaji ? '<span style="opacity:0.8; font-size:0.85em;">(' + item.kunyomiRomaji + ')</span>' : ''}`
-      : '窶・;
+      : '—';
 
     this.cardBack.innerHTML = `
       <div class="fc-back-header">
@@ -722,25 +722,25 @@ export class FlashcardController {
       </div>
       <div class="fc-readings-grid">
         <div class="reading-pill onyomi">
-          <span class="reading-label">On'yomi (髻ｳ):</span>
+          <span class="reading-label">On'yomi (音):</span>
           <span class="reading-val">${onDisplay}</span>
         </div>
         <div class="reading-pill kunyomi">
-          <span class="reading-label">Kun'yomi (險・:</span>
+          <span class="reading-label">Kun'yomi (訓):</span>
           <span class="reading-val">${kunDisplay}</span>
         </div>
       </div>
       <div class="fc-radical-info">
         <span>Radical: <strong>${item.radical}</strong></span>
         <span>Strokes: <strong>${item.strokes}</strong></span>
-        <span>Romaji: <strong>${item.romaji || '窶・}</strong></span>
+        <span>Romaji: <strong>${item.romaji || '—'}</strong></span>
       </div>
       ${examplesHtml}
     `;
   }
 
   renderVocabCard(item) {
-    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">煤 Reviewing Missed</span>` : '';
+    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">🔁 Reviewing Missed</span>` : '';
 
     this.cardFront.innerHTML = `
       <div class="card-badge-top">
@@ -769,7 +769,7 @@ export class FlashcardController {
       </div>
       <div class="fc-readings-grid">
         <div class="reading-pill onyomi">
-          <span class="reading-label">Reading (縺九↑):</span>
+          <span class="reading-label">Reading (かな):</span>
           <span class="reading-val">${item.reading}</span>
         </div>
         <div class="reading-pill kunyomi">
@@ -786,7 +786,7 @@ export class FlashcardController {
   }
 
   renderGrammarCard(item) {
-    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">煤 Reviewing Missed</span>` : '';
+    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">🔁 Reviewing Missed</span>` : '';
 
     this.cardFront.innerHTML = `
       <div class="card-badge-top">
@@ -824,7 +824,7 @@ export class FlashcardController {
   }
 
   renderCustomCard(item) {
-    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">煤 Reviewing Missed</span>` : '';
+    const recycledBadge = item.isRecycled ? `<span class="badge-recycled">🔁 Reviewing Missed</span>` : '';
 
     this.cardFront.innerHTML = `
       <div class="card-badge-top">
@@ -904,7 +904,7 @@ export class FlashcardController {
     const isBookmarked = storage.toggleBookmark(this.type, item.id);
     if (this.bookmarkBtn) {
       this.bookmarkBtn.classList.toggle('active', isBookmarked);
-      this.bookmarkBtn.innerHTML = isBookmarked ? '箝・ : '笘・;
+      this.bookmarkBtn.innerHTML = isBookmarked ? '⭐' : '☆';
     }
   }
 
@@ -998,4 +998,3 @@ export class FlashcardController {
     if (this.modal) this.modal.classList.add('hidden');
   }
 }
-

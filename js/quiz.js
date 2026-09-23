@@ -21,7 +21,7 @@ export class QuizEngine {
     this.quizRangeMode = 'all'; // 'all' | 'batch' | 'custom' | 'category' | 'bookmarked'
     this.rangeBatch = '1-50';
     this.rangeStartId = 1;
-    this.rangeEndId = 100;
+    this.rangeEndId = 200;
     this.selectedCategory = 'all';
 
     this.questionCount = 10;
@@ -142,7 +142,7 @@ export class QuizEngine {
         const q = this.questions[this.currentIndex];
         if (!q || !q.item) return;
         const isBookmarked = storage.toggleBookmark(q.type, q.item.id);
-        this.quizStarBtn.textContent = isBookmarked ? '箝・ : '笘・;
+        this.quizStarBtn.textContent = isBookmarked ? '⭐' : '☆';
         this.quizStarBtn.classList.toggle('active', isBookmarked);
         this.quizStarBtn.style.color = isBookmarked ? '#f59e0b' : 'inherit';
       });
@@ -273,7 +273,7 @@ export class QuizEngine {
     document.body.classList.toggle('zen-focus-mode', this.isZenMode);
     if (this.zenBtn) {
       this.zenBtn.classList.toggle('active', this.isZenMode);
-      this.zenBtn.innerHTML = this.isZenMode ? '笨・Exit Zen Mode' : 'ｧ・Zen Mode';
+      this.zenBtn.innerHTML = this.isZenMode ? '✕ Exit Zen Mode' : '🧘 Zen Mode';
     }
   }
 
@@ -297,22 +297,26 @@ export class QuizEngine {
     if (this.rangeBatchSelect) {
       if (type === 'kanji') {
         this.rangeBatchSelect.innerHTML = `
-          <option value="1-50">Kanji 1 - 50 (People, Family & Society)</option>
-          <option value="51-100">Kanji 51 - 100 (Actions, Verbs & Movement)</option>
-          <option value="101-150">Kanji 101 - 150 (Mind, Travel & Nature)</option>
-          <option value="151-200">Kanji 151 - 200 (States, Adjectives & Daily Life)</option>
+          <option value="1-25">Kanji 1 - 25 (Numbers & Basics)</option>
+          <option value="26-50">Kanji 26 - 50 (Nature & Time)</option>
+          <option value="51-75">Kanji 51 - 75 (Places & People)</option>
+          <option value="76-100">Kanji 76 - 100 (Actions & Advanced)</option>
         `;
       } else if (type === 'vocab') {
         this.rangeBatchSelect.innerHTML = `
-          <option value="1-50">Vocab 1 - 50 (Transitive/Intransitive & Keigo)</option>
-          <option value="51-100">Vocab 51 - 100 (Core Action Verbs)</option>
-          <option value="101-150">Vocab 101 - 150 (Adjectives & Adverbs)</option>
-          <option value="151-208">Vocab 151 - 208 (Travel, Society, Health & Nature)</option>
+          <option value="1-100">Vocab 1 - 100 (Greetings & Time)</option>
+          <option value="101-200">Vocab 101 - 200 (People, Family & Food)</option>
+          <option value="201-300">Vocab 201 - 300 (Daily Life & Home)</option>
+          <option value="301-400">Vocab 301 - 400 (School & Work)</option>
+          <option value="401-500">Vocab 401 - 500 (Travel, Town & Nature)</option>
+          <option value="501-600">Vocab 501 - 600 (Core Verbs 1)</option>
+          <option value="601-700">Vocab 601 - 700 (Core Verbs 2 & Adjectives)</option>
+          <option value="701-800">Vocab 701 - 800 (Adverbs & Expressions)</option>
         `;
       } else {
         this.rangeBatchSelect.innerHTML = `
-          <option value="1-20">Grammar Batch 1 (1 - 20: Passives, Causatives, Conditionals & Keigo)</option>
-          <option value="21-40">Grammar Batch 2 (21 - 40: Aspect, Purpose & Conjecture)</option>
+          <option value="1-20">Grammar Batch 1 (1 - 20)</option>
+          <option value="21-40">Grammar Batch 2 (21 - 40)</option>
         `;
       }
     }
@@ -620,7 +624,7 @@ export class QuizEngine {
     return {
       type: 'listening',
       format: 'listening_scenario',
-      badge: `而 ${sc.sectionName.split(' ')[0]} 窶｢ ${sc.topic}`,
+      badge: `🎧 ${sc.sectionName.split(' ')[0]} • ${sc.topic}`,
       title: sc.title,
       sub: sc.situation,
       questionLead: sc.questionJp || sc.question,
@@ -628,7 +632,7 @@ export class QuizEngine {
       scenario: sc,
       options,
       correctAnswer: correctOpt,
-      explanation: `Correct: Option ${sc.correctIndex + 1}: ${correctOpt}\n\n庁 閨槭″蜿悶ｊ縺ｮ繝昴う繝ｳ繝・ ${sc.teacherNotes.cue}`
+      explanation: `Correct: Option ${sc.correctIndex + 1}: ${correctOpt}\n\n💡 聞き取りのポイント: ${sc.teacherNotes.cue}`
     };
   }
 
@@ -645,8 +649,8 @@ export class QuizEngine {
         ...(k.kunyomiRomaji ? k.kunyomiRomaji.toLowerCase().split(/[,/]/).map(s => s.trim()) : []),
         k.onyomi ? k.onyomi.toLowerCase() : '',
         ...(k.onyomi ? k.onyomi.toLowerCase().split(/[,/]/).map(s => s.trim()) : []),
-        k.kunyomi ? k.kunyomi.toLowerCase().replace(/[繝ｻ-]/g, '') : '',
-        ...(k.kunyomi ? k.kunyomi.toLowerCase().replace(/[繝ｻ-]/g, '').split(/[,/]/).map(s => s.trim()) : [])
+        k.kunyomi ? k.kunyomi.toLowerCase().replace(/[・-]/g, '') : '',
+        ...(k.kunyomi ? k.kunyomi.toLowerCase().replace(/[・-]/g, '').split(/[,/]/).map(s => s.trim()) : [])
       ]);
       if (k.examples) {
         k.examples.forEach(ex => {
@@ -661,31 +665,31 @@ export class QuizEngine {
       return {
         type: 'kanji',
         format: 'typing',
-        badge: '竚ｨ・・Kanji Recall Challenge',
+        badge: '⌨️ Kanji Recall Challenge',
         title: k.kanji,
         sub: `Type Romaji (${cleanReadingPrompt}), Japanese Kana (${k.kunyomi || k.onyomi}), or English meaning:`,
-        speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[繝ｻ-]/g, '') : k.kanji,
+        speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[・-]/g, '') : k.kanji,
         validAnswers,
         correctAnswerDisplay: `${k.meaning} | Romaji: ${k.romaji} | Kana: ${k.kunyomi || k.onyomi}`,
-        explanation: `Kanji: ${k.kanji} | Meaning: ${k.meaning} | Romaji: ${k.romaji} | On'yomi: ${k.onyomi || '窶・} | Kun'yomi: ${k.kunyomi || '窶・}`
+        explanation: `Kanji: ${k.kanji} | Meaning: ${k.meaning} | Romaji: ${k.romaji} | On'yomi: ${k.onyomi || '—'} | Kun'yomi: ${k.kunyomi || '—'}`
       };
     } else if (format === 'listening') {
       const mode = Math.random() < 0.5 ? 'audio_to_kanji' : 'audio_to_meaning';
       const distractors = KANJI_DATA.filter(i => i.id !== k.id).sort(() => 0.5 - Math.random()).slice(0, 3);
-      const primaryReading = k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[繝ｻ-]/g, '') : (k.onyomi ? k.onyomi.split(/[,/]/)[0] : k.kanji);
+      const primaryReading = k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[・-]/g, '') : (k.onyomi ? k.onyomi.split(/[,/]/)[0] : k.kanji);
 
       if (mode === 'audio_to_kanji') {
         const options = [k.kanji, ...distractors.map(d => d.kanji)].sort(() => 0.5 - Math.random());
         return {
           type: 'kanji',
           format: 'listening',
-          badge: '而 Listening Kanji Match',
-          title: '矧 Listen to the spoken reading',
+          badge: '🎧 Listening Kanji Match',
+          title: '🔊 Listen to the spoken reading',
           sub: 'Which Kanji matches the spoken Japanese pronunciation?',
           speakText: primaryReading,
           options,
           correctAnswer: k.kanji,
-          explanation: `Spoken: "${primaryReading}" (${k.romaji}) = Kanji 縲・{k.kanji}縲・(${k.meaning})`
+          explanation: `Spoken: "${primaryReading}" (${k.romaji}) = Kanji 「${k.kanji}」 (${k.meaning})`
         };
       } else {
         const correctLabel = `${k.meaning} (${k.romaji})`;
@@ -696,13 +700,13 @@ export class QuizEngine {
         return {
           type: 'kanji',
           format: 'listening',
-          badge: '而 Listening Comprehension',
-          title: `矧 Spoken Kanji: 縲・{k.kanji}縲港,
+          badge: '🎧 Listening Comprehension',
+          title: `🔊 Spoken Kanji: 「${k.kanji}」`,
           sub: 'What is the English meaning & Romaji for this spoken Kanji?',
           speakText: primaryReading,
           options,
           correctAnswer: correctLabel,
-          explanation: `Spoken 縲・{k.kanji}縲・= ${k.meaning} (Romaji: ${k.romaji})`
+          explanation: `Spoken 「${k.kanji}」 = ${k.meaning} (Romaji: ${k.romaji})`
         };
       }
     } else if (format === 'true_false') {
@@ -714,13 +718,13 @@ export class QuizEngine {
         return {
           type: 'kanji',
           format: 'true_false',
-          badge: '笞｡ True / False Lightning',
+          badge: '⚡ True / False Lightning',
           title: k.kanji,
-          sub: `Does Kanji 縲・{k.kanji}縲・mean "${displayMeaning}"?`,
+          sub: `Does Kanji 「${k.kanji}」 mean "${displayMeaning}"?`,
           speakText: k.kanji,
           isTrue,
           correctAnswer: isTrue,
-          explanation: `縲・{k.kanji}縲・means "${k.meaning}" (Romaji: ${k.romaji}). Statement was ${isTrue ? 'True' : 'False'}.`
+          explanation: `「${k.kanji}」 means "${k.meaning}" (Romaji: ${k.romaji}). Statement was ${isTrue ? 'True' : 'False'}.`
         };
       } else {
         const displayReading = isTrue
@@ -729,13 +733,13 @@ export class QuizEngine {
         return {
           type: 'kanji',
           format: 'true_false',
-          badge: '笞｡ True / False Lightning',
+          badge: '⚡ True / False Lightning',
           title: k.kanji,
-          sub: `Is 縲・{k.kanji}縲・read as "${displayReading}" in Romaji / Japanese?`,
-          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[繝ｻ-]/g, '') : k.kanji,
+          sub: `Is 「${k.kanji}」 read as "${displayReading}" in Romaji / Japanese?`,
+          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[・-]/g, '') : k.kanji,
           isTrue,
           correctAnswer: isTrue,
-          explanation: `縲・{k.kanji}縲・is read as ${k.romaji} (Kana: ${k.kunyomi || k.onyomi}). Meaning: "${k.meaning}". Statement was ${isTrue ? 'True' : 'False'}.`
+          explanation: `「${k.kanji}」 is read as ${k.romaji} (Kana: ${k.kunyomi || k.onyomi}). Meaning: "${k.meaning}". Statement was ${isTrue ? 'True' : 'False'}.`
         };
       }
     } else if (format === 'scramble') {
@@ -743,7 +747,7 @@ export class QuizEngine {
         ? k.examples[Math.floor(Math.random() * k.examples.length)]
         : { word: k.kanji, reading: k.kunyomi || k.onyomi, romaji: k.romaji, meaning: k.meaning };
 
-      const jpSentence = `${ex.word}繧貞級蠑ｷ縺励∪縺吶Ａ;
+      const jpSentence = `${ex.word}を勉強します。`;
       const enSentence = `I study ${ex.word} (${ex.meaning}).`;
       const chunks = this.tokenizeJapaneseSentence(jpSentence);
       const shuffledChunks = [...chunks].sort(() => 0.5 - Math.random());
@@ -751,9 +755,9 @@ export class QuizEngine {
       return {
         type: 'kanji',
         format: 'scramble',
-        badge: 'ｧｩ Kanji Sentence Scramble',
+        badge: '🧩 Kanji Sentence Scramble',
         title: `English: "${enSentence}"`,
-        sub: `Rebuild the sentence using Kanji 縲・{k.kanji}縲・(${k.meaning} / ${k.romaji}):`,
+        sub: `Rebuild the sentence using Kanji 「${k.kanji}」 (${k.meaning} / ${k.romaji}):`,
         speakText: jpSentence,
         tokens: shuffledChunks,
         correctSequence: chunks,
@@ -772,13 +776,13 @@ export class QuizEngine {
         return {
           type: 'kanji',
           format: 'mcq',
-          badge: '筈 Kanji Romaji Reading',
+          badge: '🔤 Kanji Romaji Reading',
           title: k.kanji,
-          sub: `Which Romaji reading corresponds to Kanji 縲・{k.kanji}縲・(${k.meaning})?`,
-          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[繝ｻ-]/g, '') : k.kanji,
+          sub: `Which Romaji reading corresponds to Kanji 「${k.kanji}」 (${k.meaning})?`,
+          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[・-]/g, '') : k.kanji,
           options,
           correctAnswer: correct,
-          explanation: `縲・{k.kanji}縲・= ${k.meaning} | Romaji: ${k.romaji} (On: ${k.onyomi || '窶・} / Kun: ${k.kunyomi || '窶・})`
+          explanation: `「${k.kanji}」 = ${k.meaning} | Romaji: ${k.romaji} (On: ${k.onyomi || '—'} / Kun: ${k.kunyomi || '—'})`
         };
       } else if (variant === 'kana_reading') {
         const correct = `${k.kunyomi ? k.kunyomi : ''}${k.kunyomi && k.onyomi ? ' / ' : ''}${k.onyomi ? k.onyomi : ''}`;
@@ -789,26 +793,26 @@ export class QuizEngine {
         return {
           type: 'kanji',
           format: 'mcq',
-          badge: '・・ Japanese Kana Reading',
+          badge: '🇯🇵 Japanese Kana Reading',
           title: k.kanji,
-          sub: `What is the Japanese reading (Kun'yomi / On'yomi) for 縲・{k.kanji}縲・`,
-          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[繝ｻ-]/g, '') : k.kanji,
+          sub: `What is the Japanese reading (Kun'yomi / On'yomi) for 「${k.kanji}」?`,
+          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[・-]/g, '') : k.kanji,
           options,
           correctAnswer: correct,
-          explanation: `縲・{k.kanji}縲・readings: Kun: ${k.kunyomi || '窶・} | On: ${k.onyomi || '窶・} (Romaji: ${k.romaji})`
+          explanation: `「${k.kanji}」 readings: Kun: ${k.kunyomi || '—'} | On: ${k.onyomi || '—'} (Romaji: ${k.romaji})`
         };
       } else if (variant === 'reverse_kanji') {
         const options = [k.kanji, ...distractors.map(d => d.kanji)].sort(() => 0.5 - Math.random());
         return {
           type: 'kanji',
           format: 'mcq',
-          badge: '識 Reverse Kanji Recall',
+          badge: '🎯 Reverse Kanji Recall',
           title: `"${k.meaning}" (${k.romaji})`,
           sub: 'Which Kanji character matches this meaning and Romaji reading?',
-          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[繝ｻ-]/g, '') : k.kanji,
+          speakText: k.kunyomi ? k.kunyomi.split(/[,/]/)[0].replace(/[・-]/g, '') : k.kanji,
           options,
           correctAnswer: k.kanji,
-          explanation: `縲・{k.kanji}縲・means "${k.meaning}" and is read as ${k.romaji}`
+          explanation: `「${k.kanji}」 means "${k.meaning}" and is read as ${k.romaji}`
         };
       } else if (variant === 'compound_reading' && k.examples && k.examples.length > 0) {
         const ex = k.examples[Math.floor(Math.random() * k.examples.length)];
@@ -827,13 +831,13 @@ export class QuizEngine {
         return {
           type: 'kanji',
           format: 'mcq',
-          badge: '答 Compound Word Reading',
-          title: `縲・{ex.word}縲港,
-          sub: `What is the Japanese reading & Romaji for 縲・{ex.word}縲・(${ex.meaning})?`,
+          badge: '📚 Compound Word Reading',
+          title: `「${ex.word}」`,
+          sub: `What is the Japanese reading & Romaji for 「${ex.word}」 (${ex.meaning})?`,
           speakText: ex.reading || ex.word,
           options,
           correctAnswer: correct,
-          explanation: `Compound 縲・{ex.word}縲・is read as ${ex.reading} (${ex.romaji}) 窶・"${ex.meaning}"`
+          explanation: `Compound 「${ex.word}」 is read as ${ex.reading} (${ex.romaji}) — "${ex.meaning}"`
         };
       } else {
         // Standard Meaning MCQ
@@ -842,13 +846,13 @@ export class QuizEngine {
         return {
           type: 'kanji',
           format: 'mcq',
-          badge: '統 Kanji Meaning',
+          badge: '📝 Kanji Meaning',
           title: k.kanji,
-          sub: `What is the English meaning of Kanji 縲・{k.kanji}縲・(${k.romaji})?`,
+          sub: `What is the English meaning of Kanji 「${k.kanji}」 (${k.romaji})?`,
           speakText: k.kanji,
           options,
           correctAnswer: k.meaning,
-          explanation: `Kanji: 縲・{k.kanji}縲・= ${k.meaning} | Romaji: ${k.romaji} (On: ${k.onyomi || '窶・} / Kun: ${k.kunyomi || '窶・})`
+          explanation: `Kanji: 「${k.kanji}」 = ${k.meaning} | Romaji: ${k.romaji} (On: ${k.onyomi || '—'} / Kun: ${k.kunyomi || '—'})`
         };
       }
     }
@@ -859,9 +863,9 @@ export class QuizEngine {
       return {
         type: 'vocab',
         format: 'typing',
-        badge: '竚ｨ・・Typing Challenge',
+        badge: '⌨️ Typing Challenge',
         title: v.word,
-        sub: `Reading: ${v.reading} (${v.romaji}) 窶・Type meaning or Romaji:`,
+        sub: `Reading: ${v.reading} (${v.romaji}) — Type meaning or Romaji:`,
         speakText: v.reading || v.word,
         validAnswers: [
           v.meaning.toLowerCase(),
@@ -878,8 +882,8 @@ export class QuizEngine {
       return {
         type: 'vocab',
         format: 'listening',
-        badge: '而 Listening Comprehension',
-        title: '矧 Listen to the spoken Japanese word',
+        badge: '🎧 Listening Comprehension',
+        title: '🔊 Listen to the spoken Japanese word',
         sub: 'What does this spoken word mean?',
         speakText: v.reading || v.word,
         options,
@@ -887,14 +891,14 @@ export class QuizEngine {
         explanation: `Spoken: ${v.word} (${v.reading}) = ${v.meaning}`
       };
     } else if (format === 'scramble') {
-      const example = v.example || { jp: `${v.word}繧帝｣溘∋縺ｾ縺吶Ａ, en: `Eat ${v.meaning}.` };
+      const example = v.example || { jp: `${v.word}を食べます。`, en: `Eat ${v.meaning}.` };
       const chunks = this.tokenizeJapaneseSentence(example.jp);
       const shuffledChunks = [...chunks].sort(() => 0.5 - Math.random());
 
       return {
         type: 'vocab',
         format: 'scramble',
-        badge: 'ｧｩ Sentence Scramble',
+        badge: '🧩 Sentence Scramble',
         title: `English: "${example.en}"`,
         sub: 'Click tokens in correct order to build the Japanese sentence:',
         speakText: example.jp,
@@ -909,7 +913,7 @@ export class QuizEngine {
       return {
         type: 'vocab',
         format: 'true_false',
-        badge: '笞｡ True / False Lightning',
+        badge: '⚡ True / False Lightning',
         title: `${v.word} (${v.reading})`,
         sub: `Does this word mean "${displayMeaning}"?`,
         speakText: v.reading || v.word,
@@ -923,9 +927,9 @@ export class QuizEngine {
       return {
         type: 'vocab',
         format: 'mcq',
-        badge: '統 Multiple Choice',
+        badge: '📝 Multiple Choice',
         title: v.word,
-        sub: `Reading: ${v.reading} (${v.romaji}) 窶・What does it mean?`,
+        sub: `Reading: ${v.reading} (${v.romaji}) — What does it mean?`,
         speakText: v.reading || v.word,
         options,
         correctAnswer: v.meaning,
@@ -939,7 +943,7 @@ export class QuizEngine {
       return {
         type: 'grammar',
         format: 'particle',
-        badge: '識 Particle & Grammar Cloze',
+        badge: '🎯 Particle & Grammar Cloze',
         title: g.question,
         sub: 'Choose the correct particle / grammar structure for the blank:',
         speakText: g.question.replace(/____/g, ''),
@@ -951,7 +955,7 @@ export class QuizEngine {
       return {
         type: 'grammar',
         format: 'typing',
-        badge: '竚ｨ・・Grammar Type Challenge',
+        badge: '⌨️ Grammar Type Challenge',
         title: g.question,
         sub: 'Type the correct missing particle or verb form:',
         speakText: g.question.replace(/____/g, ''),
@@ -963,7 +967,7 @@ export class QuizEngine {
       return {
         type: 'grammar',
         format: 'mcq',
-        badge: '当 Grammar Test Question',
+        badge: '📖 Grammar Test Question',
         title: g.question,
         sub: 'Select the most appropriate option:',
         speakText: g.question.replace(/____/g, ''),
@@ -975,8 +979,8 @@ export class QuizEngine {
   }
 
   tokenizeJapaneseSentence(sentence) {
-    if (sentence.includes('縺ｯ')) {
-      const parts = sentence.split(/(?<=[縺ｯ縺後ｒ縺ｫ縺ｧ縺ｸ縺ｨ繧ゅ°繧峨∪縺ｧ])|(?=[縲ゑｼ・ｼ歉)/).filter(Boolean);
+    if (sentence.includes('は')) {
+      const parts = sentence.split(/(?<=[はがをにでへともからまで])|(?=[。！？])/).filter(Boolean);
       if (parts.length >= 3) return parts;
     }
     const len = sentence.length;
@@ -1014,7 +1018,7 @@ export class QuizEngine {
     if (this.scrambleContainer) this.scrambleContainer.classList.add('hidden');
     if (this.tfContainer) this.tfContainer.classList.add('hidden');
 
-    const totalCount = this.isBlitzMode ? '笞｡ Blitz' : this.questions.length;
+    const totalCount = this.isBlitzMode ? '⚡ Blitz' : this.questions.length;
     if (this.qIndexText) this.qIndexText.textContent = `Question ${this.currentIndex + 1} / ${totalCount}`;
     if (this.qFormatBadge) this.qFormatBadge.textContent = q.badge || 'Challenge';
     if (this.scoreText) this.scoreText.textContent = `Score: ${this.score}`;
@@ -1024,7 +1028,7 @@ export class QuizEngine {
       if (q && q.item && q.type) {
         this.quizStarBtn.classList.remove('hidden');
         const isBookmarked = storage.isBookmarked(q.type, q.item.id);
-        this.quizStarBtn.textContent = isBookmarked ? '箝・ : '笘・;
+        this.quizStarBtn.textContent = isBookmarked ? '⭐' : '☆';
         this.quizStarBtn.classList.toggle('active', isBookmarked);
         this.quizStarBtn.style.color = isBookmarked ? '#f59e0b' : 'inherit';
       } else {
@@ -1052,7 +1056,7 @@ export class QuizEngine {
       if (this.audioPromptCard) {
         this.audioPromptCard.classList.remove('hidden');
         if (this.audioReplayBtn) {
-          this.audioReplayBtn.textContent = '矧 Play Scenario Dialogue';
+          this.audioReplayBtn.textContent = '🔊 Play Scenario Dialogue';
           this.audioReplayBtn.onclick = () => {
             audio.playJLPTChime(() => {
               audio.playDialogue(q.scenario.dialogue, null, () => {
@@ -1063,7 +1067,7 @@ export class QuizEngine {
         }
       }
       if (this.questionSub && q.questionLead) {
-        this.questionSub.innerHTML = `${q.sub}<br><span style="display:inline-block; margin-top:0.6rem; font-weight:800; color:var(--accent-cyan); font-size:1.05rem;">笶・雉ｪ蝠・ ${q.questionLead}</span>`;
+        this.questionSub.innerHTML = `${q.sub}<br><span style="display:inline-block; margin-top:0.6rem; font-weight:800; color:var(--accent-cyan); font-size:1.05rem;">❓ 質問: ${q.questionLead}</span>`;
       }
       if (storage.getSettings().autoPlayAudio) {
         audio.playJLPTChime(() => {
@@ -1141,7 +1145,7 @@ export class QuizEngine {
     this.scrambleSlots.innerHTML = this.scrambleSelectedTokens.length === 0
       ? `<div class="scramble-empty-hint">Click tokens below in order</div>`
       : this.scrambleSelectedTokens.map((token, idx) => `
-          <button class="scramble-token-slot" data-slotidx="${idx}">${token} 笨・/button>
+          <button class="scramble-token-slot" data-slotidx="${idx}">${token} ✕</button>
         `).join('');
 
     this.scrambleSlots.querySelectorAll('.scramble-token-slot').forEach(btn => {
@@ -1232,10 +1236,10 @@ export class QuizEngine {
 
     if (!userInput) return;
 
-    const cleanInput = userInput.replace(/[繝ｻ\s\-_/]/g, '').toLowerCase();
+    const cleanInput = userInput.replace(/[・\s\-_/]/g, '').toLowerCase();
 
     const isCorrect = q.validAnswers.some(ans => {
-      const cleanAns = ans.trim().replace(/[繝ｻ\s\-_/]/g, '').toLowerCase();
+      const cleanAns = ans.trim().replace(/[・\s\-_/]/g, '').toLowerCase();
       if (!cleanAns) return false;
       if (cleanInput === cleanAns) return true;
       if (userInput === ans.trim().toLowerCase()) return true;
@@ -1250,8 +1254,8 @@ export class QuizEngine {
     if (this.isAnswered) return;
     const q = this.questions[this.currentIndex];
     const assembled = this.scrambleSelectedTokens.join('');
-    const cleanCorrect = q.correctSentence.replace(/[縲ゑｼ・ｼ歃s]/g, '');
-    const cleanAssembled = assembled.replace(/[縲ゑｼ・ｼ歃s]/g, '');
+    const cleanCorrect = q.correctSentence.replace(/[。！？\s]/g, '');
+    const cleanAssembled = assembled.replace(/[。！？\s]/g, '');
 
     const isCorrect = cleanAssembled === cleanCorrect;
     this.finalizeAnswer(isCorrect, isCorrect ? "Correct Sentence!" : `Incorrect! Sentence: ${q.correctSentence}`);
@@ -1312,12 +1316,12 @@ export class QuizEngine {
         const sc = q.scenario;
         this.explanationBox.innerHTML = `
           <div class="expl-status ${isCorrect ? 'correct' : 'wrong'}">
-            ${isCorrect ? '笨・ : '笶・} ${statusText}
+            ${isCorrect ? '✅' : '❌'} ${statusText}
           </div>
           <div class="expl-detail" style="line-height: 1.6;">
-            <div style="font-weight: 800; color: var(--accent-cyan); margin-bottom: 0.5rem;">而 Scenario Transcript & Translation:</div>
+            <div style="font-weight: 800; color: var(--accent-cyan); margin-bottom: 0.5rem;">🎧 Scenario Transcript & Translation:</div>
             <div class="quiz-expl-dialogue" style="background: rgba(0,0,0,0.25); border: 1px solid var(--border-color); padding: 0.85rem 1rem; border-radius: 10px; margin-bottom: 0.85rem;">
-              ${sc.dialogue.map(d => `<div style="margin-bottom: 0.45rem;"><strong>${d.speaker}:</strong> 縲・{d.furigana || d.jp}縲・<span style="font-size:0.85em; opacity:0.85; display:block;">${d.en}</span></div>`).join('')}
+              ${sc.dialogue.map(d => `<div style="margin-bottom: 0.45rem;"><strong>${d.speaker}:</strong> 「${d.furigana || d.jp}」 <span style="font-size:0.85em; opacity:0.85; display:block;">${d.en}</span></div>`).join('')}
             </div>
             <div style="font-size: 0.92rem; color: var(--text-secondary); margin-top: 0.5rem;">${q.explanation}</div>
           </div>
@@ -1325,7 +1329,7 @@ export class QuizEngine {
       } else {
         this.explanationBox.innerHTML = `
           <div class="expl-status ${isCorrect ? 'correct' : 'wrong'}">
-            ${isCorrect ? '笨・ : '笶・} ${statusText}
+            ${isCorrect ? '✅' : '❌'} ${statusText}
           </div>
           <div class="expl-detail">${q.explanation}</div>
         `;
@@ -1378,28 +1382,28 @@ export class QuizEngine {
 
     if (this.resultScoreText) this.resultScoreText.textContent = `${this.score} / ${total}`;
     if (this.resultAccuracyText) this.resultAccuracyText.textContent = `${accuracy}% Accuracy`;
-    if (this.resultComboText) this.resultComboText.textContent = `${this.maxCombo}x Max Combo 櫨`;
+    if (this.resultComboText) this.resultComboText.textContent = `${this.maxCombo}x Max Combo 🔥`;
 
-    let badge = '減 Beginner';
+    let badge = '🌸 Beginner';
     let badgeColor = '#94a3b8';
     if (this.isBlitzMode) {
-      badge = `笞｡ 2-Minute Blitz Master (${this.score} pts)`;
+      badge = `⚡ 2-Minute Blitz Master (${this.score} pts)`;
       badgeColor = '#f59e0b';
       storage.saveBlitzScore(this.score);
       this.triggerConfetti();
     } else if (accuracy === 100) {
-      badge = '醇 JLPT N4 Master (Perfect Score!)';
+      badge = '🏆 JLPT N5 Master (Perfect Score!)';
       badgeColor = '#eab308';
       this.triggerConfetti();
     } else if (accuracy >= 80) {
-      badge = '･・Excellent! (Gold Rank)';
+      badge = '🥇 Excellent! (Gold Rank)';
       badgeColor = '#38bdf8';
       this.triggerConfetti();
     } else if (accuracy >= 60) {
-      badge = '･・Good Job! (Silver Rank)';
+      badge = '🥈 Good Job! (Silver Rank)';
       badgeColor = '#a855f7';
     } else {
-      badge = '･・Keep Practicing! (Bronze Rank)';
+      badge = '🥉 Keep Practicing! (Bronze Rank)';
     }
 
     if (this.resultBadge) {
@@ -1433,4 +1437,3 @@ export class QuizEngine {
     }
   }
 }
-

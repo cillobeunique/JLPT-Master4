@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Explore & Searchable Library for Kanji, Vocabulary, Grammar & JLPT Listening Practice
  */
 import { KANJI_DATA } from './data/kanji.js';

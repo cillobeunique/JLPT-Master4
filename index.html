@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JLPT N4 Master - Flashcards, Quizzes, Official Mock Exam & AI Chat</title>
-  <meta name="description" content="Master 363 JLPT N4 Kanji, 800 Vocabulary items, Grammar, Official Mock Certification Exams, and practice Japanese conversation with AI Sensei.">
+  <meta name="description" content="Master 200 JLPT N4 Kanji, 800 Vocabulary items, Grammar, Official Mock Certification Exams, and practice Japanese conversation with AI Sensei.">
   
   <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -39,41 +39,41 @@
 
       <nav class="app-nav">
         <ul class="nav-links">
-          <li><a href="#dashboard" class="nav-link active" data-view="dashboard">投 Dashboard</a></li>
+          <li><a href="#dashboard" class="nav-link active" data-view="dashboard">📊 Dashboard</a></li>
           
           <!-- Study & Lessons Submenu -->
           <li class="nav-dropdown-item">
             <button class="nav-link nav-dropdown-btn" id="nav-study-dropdown-btn" aria-haspopup="true" aria-expanded="false">
-              <span>答 Study Hub</span>
-              <span class="dropdown-caret">笆ｾ</span>
+              <span>📚 Study Hub</span>
+              <span class="dropdown-caret">▾</span>
             </button>
             <div class="nav-dropdown-menu" id="nav-study-dropdown-menu">
               <a href="#flashcards" class="dropdown-link nav-link" data-view="flashcards">
-                <div class="dropdown-link-icon">雫</div>
+                <div class="dropdown-link-icon">🎴</div>
                 <div class="dropdown-link-info">
                   <div class="dropdown-link-title">3D Flashcards</div>
                   <div class="dropdown-link-sub">Kanji & Vocab Spaced Repetition</div>
                 </div>
               </a>
               <a href="#grammar" class="dropdown-link nav-link" data-view="grammar">
-                <div class="dropdown-link-icon">当</div>
+                <div class="dropdown-link-icon">📖</div>
                 <div class="dropdown-link-info">
                   <div class="dropdown-link-title">Grammar Lessons</div>
                   <div class="dropdown-link-sub">40+ Core N4 Points & Tests</div>
                 </div>
               </a>
               <a href="#explore" class="dropdown-link nav-link" data-view="explore" data-explore-tab="listening">
-                <div class="dropdown-link-icon">而</div>
+                <div class="dropdown-link-icon">🎧</div>
                 <div class="dropdown-link-info">
-                  <div class="dropdown-link-title">Audio Listening Practice (閨ｴ隗｣)</div>
-                  <div class="dropdown-link-sub">Authentic Chōkai Scenarios & Multi-Voice</div>
+                  <div class="dropdown-link-title">Audio Listening Practice (聴解)</div>
+                  <div class="dropdown-link-sub">24 Authentic Test Scenarios & Multi-Voice</div>
                 </div>
               </a>
               <a href="#explore" class="dropdown-link nav-link" data-view="explore">
-                <div class="dropdown-link-icon">剥</div>
+                <div class="dropdown-link-icon">🔍</div>
                 <div class="dropdown-link-info">
                   <div class="dropdown-link-title">N4 Library Explorer</div>
-                  <div class="dropdown-link-sub">Search 200 Kanji & 800 Vocab</div>
+                  <div class="dropdown-link-sub">Search 363 Kanji & 800 Vocab</div>
                 </div>
               </a>
             </div>
@@ -82,19 +82,19 @@
           <!-- Tests & Quizzes Submenu -->
           <li class="nav-dropdown-item">
             <button class="nav-link nav-dropdown-btn" id="nav-tests-dropdown-btn" aria-haspopup="true" aria-expanded="false">
-              <span>統 Tests & Exams</span>
-              <span class="dropdown-caret">笆ｾ</span>
+              <span>📝 Tests & Exams</span>
+              <span class="dropdown-caret">▾</span>
             </button>
             <div class="nav-dropdown-menu" id="nav-tests-dropdown-menu">
               <a href="#quiz" class="dropdown-link nav-link" data-view="quiz">
-                <div class="dropdown-link-icon">統</div>
+                <div class="dropdown-link-icon">📝</div>
                 <div class="dropdown-link-info">
                   <div class="dropdown-link-title">Quiz Challenge</div>
                   <div class="dropdown-link-sub">Ranges, Typing, Audio & Scramble</div>
                 </div>
               </a>
               <a href="#mock-exam" class="dropdown-link nav-link" data-view="mock-exam">
-                <div class="dropdown-link-icon">醇</div>
+                <div class="dropdown-link-icon">🏆</div>
                 <div class="dropdown-link-info">
                   <div class="dropdown-link-title">Official Mock Exam</div>
                   <div class="dropdown-link-sub">Full 3-Section JLPT Test (180 pts)</div>
@@ -103,14 +103,14 @@
             </div>
           </li>
 
-          <li><a href="#chat" class="nav-link" data-view="chat">町 AI Sensei</a></li>
+          <li><a href="#chat" class="nav-link" data-view="chat">💬 AI Sensei</a></li>
         </ul>
       </nav>
 
       <div class="header-actions">
-        <button id="pwa-install-btn" class="icon-btn hidden" title="Install App to Home Screen" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple)); color: #fff; font-weight: 700; border: none; padding: 0.35rem 0.75rem; border-radius: 999px; font-size: 0.85rem;">憧 Install App</button>
-        <button id="theme-toggle-btn" class="icon-btn" title="Toggle Theme">減 Light</button>
-        <button id="settings-btn" class="icon-btn" title="Settings">笞呻ｸ・/button>
+        <button id="pwa-install-btn" class="icon-btn hidden" title="Install App to Home Screen" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-purple)); color: #fff; font-weight: 700; border: none; padding: 0.35rem 0.75rem; border-radius: 999px; font-size: 0.85rem;">📲 Install App</button>
+        <button id="theme-toggle-btn" class="icon-btn" title="Toggle Theme">🌸 Light</button>
+        <button id="settings-btn" class="icon-btn" title="Settings">⚙️</button>
       </div>
     </div>
   </header>
@@ -123,16 +123,16 @@
       <!-- Hero Banner -->
       <div class="hero-section">
         <div class="hero-text-content">
-          <div class="hero-badge">笞｡ Rapid Micro-Learning & Gamified Review</div>
-          <h1 class="hero-title">Master <span class="text-gradient">200 Kanji & 800 Vocab</span></h1>
+          <div class="hero-badge">⚡ Rapid Micro-Learning & Gamified Review</div>
+          <h1 class="hero-title">Master <span class="text-gradient">363 Kanji & 800 Vocab</span></h1>
           <p class="hero-subtitle">High-speed 5-card micro-sessions, 2-minute timed blitz challenges, authentic JLPT N4 audio listening practice, and AI conversation.</p>
           <div class="hero-cta-group">
-            <button class="btn-primary hero-cta-btn" id="dashboard-quick-5-btn">笞｡ Quick 5 Micro-Session</button>
-            <button class="btn-primary hero-cta-btn" id="dashboard-blitz-btn" style="background: linear-gradient(135deg, #f59e0b, #ef4444); box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);">竢ｱ・・2-Minute Blitz</button>
-            <button class="btn-secondary hero-cta-btn" data-view="explore" data-explore-tab="listening">而 Audio Practice</button>
-            <button class="btn-secondary hero-cta-btn" data-view="mock-exam">醇 Mock Exam</button>
-            <button class="btn-secondary hero-cta-btn" data-view="quiz">統 Custom Quiz</button>
-            <button class="btn-secondary hero-cta-btn" data-view="chat">町 AI Sensei</button>
+            <button class="btn-primary hero-cta-btn" id="dashboard-quick-5-btn">⚡ Quick 5 Micro-Session</button>
+            <button class="btn-primary hero-cta-btn" id="dashboard-blitz-btn" style="background: linear-gradient(135deg, #f59e0b, #ef4444); box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);">⏱️ 2-Minute Blitz</button>
+            <button class="btn-secondary hero-cta-btn" data-view="explore" data-explore-tab="listening">🎧 Audio Practice</button>
+            <button class="btn-secondary hero-cta-btn" data-view="mock-exam">🏆 Mock Exam</button>
+            <button class="btn-secondary hero-cta-btn" data-view="quiz">📝 Custom Quiz</button>
+            <button class="btn-secondary hero-cta-btn" data-view="chat">💬 AI Sensei</button>
           </div>
         </div>
       </div>
@@ -140,7 +140,7 @@
       <!-- Live Statistics Grid -->
       <div class="stats-grid">
         <div class="stat-card">
-          <div class="stat-icon-wrapper">櫨</div>
+          <div class="stat-icon-wrapper">🔥</div>
           <div class="stat-content">
             <div class="stat-label">Daily Streak</div>
             <div class="stat-value" id="stat-streak-val">1 Day</div>
@@ -148,15 +148,15 @@
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon-wrapper gold">笞｡</div>
+          <div class="stat-icon-wrapper gold">⚡</div>
           <div class="stat-content">
             <div class="stat-label">Highest Combo</div>
-            <div class="stat-value" id="stat-highest-combo">0x 櫨</div>
+            <div class="stat-value" id="stat-highest-combo">0x 🔥</div>
           </div>
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon-wrapper" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">竢ｱ・・/div>
+          <div class="stat-icon-wrapper" style="background: rgba(245, 158, 11, 0.15); color: #f59e0b;">⏱️</div>
           <div class="stat-content">
             <div class="stat-label">Blitz High Score</div>
             <div class="stat-value" id="stat-blitz-high">0 Pts</div>
@@ -164,10 +164,10 @@
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon-wrapper blue">貍｢</div>
+          <div class="stat-icon-wrapper blue">漢</div>
           <div class="stat-content">
             <div class="stat-label">Kanji Mastered</div>
-            <div class="stat-value" id="stat-kanji-mastered">0 / 100 (0%)</div>
+            <div class="stat-value" id="stat-kanji-mastered">0 / 200 (0%)</div>
             <div class="stat-progress-bg">
               <div class="stat-progress-fill blue" id="stat-kanji-bar" style="width: 0%;"></div>
             </div>
@@ -175,7 +175,7 @@
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon-wrapper purple">隱・/div>
+          <div class="stat-icon-wrapper purple">語</div>
           <div class="stat-content">
             <div class="stat-label">Vocab Mastered</div>
             <div class="stat-value" id="stat-vocab-mastered">0 / 800 (0%)</div>
@@ -186,7 +186,7 @@
         </div>
 
         <div class="stat-card">
-          <div class="stat-icon-wrapper cyan">識</div>
+          <div class="stat-icon-wrapper cyan">🎯</div>
           <div class="stat-content">
             <div class="stat-label">Quiz Accuracy</div>
             <div class="stat-value" id="stat-accuracy-val">0%</div>
@@ -198,7 +198,7 @@
       <div class="heatmap-section-card">
         <div class="heatmap-header">
           <div class="heatmap-title-group">
-            <span class="heatmap-icon">套</span>
+            <span class="heatmap-icon">📅</span>
             <div>
               <h3 class="heatmap-title">30-Day Study Consistency</h3>
               <p class="heatmap-sub">Complete daily micro-sessions to level up your Japanese streak!</p>
@@ -225,7 +225,7 @@
       <div class="quick-hub-grid">
         <div class="dashboard-quick-card" data-view="flashcards">
           <div class="quick-card-header">
-            <span class="quick-card-icon">雫</span>
+            <span class="quick-card-icon">🎴</span>
             <h3 class="quick-card-title">3D SRS Flashcards</h3>
           </div>
           <p class="quick-card-desc">Rapid 5-card micro-sessions, instant mistake recycling ~3 cards later, combo streaks, and spaced repetition grading.</p>
@@ -233,7 +233,7 @@
 
         <div class="dashboard-quick-card" data-view="quiz">
           <div class="quick-card-header">
-            <span class="quick-card-icon">笞｡</span>
+            <span class="quick-card-icon">⚡</span>
             <h3 class="quick-card-title">2-Min Blitz & Quizzes</h3>
           </div>
           <p class="quick-card-desc">Rapid-fire 120s Blitz mode, Typing recall, Audio prompts, Sentence Scrambler, and Particle Fill-ins.</p>
@@ -241,7 +241,7 @@
 
         <div class="dashboard-quick-card" data-view="mock-exam">
           <div class="quick-card-header">
-            <span class="quick-card-icon">醇</span>
+            <span class="quick-card-icon">🏆</span>
             <h3 class="quick-card-title">Official JLPT Mock Exam</h3>
           </div>
           <p class="quick-card-desc">Simulate the full 3-section JLPT N4 Certification Exam (Kanji/Vocab, Grammar/Reading & Listening) with 180-point scoring.</p>
@@ -249,7 +249,7 @@
 
         <div class="dashboard-quick-card" data-view="chat">
           <div class="quick-card-header">
-            <span class="quick-card-icon">町</span>
+            <span class="quick-card-icon">💬</span>
             <h3 class="quick-card-title">AI Sensei Japanese Chat</h3>
           </div>
           <p class="quick-card-desc">Roleplay 7 real-life scenarios (Restaurant, Directions, Self-Intro, Shopping) with voice input and audio speech.</p>
@@ -257,15 +257,15 @@
 
         <div class="dashboard-quick-card" data-view="explore" data-explore-tab="listening">
           <div class="quick-card-header">
-            <span class="quick-card-icon">而</span>
-            <h3 class="quick-card-title">JLPT Audio Listening (閨ｴ隗｣)</h3>
+            <span class="quick-card-icon">🎧</span>
+            <h3 class="quick-card-title">JLPT Audio Listening (聴解)</h3>
           </div>
           <p class="quick-card-desc">Practice 24 authentic talking scenarios across all 4 official sections (Task, Key Point, Utterance & Quick Response) with multi-voice audio.</p>
         </div>
 
         <div class="dashboard-quick-card" data-view="grammar">
           <div class="quick-card-header">
-            <span class="quick-card-icon">当</span>
+            <span class="quick-card-icon">📖</span>
             <h3 class="quick-card-title">Grammar Lessons & Hub</h3>
           </div>
           <p class="quick-card-desc">Master 40+ essential N4 particle structures, verb conjugations, and sentence construction rules.</p>
@@ -273,7 +273,7 @@
       </div>
 
       <!-- Recent Activity History -->
-      <div class="section-title">葡 Recent Activity History</div>
+      <div class="section-title">🕒 Recent Activity History</div>
       <div class="history-card">
         <div id="dashboard-recent-history">
           <!-- Dynamically populated -->
@@ -294,10 +294,10 @@
 
         <div class="session-actions-right">
           <div class="combo-pill hidden" id="fc-combo-badge">
-            櫨 <span id="fc-combo-count">2</span>x Combo!
+            🔥 <span id="fc-combo-count">2</span>x Combo!
           </div>
           <button id="fc-zen-btn" class="icon-btn zen-btn" title="Toggle Distraction-Free Focus Mode (Key Z)">
-            ｧ・Zen Mode
+            🧘 Zen Mode
           </button>
         </div>
       </div>
@@ -306,15 +306,15 @@
       <div class="fc-controls-bar">
         <div class="filter-group">
           <select id="fc-session-limit-select" class="styled-select" style="font-weight: 700; border-color: var(--accent-primary);">
-            <option value="5" selected>笞｡ 5 Cards (Micro-Session)</option>
-            <option value="10">逃 10 Cards (Standard)</option>
-            <option value="20">答 20 Cards (Deep Study)</option>
-            <option value="0">笙ｾ・・All Cards (Full Deck)</option>
+            <option value="5" selected>⚡ 5 Cards (Micro-Session)</option>
+            <option value="10">📦 10 Cards (Standard)</option>
+            <option value="20">📚 20 Cards (Deep Study)</option>
+            <option value="0">♾️ All Cards (Full Deck)</option>
           </select>
 
           <select id="fc-type-select" class="styled-select">
-            <option value="kanji">200 N4 Kanji</option>
-            <option value="vocab">N4 Vocabulary</option>
+            <option value="kanji">100 N4 Kanji</option>
+            <option value="vocab">800 N4 Vocabulary</option>
             <option value="grammar">Grammar Points</option>
           </select>
 
@@ -327,12 +327,12 @@
             <option value="unseen">Unseen</option>
             <option value="learning">Learning</option>
             <option value="mastered">Mastered</option>
-            <option value="bookmarked">箝・Bookmarked</option>
-            <option value="unbookmarked">笘・Not Starred (Unfamiliar)</option>
+            <option value="bookmarked">⭐ Bookmarked</option>
+            <option value="unbookmarked">☆ Not Starred (Unfamiliar)</option>
           </select>
 
           <button id="fc-import-deck-btn" class="icon-btn" style="padding: 0.5rem 0.9rem; font-weight: 700; border-color: var(--accent-primary); color: var(--accent-primary); white-space: nowrap;">
-            踏 Import Anki / Deck
+            📥 Import Anki / Deck
           </button>
         </div>
       </div>
@@ -354,16 +354,16 @@
 
       <!-- Action Toolbar with Keycap Hints -->
       <div class="fc-toolbar">
-        <button id="fc-prev-btn" class="fc-action-btn" title="Previous Card (P)">笳</button>
+        <button id="fc-prev-btn" class="fc-action-btn" title="Previous Card (P)">◀</button>
         <button id="fc-speak-btn" class="fc-action-btn" title="Listen Pronunciation (Key S)">
-          <span>矧</span> <kbd class="key-hint">S</kbd>
+          <span>🔊</span> <kbd class="key-hint">S</kbd>
         </button>
         <button id="fc-flip-btn" class="fc-action-btn wide" title="Flip Card (Spacebar)">
-          <span>売 Flip Card</span> <kbd class="key-hint">Space</kbd>
+          <span>🔄 Flip Card</span> <kbd class="key-hint">Space</kbd>
         </button>
-        <button id="fc-bookmark-btn" class="fc-action-btn" title="Bookmark Card">笘・/button>
-        <button id="fc-shuffle-btn" class="fc-action-btn" title="Shuffle Deck">楳</button>
-        <button id="fc-next-btn" class="fc-action-btn" title="Next Card (N)">笆ｶ</button>
+        <button id="fc-bookmark-btn" class="fc-action-btn" title="Bookmark Card">☆</button>
+        <button id="fc-shuffle-btn" class="fc-action-btn" title="Shuffle Deck">🔀</button>
+        <button id="fc-next-btn" class="fc-action-btn" title="Next Card (N)">▶</button>
       </div>
 
       <!-- SRS Grading Bar with Keycaps & Mistake Recycling Hint -->
@@ -371,62 +371,62 @@
         <button class="srs-grade-btn again" data-srs-level="1" title="Re-inserts card ~3 cards later for instant repetition">
           <div class="srs-label-group">
             <span class="srs-main-label">Again (1)</span>
-            <span class="srs-recycle-tag">煤 Re-rolls in 3 cards</span>
+            <span class="srs-recycle-tag">🔁 Re-rolls in 3 cards</span>
           </div>
-          <kbd class="key-hint">1 / 笳</kbd>
+          <kbd class="key-hint">1 / ◀</kbd>
         </button>
         <button class="srs-grade-btn hard" data-srs-level="2" title="Re-inserts card ~4 cards later">
           <div class="srs-label-group">
             <span class="srs-main-label">Hard (2)</span>
-            <span class="srs-recycle-tag">煤 Re-rolls in 4 cards</span>
+            <span class="srs-recycle-tag">🔁 Re-rolls in 4 cards</span>
           </div>
-          <kbd class="key-hint">2 / 笆ｼ</kbd>
+          <kbd class="key-hint">2 / ▼</kbd>
         </button>
         <button class="srs-grade-btn good" data-srs-level="3" title="Advances combo & marks learning">
           <div class="srs-label-group">
             <span class="srs-main-label">Good (3)</span>
-            <span class="srs-recycle-tag">笞｡ Combo +1</span>
+            <span class="srs-recycle-tag">⚡ Combo +1</span>
           </div>
-          <kbd class="key-hint">3 / 笆ｲ</kbd>
+          <kbd class="key-hint">3 / ▲</kbd>
         </button>
         <button class="srs-grade-btn easy" data-srs-level="4" title="Advances combo & marks mastered">
           <div class="srs-label-group">
             <span class="srs-main-label">Easy / Mastered (4)</span>
-            <span class="srs-recycle-tag">櫨 Mega Boost</span>
+            <span class="srs-recycle-tag">🔥 Mega Boost</span>
           </div>
-          <kbd class="key-hint">4 / 笆ｶ</kbd>
+          <kbd class="key-hint">4 / ▶</kbd>
         </button>
       </div>
 
       <!-- Session Completion Modal -->
       <div id="fc-completion-modal" class="modal-overlay hidden">
         <div class="modal-dialog completion-modal-dialog">
-          <button id="fc-modal-close-btn" class="modal-close-btn" title="Close">笨・/button>
+          <button id="fc-modal-close-btn" class="modal-close-btn" title="Close">✕</button>
           
           <div class="completion-header">
-            <div class="completion-trophy">醇</div>
+            <div class="completion-trophy">🏆</div>
             <h2 class="completion-title">Micro-Session Complete!</h2>
-            <p class="completion-sub">縺顔夢繧梧ｧ倥〒縺励◆・・Great job mastering this set.</p>
+            <p class="completion-sub">お疲れ様でした！ Great job mastering this set.</p>
           </div>
 
           <div class="completion-metrics-grid">
             <div class="completion-metric-card">
-              <span class="metric-icon">雫</span>
+              <span class="metric-icon">🎴</span>
               <span class="metric-val" id="fc-modal-total-reviewed">5 Cards</span>
               <span class="metric-lbl">Reviewed</span>
             </div>
             <div class="completion-metric-card">
-              <span class="metric-icon">識</span>
+              <span class="metric-icon">🎯</span>
               <span class="metric-val" id="fc-modal-accuracy">100%</span>
               <span class="metric-lbl">Mastery Accuracy</span>
             </div>
             <div class="completion-metric-card">
-              <span class="metric-icon">櫨</span>
+              <span class="metric-icon">🔥</span>
               <span class="metric-val" id="fc-modal-max-combo">5x</span>
               <span class="metric-lbl">Max Combo</span>
             </div>
             <div class="completion-metric-card">
-              <span class="metric-icon">竢ｱ・・/span>
+              <span class="metric-icon">⏱️</span>
               <span class="metric-val" id="fc-modal-time">45s</span>
               <span class="metric-lbl">Session Time</span>
             </div>
@@ -434,12 +434,13 @@
 
           <div class="completion-actions">
             <button id="fc-modal-next-session-btn" class="btn-primary" style="flex: 1; justify-content: center;">
-              笞｡ Start Next 5 Cards 筐・            </button>
+              ⚡ Start Next 5 Cards ➔
+            </button>
             <button id="fc-modal-retry-mistakes-btn" class="btn-secondary hidden" style="color: var(--accent-red); border-color: var(--accent-red);">
-              煤 Retry Missed Cards
+              🔁 Retry Missed Cards
             </button>
             <button id="fc-modal-dashboard-btn" class="btn-secondary">
-              匠 Dashboard
+              🏠 Dashboard
             </button>
           </div>
         </div>
@@ -448,10 +449,10 @@
       <!-- Anki / Custom Deck Import Modal -->
       <div id="anki-import-modal" class="modal-overlay hidden">
         <div class="modal-dialog" style="max-width: 650px; width: 92vw;">
-          <button id="anki-import-close-btn" class="modal-close-btn" title="Close">笨・/button>
+          <button id="anki-import-close-btn" class="modal-close-btn" title="Close">✕</button>
           
           <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem;">
-            <span style="font-size: 1.75rem;">踏</span>
+            <span style="font-size: 1.75rem;">📥</span>
             <h2 style="font-size: 1.5rem; font-weight: 800; margin: 0;">Import Anki / Custom Flashcards</h2>
           </div>
           <p style="color: var(--text-secondary); font-size: 0.92rem; margin-bottom: 1.25rem;">
@@ -467,7 +468,7 @@
             <div class="setup-field">
               <label>Upload Anki / TSV / CSV / JSON File</label>
               <div id="anki-drop-zone" style="border: 2px dashed var(--border-color); border-radius: 12px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all 0.2s ease; background: rgba(255,255,255,0.02);">
-                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">刀</span>
+                <span style="font-size: 2rem; display: block; margin-bottom: 0.5rem;">📁</span>
                 <span style="font-weight: 700; color: var(--accent-primary);">Click to select file</span> or drag & drop here
                 <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Supports .txt, .tsv, .csv, .json</div>
                 <input type="file" id="anki-file-input" accept=".txt,.tsv,.csv,.json" style="display: none;">
@@ -488,12 +489,12 @@
                   </select>
                 </div>
               </div>
-              <textarea id="anki-paste-textarea" class="styled-input" style="height: 120px; font-family: monospace; font-size: 0.88rem; line-height: 1.4; resize: vertical;" placeholder="Paste Anki cards (e.g. Front [Tab] Back [Tab] Reading)&#10;鬟溘∋繧・#9;縺溘∋繧・#9;To eat&#10;鬟ｲ繧&#9;縺ｮ繧&#9;To drink"></textarea>
+              <textarea id="anki-paste-textarea" class="styled-input" style="height: 120px; font-family: monospace; font-size: 0.88rem; line-height: 1.4; resize: vertical;" placeholder="Paste Anki cards (e.g. Front [Tab] Back [Tab] Reading)&#10;食べる&#9;たべる&#9;To eat&#10;飲む&#9;のむ&#9;To drink"></textarea>
             </div>
 
             <!-- Parse Preview Summary -->
             <div id="anki-preview-box" class="hidden" style="background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); border-radius: 8px; padding: 0.75rem 1rem; font-size: 0.9rem; color: #10b981; display: flex; justify-content: space-between; align-items: center;">
-              <span id="anki-preview-count">笨・0 cards detected</span>
+              <span id="anki-preview-count">✓ 0 cards detected</span>
               <span style="font-size: 0.8rem; opacity: 0.9;">Ready to import</span>
             </div>
 
@@ -507,7 +508,7 @@
 
             <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
               <button id="anki-submit-import-btn" class="btn-primary" style="flex: 1; justify-content: center; font-size: 1rem; padding: 0.8rem;">
-                踏 Import Deck & Study
+                📥 Import Deck & Study
               </button>
               <button id="anki-cancel-btn" class="btn-secondary" style="padding: 0.8rem 1.25rem;">
                 Cancel
@@ -524,11 +525,12 @@
       <div id="quiz-setup-view" class="quiz-card-wrapper">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
           <div>
-            <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.3rem;">統 JLPT N4 Quiz Challenge</h2>
+            <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 0.3rem;">📝 JLPT N4 Quiz Challenge</h2>
             <p style="color: var(--text-secondary);">Select 2-Minute Blitz Mode for continuous rapid-fire practice, or customize your question formats.</p>
           </div>
           <button id="quiz-start-blitz-btn" class="btn-primary" style="background: linear-gradient(135deg, #f59e0b, #ef4444); box-shadow: 0 0 20px rgba(245, 158, 11, 0.4); padding: 0.8rem 1.6rem;">
-            竢ｱ・・Launch 2-Minute Blitz Mode 筐・          </button>
+            ⏱️ Launch 2-Minute Blitz Mode ➔
+          </button>
         </div>
 
         <div class="quiz-setup-grid">
@@ -536,10 +538,10 @@
           <div class="setup-field">
             <label for="quiz-type-select">Quiz Topic</label>
             <select id="quiz-type-select" class="styled-select" style="width: 100%;">
-              <option value="kanji">Kanji (200 N4 Kanji)</option>
-              <option value="vocab" selected>Vocabulary (N4 Vocabulary)</option>
+              <option value="kanji">Kanji (100 N4 Kanji)</option>
+              <option value="vocab" selected>Vocabulary (800 N4 Words)</option>
               <option value="grammar">Grammar & Particles</option>
-              <option value="listening_scenarios">而 JLPT N4 Listening (Authentic Test Scenarios)</option>
+              <option value="listening_scenarios">🎧 JLPT N4 Listening (24 Test Scenarios)</option>
               <option value="mixed">Mixed JLPT N4 Challenge</option>
             </select>
           </div>
@@ -548,13 +550,13 @@
           <div class="setup-field">
             <label for="quiz-format-select">Question Format</label>
             <select id="quiz-format-select" class="styled-select" style="width: 100%;">
-              <option value="mix" selected>笨ｨ Dynamic Mix (Most Challenging!)</option>
-              <option value="mcq">統 Multiple Choice (4 Options)</option>
-              <option value="typing">竚ｨ・・Typing / Recall Challenge</option>
-              <option value="listening">而 Audio Listening Comprehension</option>
-              <option value="scramble">ｧｩ Sentence Scramble Challenge</option>
-              <option value="particle">識 Particle Cloze Blank</option>
-              <option value="true_false">笞｡ True / False Lightning Speed</option>
+              <option value="mix" selected>✨ Dynamic Mix (Most Challenging!)</option>
+              <option value="mcq">📝 Multiple Choice (4 Options)</option>
+              <option value="typing">⌨️ Typing / Recall Challenge</option>
+              <option value="listening">🎧 Audio Listening Comprehension</option>
+              <option value="scramble">🧩 Sentence Scramble Challenge</option>
+              <option value="particle">🎯 Particle Cloze Blank</option>
+              <option value="true_false">⚡ True / False Lightning Speed</option>
             </select>
           </div>
 
@@ -563,11 +565,11 @@
             <label for="quiz-range-select">Study Range Filter</label>
             <select id="quiz-range-select" class="styled-select" style="width: 100%;">
               <option value="all" selected>All Items (Full Pool)</option>
-              <option value="unbookmarked">笘・Unstarred / Unfamiliar Only (Not Pinned)</option>
+              <option value="unbookmarked">☆ Unstarred / Unfamiliar Only (Not Pinned)</option>
               <option value="batch">Study Batch Range</option>
               <option value="custom">Custom ID Range (From - To)</option>
               <option value="category">By Category</option>
-              <option value="bookmarked">箝・Bookmarked Items Only</option>
+              <option value="bookmarked">⭐ Bookmarked Items Only</option>
             </select>
           </div>
 
@@ -592,7 +594,7 @@
             <label>Custom ID Range (Enter start & end numbers)</label>
             <div style="display: flex; gap: 0.75rem; align-items: center;">
               <input type="number" id="quiz-range-start" class="styled-input" style="flex: 1;" placeholder="From ID" value="1" min="1">
-              <span style="font-weight: 700; color: var(--text-secondary);">筐・/span>
+              <span style="font-weight: 700; color: var(--text-secondary);">➔</span>
               <input type="number" id="quiz-range-end" class="styled-input" style="flex: 1;" placeholder="To ID" value="50" min="1">
             </div>
           </div>
@@ -601,7 +603,7 @@
           <div class="setup-field">
             <label for="quiz-count-select">Number of Questions</label>
             <select id="quiz-count-select" class="styled-select" style="width: 100%;">
-              <option value="5" selected>笞｡ 5 Questions (Micro-Quiz)</option>
+              <option value="5" selected>⚡ 5 Questions (Micro-Quiz)</option>
               <option value="10">10 Questions (Standard)</option>
               <option value="20">20 Questions</option>
               <option value="50">50 Questions (Deep Study)</option>
@@ -612,12 +614,12 @@
           <div class="setup-field">
             <label for="quiz-algo-select">Question Sequencing Algorithm</label>
             <select id="quiz-algo-select" class="styled-select" style="width: 100%; border-color: var(--accent-primary);">
-              <option value="smart_star" selected>箝・Smart Star & SRS Priority (Recommended)</option>
-              <option value="unstarred_first">笘・Unstarred / Unfamiliar First (Priority)</option>
-              <option value="starred_first">検 Starred Favorites First</option>
-              <option value="missed_first">煤 Hardest & Recently Missed First</option>
-              <option value="random">楳 Balanced Random (No Immediate Repeats)</option>
-              <option value="progressive">嶋 Progressive N4 Order (ID 1 筐・100)</option>
+              <option value="smart_star" selected>⭐ Smart Star & SRS Priority (Recommended)</option>
+              <option value="unstarred_first">☆ Unstarred / Unfamiliar First (Priority)</option>
+              <option value="starred_first">🌟 Starred Favorites First</option>
+              <option value="missed_first">🔁 Hardest & Recently Missed First</option>
+              <option value="random">🔀 Balanced Random (No Immediate Repeats)</option>
+              <option value="progressive">📈 Progressive N4 Order (ID 1 ➔ 100)</option>
             </select>
           </div>
 
@@ -632,7 +634,7 @@
         </div>
 
         <button id="quiz-start-btn" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1.1rem; padding: 0.9rem;">
-          噫 Start Standard Quiz Challenge
+          🚀 Start Standard Quiz Challenge
         </button>
       </div>
 
@@ -649,10 +651,10 @@
 
           <div class="session-actions-right">
             <div class="combo-pill hidden" id="quiz-combo-badge">
-              櫨 <span id="quiz-combo-count">2</span>x Combo!
+              🔥 <span id="quiz-combo-count">2</span>x Combo!
             </div>
             <button id="quiz-zen-btn" class="icon-btn zen-btn" title="Toggle Distraction-Free Focus Mode (Key Z)">
-              ｧ・Zen Mode
+              🧘 Zen Mode
             </button>
           </div>
         </div>
@@ -661,7 +663,8 @@
           <div style="display: flex; align-items: center; gap: 0.75rem;">
             <span class="badge-tag" id="quiz-q-format-badge" style="background: rgba(236, 72, 153, 0.15); color: var(--accent-primary);">Challenge</span>
             <button id="quiz-star-btn" class="icon-btn" title="Star / Favorite this item (Bookmark in Library)" style="padding: 0.2rem 0.6rem; font-size: 1.1rem; border-radius: 8px;">
-              笘・            </button>
+              ☆
+            </button>
           </div>
           
           <!-- Regular Sprint Timer Box -->
@@ -674,7 +677,7 @@
 
           <!-- 2-Minute Blitz Countdown Box -->
           <div class="quiz-timer-box blitz-box hidden" id="quiz-blitz-timer-box" style="background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.4); padding: 0.35rem 0.85rem; border-radius: 999px;">
-            <span style="font-size: 0.9rem; font-weight: 700; color: #f59e0b;">竢ｱ・・Blitz Time:</span>
+            <span style="font-size: 0.9rem; font-weight: 700; color: #f59e0b;">⏱️ Blitz Time:</span>
             <span id="quiz-blitz-timer-num" style="font-weight: 800; color: #f59e0b; font-size: 1.1rem;">2:00</span>
           </div>
 
@@ -682,9 +685,9 @@
         </div>
 
         <div class="quiz-question-box">
-          <div class="quiz-q-title" id="quiz-question-title">荳</div>
+          <div class="quiz-q-title" id="quiz-question-title">一</div>
           <div class="quiz-q-sub" id="quiz-question-sub">What is the English meaning of this Kanji?</div>
-          <button id="quiz-speak-question-btn" class="icon-btn" style="margin: 0.5rem auto 0 auto;">矧 Pronounce</button>
+          <button id="quiz-speak-question-btn" class="icon-btn" style="margin: 0.5rem auto 0 auto;">🔊 Pronounce</button>
         </div>
 
         <!-- Audio Prompt Wave Card (For Listening Questions) -->
@@ -692,7 +695,7 @@
           <div class="audio-wave-anim">
             <span></span><span></span><span></span><span></span><span></span>
           </div>
-          <button id="quiz-audio-replay-btn" class="btn-secondary" style="margin-top: 0.75rem;">矧 Replay Spoken Audio</button>
+          <button id="quiz-audio-replay-btn" class="btn-secondary" style="margin-top: 0.75rem;">🔊 Replay Spoken Audio</button>
         </div>
 
         <!-- 1. Multiple Choice Options Grid -->
@@ -704,9 +707,9 @@
         <div class="quiz-typing-container hidden" id="quiz-typing-container">
           <div class="typing-input-wrapper">
             <input type="text" id="quiz-typing-input" class="quiz-typing-input" placeholder="Type meaning or Romaji/Kana..." autocomplete="off">
-            <button id="quiz-typing-submit-btn" class="btn-primary">Submit 筐・/button>
+            <button id="quiz-typing-submit-btn" class="btn-primary">Submit ➔</button>
           </div>
-          <div class="typing-helper-hint">庁 Press <kbd class="key-hint">Enter</kbd> to submit. Accepts English meanings, Romaji, and Hiragana.</div>
+          <div class="typing-helper-hint">💡 Press <kbd class="key-hint">Enter</kbd> to submit. Accepts English meanings, Romaji, and Hiragana.</div>
         </div>
 
         <!-- 3. Sentence Scramble Slots & Tokens -->
@@ -718,21 +721,21 @@
             <!-- Source Token Chips -->
           </div>
           <div style="display: flex; gap: 0.75rem; margin-top: 1rem; justify-content: flex-end;">
-            <button id="quiz-scramble-reset-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">売 Reset</button>
-            <button id="quiz-scramble-submit-btn" class="btn-primary" style="padding: 0.5rem 1.4rem;">Check Sentence 筐・/button>
+            <button id="quiz-scramble-reset-btn" class="btn-secondary" style="padding: 0.5rem 1rem;">🔄 Reset</button>
+            <button id="quiz-scramble-submit-btn" class="btn-primary" style="padding: 0.5rem 1.4rem;">Check Sentence ➔</button>
           </div>
         </div>
 
         <!-- 4. True / False Lightning Grid -->
         <div class="quiz-tf-grid hidden" id="quiz-tf-container">
           <button id="quiz-tf-true-btn" class="quiz-tf-btn true-btn">
-            <span class="tf-icon">箝・/span>
-            <span class="tf-text">True (豁｣縺励＞)</span>
+            <span class="tf-icon">⭕</span>
+            <span class="tf-text">True (正しい)</span>
             <span class="tf-shortcut"><kbd class="key-hint">T / 1</kbd></span>
           </button>
           <button id="quiz-tf-false-btn" class="quiz-tf-btn false-btn">
-            <span class="tf-icon">笶・/span>
-            <span class="tf-text">False (驕輔≧)</span>
+            <span class="tf-icon">❌</span>
+            <span class="tf-text">False (違う)</span>
             <span class="tf-shortcut"><kbd class="key-hint">F / 2</kbd></span>
           </button>
         </div>
@@ -743,20 +746,20 @@
         </div>
 
         <button id="quiz-next-btn" class="btn-primary hidden" style="width: 100%; justify-content: center; margin-top: 1rem;">
-          Next Question 筐・<kbd class="key-hint" style="margin-left: 0.5rem;">Enter</kbd>
+          Next Question ➔ <kbd class="key-hint" style="margin-left: 0.5rem;">Enter</kbd>
         </button>
       </div>
 
       <!-- Quiz Results Screen -->
       <div id="quiz-results-view" class="quiz-card-wrapper hidden">
         <div class="quiz-results-card">
-          <div class="results-hero-badge" id="quiz-res-badge">醇 JLPT N4 Master</div>
+          <div class="results-hero-badge" id="quiz-res-badge">🏆 JLPT N4 Master</div>
           <div class="results-score-big" id="quiz-res-score">10 / 10</div>
           <div class="results-accuracy" id="quiz-res-accuracy">100% Accuracy</div>
-          <div style="font-size: 1.05rem; font-weight: 700; color: #f59e0b; margin-bottom: 1.5rem;" id="quiz-res-combo">5x Max Combo 櫨</div>
+          <div style="font-size: 1.05rem; font-weight: 700; color: #f59e0b; margin-bottom: 1.5rem;" id="quiz-res-combo">5x Max Combo 🔥</div>
           <div class="results-actions">
-            <button id="quiz-restart-btn" class="btn-primary">売 New Quiz</button>
-            <button id="quiz-retry-mistakes-btn" class="btn-secondary hidden">笞・・Retry Missed Questions</button>
+            <button id="quiz-restart-btn" class="btn-primary">🔄 New Quiz</button>
+            <button id="quiz-retry-mistakes-btn" class="btn-secondary hidden">⚠️ Retry Missed Questions</button>
           </div>
         </div>
       </div>
@@ -768,7 +771,7 @@
       <div id="exam-intro-view" class="quiz-card-wrapper">
         <div class="exam-intro-header">
           <div class="hero-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.4);">Official Test Simulation</div>
-          <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 0.6rem;">醇 JLPT N4 Official Mock Certification Exam</h2>
+          <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 0.6rem;">🏆 JLPT N4 Official Mock Certification Exam</h2>
           <p style="color: var(--text-secondary); font-size: 1.05rem;">
             Test your comprehensive Japanese language proficiency under official JLPT test conditions.
           </p>
@@ -777,28 +780,28 @@
         <div class="exam-structure-grid">
           <div class="exam-structure-card">
             <div class="sec-badge">Section 1</div>
-            <h3>險隱樒衍隴假ｼ域枚蟄励・隱槫ｽ呻ｼ・/h3>
-            <p>Kanji & Vocabulary (25 Questions 窶｢ 60 Pts)</p>
-            <div class="sec-tags">Kanji Reading 窶｢ Orthography 窶｢ Context 窶｢ Synonyms</div>
+            <h3>言語知識（文字・語彙）</h3>
+            <p>Kanji & Vocabulary (25 Questions • 60 Pts)</p>
+            <div class="sec-tags">Kanji Reading • Orthography • Context • Synonyms</div>
           </div>
 
           <div class="exam-structure-card">
             <div class="sec-badge">Section 2</div>
-            <h3>險隱樒衍隴假ｼ域枚豕包ｼ峨・隱ｭ隗｣</h3>
-            <p>Grammar & Reading (20 Questions 窶｢ 60 Pts)</p>
-            <div class="sec-tags">Particle Blanks 窶｢ 笘・Star Sentence Ordering 窶｢ Reading Passages</div>
+            <h3>言語知識（文法）・読解</h3>
+            <p>Grammar & Reading (20 Questions • 60 Pts)</p>
+            <div class="sec-tags">Particle Blanks • ★ Star Sentence Ordering • Reading Passages</div>
           </div>
 
           <div class="exam-structure-card">
             <div class="sec-badge">Section 3</div>
-            <h3>閨ｴ隗｣ (Listening)</h3>
-            <p>Listening Comprehension (15 Questions 窶｢ 60 Pts)</p>
-            <div class="sec-tags">Task Comprehension 窶｢ Key Points 窶｢ Quick Responses (Audio)</div>
+            <h3>聴解 (Listening)</h3>
+            <p>Listening Comprehension (15 Questions • 60 Pts)</p>
+            <div class="sec-tags">Task Comprehension • Key Points • Quick Responses (Audio)</div>
           </div>
         </div>
 
         <div class="exam-rules-banner">
-          <h4>搭 Official JLPT Scoring & Standards</h4>
+          <h4>📋 Official JLPT Scoring & Standards</h4>
           <ul>
             <li><strong>Total Score:</strong> 180 Points (60 min timer).</li>
             <li><strong>Passing Criteria:</strong> Overall score of <strong>80 / 180 (44.4%)</strong> or higher.</li>
@@ -807,7 +810,7 @@
         </div>
 
         <button id="exam-start-btn" class="btn-primary" style="width: 100%; justify-content: center; font-size: 1.15rem; padding: 1rem; margin-top: 1.5rem;">
-          潤 Begin Official JLPT N4 Exam
+          🏁 Begin Official JLPT N4 Exam
         </button>
       </div>
 
@@ -817,10 +820,10 @@
         <div class="exam-header-bar">
           <div class="exam-title-group">
             <div id="exam-q-part-badge" class="badge-tag" style="background: rgba(236, 72, 153, 0.15); color: var(--accent-primary);">Section 1: Kanji & Vocab</div>
-            <div id="exam-timer-display" class="exam-timer">竢ｱ・・60:00</div>
+            <div id="exam-timer-display" class="exam-timer">⏱️ 60:00</div>
           </div>
           <button id="exam-submit-btn" class="btn-secondary" style="color: var(--accent-cyan); border-color: var(--accent-cyan); padding: 0.4rem 1rem;">
-            豆 Finish & Submit Exam
+            📤 Finish & Submit Exam
           </button>
         </div>
 
@@ -839,17 +842,17 @@
 
         <!-- Active Question Card -->
         <div class="exam-question-stage">
-          <div class="exam-instruction" id="exam-q-instruction">・ｿ・ｿ・ｿ縺ｮ險闡峨・縺ｩ縺・ｪｭ縺ｿ縺ｾ縺吶°縲ゆｸ逡ｪ縺・＞繧ゅ・繧剃ｸ縺､驕ｸ繧薙〒縺上□縺輔＞縲・/div>
+          <div class="exam-instruction" id="exam-q-instruction">＿＿＿の言葉はどう読みますか。一番いいものを一つ選んでください。</div>
 
           <!-- Reading Passage Container (When applicable) -->
           <div class="exam-passage-box hidden" id="exam-q-passage-box">
-            <div class="passage-header">当 Reading Passage / Notice:</div>
+            <div class="passage-header">📖 Reading Passage / Notice:</div>
             <div class="passage-body" id="exam-q-passage-text"></div>
           </div>
 
           <!-- Audio Listening Container (When applicable) -->
           <div class="exam-audio-box hidden" id="exam-q-audio-box">
-            <button id="exam-q-audio-play-btn" class="btn-primary sm">矧 Play Dialogue Audio</button>
+            <button id="exam-q-audio-play-btn" class="btn-primary sm">🔊 Play Dialogue Audio</button>
             <span id="exam-q-audio-status" style="font-size: 0.88rem; color: var(--text-secondary);">Click to play listening prompt</span>
           </div>
 
@@ -865,10 +868,10 @@
 
           <!-- Bottom Stage Controls -->
           <div class="exam-stage-footer">
-            <button id="exam-q-flag-btn" class="icon-btn">承・・Flag for Review</button>
+            <button id="exam-q-flag-btn" class="icon-btn">🏳️ Flag for Review</button>
             <div style="display: flex; gap: 0.75rem;">
-              <button id="exam-prev-q-btn" class="btn-secondary" style="padding: 0.5rem 1.2rem;">笳 Previous</button>
-              <button id="exam-next-q-btn" class="btn-primary" style="padding: 0.5rem 1.4rem;">Next Question 笆ｶ</button>
+              <button id="exam-prev-q-btn" class="btn-secondary" style="padding: 0.5rem 1.2rem;">◀ Previous</button>
+              <button id="exam-next-q-btn" class="btn-primary" style="padding: 0.5rem 1.4rem;">Next Question ▶</button>
             </div>
           </div>
         </div>
@@ -878,13 +881,13 @@
       <div id="exam-results-view" class="quiz-card-wrapper hidden" style="max-width: 900px;">
         <div class="exam-report-card">
           <div class="report-header">
-            <div class="results-hero-badge" id="exam-res-status-badge">脂 PASSED (蜷域ｼ)</div>
-            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Official Japanese Language Proficiency Test 窶｢ Level N4 Mock Certificate</div>
+            <div class="results-hero-badge" id="exam-res-status-badge">🎉 PASSED (合格)</div>
+            <div style="font-size: 0.95rem; color: var(--text-secondary); margin-bottom: 0.5rem;">Official Japanese Language Proficiency Test • Level N4 Mock Certificate</div>
             <div class="exam-total-score-box">
               <span class="score-num" id="exam-res-total-score">162 / 180</span>
               <span class="score-lbl">Total Score</span>
             </div>
-            <p id="exam-res-passing-notice" class="passing-notice">JLPT N4 Passing Standard: 90/180 points with minimum 19 points in all sections.</p>
+            <p id="exam-res-passing-notice" class="passing-notice">JLPT N4 Passing Standard: 80/180 points with minimum 19 points in all sections.</p>
           </div>
 
           <!-- Section Breakdown Cards -->
@@ -894,14 +897,14 @@
 
           <!-- Question-by-Question Review -->
           <div class="exam-review-container">
-            <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 1.25rem;">統 Comprehensive Answer Review & Explanations</h3>
+            <h3 style="font-size: 1.3rem; font-weight: 800; margin-bottom: 1.25rem;">📝 Comprehensive Answer Review & Explanations</h3>
             <div id="exam-res-review-container">
               <!-- Dynamically populated -->
             </div>
           </div>
 
           <div style="display: flex; justify-content: center; gap: 1rem; margin-top: 2rem;">
-            <button id="exam-restart-btn" class="btn-primary" style="padding: 0.85rem 2rem;">売 Retake Mock Exam</button>
+            <button id="exam-restart-btn" class="btn-primary" style="padding: 0.85rem 2rem;">🔄 Retake Mock Exam</button>
           </div>
         </div>
       </div>
@@ -915,23 +918,23 @@
           <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
             <div>
               <h2 style="font-size: 1.8rem; font-weight: 800; display: flex; align-items: center; gap: 0.6rem;">
-                <span>町</span> AI Sensei <span class="badge-tag" style="background: rgba(236, 72, 153, 0.15); color: var(--accent-primary);">莨夊ｩｱ (Conversation)</span>
+                <span>💬</span> AI Sensei <span class="badge-tag" style="background: rgba(236, 72, 153, 0.15); color: var(--accent-primary);">会話 (Conversation)</span>
               </h2>
               <p style="color: var(--text-secondary); font-size: 0.95rem;">Select a real-life Japanese scenario and chat naturally with native audio pronunciation, furigana, and speech recognition.</p>
             </div>
             <div style="display: flex; gap: 0.6rem;">
-              <button id="chat-romaji-toggle-btn" class="icon-btn active">・ Romaji / Furigana: ON</button>
-              <button id="chat-clear-btn" class="icon-btn" title="Clear Chat">売 New Chat</button>
+              <button id="chat-romaji-toggle-btn" class="icon-btn active">🈁 Romaji / Furigana: ON</button>
+              <button id="chat-clear-btn" class="icon-btn" title="Clear Chat">🔄 New Chat</button>
             </div>
           </div>
 
           <!-- Mode Switcher Tabs -->
           <div class="chat-mode-tabs">
             <button class="chat-mode-tab-btn active" id="chat-tab-conv-btn" data-chat-mode="conversation">
-              <span>町</span> Conversation Practice
+              <span>💬</span> Conversation Practice
             </button>
             <button class="chat-mode-tab-btn" id="chat-tab-guide-btn" data-chat-mode="guide">
-              <span>答</span> Particle & Vocab Master Guide
+              <span>📚</span> Particle & Vocab Master Guide
             </button>
           </div>
 
@@ -945,8 +948,8 @@
         <div class="chat-box-stage" id="chat-conversation-stage">
           <!-- Active Scenario Banner -->
           <div class="chat-scenario-banner">
-            <div class="banner-title" id="chat-active-scenario-title">嵯 Restaurant & Cafﾃｩ (繝ｬ繧ｹ繝医Λ繝ｳ繝ｻ蝟ｫ闌ｶ蠎・</div>
-            <div class="banner-role" id="chat-active-scenario-role">Partner: Waiter / Cafﾃｩ Staff 窶｢ Practice ordering food, asking prices and recommendations.</div>
+            <div class="banner-title" id="chat-active-scenario-title">🍵 Restaurant & Café (レストラン・喫茶店)</div>
+            <div class="banner-role" id="chat-active-scenario-role">Partner: Waiter / Café Staff • Practice ordering food, asking prices and recommendations.</div>
           </div>
 
           <!-- Messages Stream Feed -->
@@ -962,11 +965,12 @@
           <!-- Bottom Chat Input Bar -->
           <div class="chat-input-bar">
             <button id="chat-mic-btn" class="chat-action-btn mic-btn" title="Speak in Japanese (Web Speech Recognition)">
-              痔 Speak (JP)
+              🎤 Speak (JP)
             </button>
-            <input type="text" id="chat-text-input" class="chat-input-field" placeholder="Type in Japanese/English or ask grammar questions (e.g. why 縺ｯ vs 縺・..." autocomplete="off">
+            <input type="text" id="chat-text-input" class="chat-input-field" placeholder="Type in Japanese/English or ask grammar questions (e.g. why は vs が)..." autocomplete="off">
             <button id="chat-send-btn" class="btn-primary" style="padding: 0.65rem 1.4rem;">
-              Send 筐・            </button>
+              Send ➔
+            </button>
           </div>
         </div>
 
@@ -984,10 +988,10 @@
       <!-- Grammar Tabs / Actions -->
       <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
         <div>
-          <h2 style="font-size: 1.8rem; font-weight: 800;">当 JLPT N4 Grammar Hub</h2>
+          <h2 style="font-size: 1.8rem; font-weight: 800;">📖 JLPT N4 Grammar Hub</h2>
           <p style="color: var(--text-secondary);">Master 40+ key grammar points, sentence formulas, and particle rules.</p>
         </div>
-        <button id="start-grammar-test-btn" class="btn-primary">統 Start Grammar Test</button>
+        <button id="start-grammar-test-btn" class="btn-primary">📝 Start Grammar Test</button>
       </div>
 
       <!-- Active Grammar Test Screen -->
@@ -999,7 +1003,7 @@
 
         <div class="quiz-question-box">
           <div style="font-size: 1.6rem; font-weight: 700; margin-bottom: 1rem; line-height: 1.4;" id="gt-question-title">
-            遘＼___逕ｰ荳ｭ縺ｧ縺吶・(I am Tanaka.)
+            私____田中です。 (I am Tanaka.)
           </div>
         </div>
 
@@ -1012,7 +1016,8 @@
         </div>
 
         <button id="gt-next-btn" class="btn-primary hidden" style="width: 100%; justify-content: center; margin-top: 1rem;">
-          Next Question 筐・        </button>
+          Next Question ➔
+        </button>
       </div>
 
       <!-- Grammar Test Results -->
@@ -1022,14 +1027,14 @@
           <div class="results-score-big" id="gt-res-score">28 / 30</div>
           <div class="results-accuracy" id="gt-res-accuracy">93% Accuracy</div>
           <div class="results-actions">
-            <button id="gt-restart-btn" class="btn-primary">売 Retake Test</button>
-            <button id="gt-retry-mistakes-btn" class="btn-secondary hidden">笞・・Retry Missed</button>
+            <button id="gt-restart-btn" class="btn-primary">🔄 Retake Test</button>
+            <button id="gt-retry-mistakes-btn" class="btn-secondary hidden">⚠️ Retry Missed</button>
           </div>
         </div>
       </div>
 
       <!-- Grammar Lessons Reference Grid -->
-      <div class="section-title">答 Complete Grammar Lessons</div>
+      <div class="section-title">📚 Complete Grammar Lessons</div>
       <div class="grammar-lessons-grid" id="grammar-lessons-list">
         <!-- Dynamically rendered -->
       </div>
@@ -1040,17 +1045,17 @@
       <div class="explore-top-bar">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
           <div class="explore-tabs">
-            <button class="explore-tab-btn active" data-tab="kanji" id="explore-tab-kanji-btn">200 Kanji</button>
+            <button class="explore-tab-btn active" data-tab="kanji" id="explore-tab-kanji-btn">363 Kanji</button>
             <button class="explore-tab-btn" data-tab="vocab">800 Vocabulary</button>
             <button class="explore-tab-btn" data-tab="grammar">Grammar Points</button>
-            <button class="explore-tab-btn" data-tab="listening" id="explore-tab-listening-btn">而 Audio Practice (24 閨ｴ隗｣ Scenarios)</button>
+            <button class="explore-tab-btn" data-tab="listening" id="explore-tab-listening-btn">🎧 Audio Practice (24 聴解 Scenarios)</button>
           </div>
           <div class="explore-results-count" id="explore-results-count">Showing 100 items</div>
         </div>
 
         <div class="explore-filter-row">
           <div class="search-input-wrapper">
-            <span class="search-icon">剥</span>
+            <span class="search-icon">🔍</span>
             <input type="text" id="explore-search-input" class="search-input" placeholder="Search Kanji, Kana, Romaji, or English meaning...">
           </div>
 
@@ -1060,18 +1065,18 @@
 
           <!-- Star Filter (All / Starred / Not Starred) -->
           <select id="explore-star-filter" class="styled-select" title="Filter by Starred or Unstarred">
-            <option value="all">箝・Star: All</option>
-            <option value="starred">箝・Starred Only</option>
-            <option value="unstarred">笘・Not Starred Only</option>
+            <option value="all">⭐ Star: All</option>
+            <option value="starred">⭐ Starred Only</option>
+            <option value="unstarred">☆ Not Starred Only</option>
           </select>
 
           <!-- Star & ID Sorting (Starred to Not Starred, Not Starred to Starred, etc.) -->
           <select id="explore-sort-select" class="styled-select" title="Sort items">
-            <option value="default">箸 Default ID Order</option>
-            <option value="star_first">箝・Starred 筐・Not Starred</option>
-            <option value="unstar_first">笘・Not Starred 筐・Starred</option>
-            <option value="alpha_asc">筈 Alphabetical (A 筐・Z)</option>
-            <option value="alpha_desc">筈 Alphabetical (Z 筐・A)</option>
+            <option value="default">🔢 Default ID Order</option>
+            <option value="star_first">⭐ Starred ➔ Not Starred</option>
+            <option value="unstar_first">☆ Not Starred ➔ Starred</option>
+            <option value="alpha_asc">🔤 Alphabetical (A ➔ Z)</option>
+            <option value="alpha_desc">🔤 Alphabetical (Z ➔ A)</option>
           </select>
         </div>
       </div>
@@ -1087,7 +1092,7 @@
   <!-- Detail Modal Inspector -->
   <div id="explore-detail-modal" class="modal-overlay hidden">
     <div class="modal-dialog">
-      <button id="modal-close-btn" class="modal-close-btn" title="Close">笨・/button>
+      <button id="modal-close-btn" class="modal-close-btn" title="Close">✕</button>
       <div id="modal-detail-body">
         <!-- Injected dynamically -->
       </div>
@@ -1097,8 +1102,8 @@
   <!-- Settings Modal -->
   <div id="settings-modal" class="modal-overlay hidden">
     <div class="modal-dialog">
-      <button id="settings-close-btn" class="modal-close-btn" title="Close">笨・/button>
-      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">笞呻ｸ・Application Settings</h2>
+      <button id="settings-close-btn" class="modal-close-btn" title="Close">✕</button>
+      <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 1.5rem;">⚙️ Application Settings</h2>
       
       <div style="display: flex; flex-direction: column; gap: 1.25rem;">
         <div class="setup-field">
@@ -1114,9 +1119,9 @@
         <div class="setup-field">
           <label for="setting-default-session">Default Micro-Session Size</label>
           <select id="setting-default-session" class="styled-select" style="width: 100%;">
-            <option value="5" selected>笞｡ 5 Cards (Rapid Micro-Session)</option>
-            <option value="10">逃 10 Cards (Standard)</option>
-            <option value="20">答 20 Cards (Deep Study)</option>
+            <option value="5" selected>⚡ 5 Cards (Rapid Micro-Session)</option>
+            <option value="10">📦 10 Cards (Standard)</option>
+            <option value="20">📚 20 Cards (Deep Study)</option>
           </select>
         </div>
 
@@ -1140,7 +1145,7 @@
           <label>Reset Study Progress</label>
           <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 0.75rem;">Clear all SRS reviews, streak records, combo stats, and bookmarks.</p>
           <button id="setting-reset-progress" class="btn-secondary" style="color: var(--accent-red); border-color: var(--accent-red);">
-            卵・・Reset All Progress
+            🗑️ Reset All Progress
           </button>
         </div>
       </div>
@@ -1149,7 +1154,7 @@
 
   <!-- Footer -->
   <footer class="app-footer">
-    <p>ﾂｩ 2026 JLPT N4 Master 窶｢ Full JLPT Suite (200 Kanji, Core Vocab & Grammar, Official Mock Exam & AI Chatbot)</p>
+    <p>© 2026 JLPT N4 Master • Full JLPT Suite (363 Kanji, 800 Vocab, Official Mock Exam & AI Chatbot)</p>
   </footer>
 
   <!-- Floating PWA Install Prompt Banner -->
@@ -1158,12 +1163,12 @@
       <img src="icon-192.png" alt="JLPT N4 Master App Icon" class="pwa-banner-icon" width="46" height="46">
       <div class="pwa-banner-info">
         <div class="pwa-banner-title">Install JLPT N4 Master</div>
-        <div class="pwa-banner-subtitle">Fast offline access, 200 Kanji, Core Vocab & Grammar & audio practice directly from your home screen.</div>
+        <div class="pwa-banner-subtitle">Fast offline access, 363 Kanji, 800 Vocab & audio practice directly from your home screen.</div>
       </div>
     </div>
     <div class="pwa-banner-actions">
       <button id="pwa-banner-dismiss-btn" class="pwa-banner-btn-dismiss">Later</button>
-      <button id="pwa-banner-install-btn" class="pwa-banner-btn-install">憧 Install App</button>
+      <button id="pwa-banner-install-btn" class="pwa-banner-btn-install">📲 Install App</button>
     </div>
   </div>
 
@@ -1171,4 +1176,3 @@
   <script type="module" src="js/app.js"></script>
 </body>
 </html>
-

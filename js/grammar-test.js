@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Grammar Test Engine & Interactive Grammar Points Explorer
  */
 import { GRAMMAR_POINTS, GRAMMAR_QUIZ_QUESTIONS } from './data/grammar.js';
