@@ -1,4 +1,4 @@
-﻿/**
+/**
  * JLPT N4 Official Mock Certification Exam Dataset
  * Structured strictly according to the Official JLPT N4 Test Specification:
  * - Section 1: 言語知識（文字・語彙） Language Knowledge: Kanji & Vocabulary (60 Points)
@@ -315,3 +315,5 @@ export const JLPT_N4_MOCK_EXAM = {
     }
   ]
 };
+
+export const JLPT_N5_MOCK_EXAM = JLPT_N4_MOCK_EXAM;

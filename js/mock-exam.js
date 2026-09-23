@@ -1,14 +1,14 @@
-﻿/**
+/**
  * JLPT N5 Official Mock Certification Exam Controller
  * Full Exam Lifecycle, Section Jumping, Audio Prompt Player, Official JLPT 180-Point Scoring & Analysis
  */
-import { JLPT_N5_MOCK_EXAM } from './data/mock-exam.js';
+import { JLPT_N4_MOCK_EXAM } from './data/mock-exam.js';
 import { audio } from './audio.js';
 import { storage } from './storage.js';
 
 export class MockExamController {
   constructor() {
-    this.exam = JLPT_N5_MOCK_EXAM;
+    this.exam = JLPT_N4_MOCK_EXAM;
     this.currentSectionIndex = 0;
     this.currentQuestionIndex = 0;
     this.answers = {}; // key: question.id -> selectedOptionIndex or value
