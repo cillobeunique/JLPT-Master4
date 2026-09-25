@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Conversational Japanese Chatbot Controller ("AI Sensei - 会話")
  * Web Speech API Voice Recognition + Native TTS Speech Synthesis + Furigana, Grammar & Particle Tutorials
  */
@@ -151,24 +151,33 @@ export class ChatController {
   loadScenario(scenarioId) {
     this.currentScenarioId = scenarioId;
     const scenario = this.scenarios.find(s => s.id === scenarioId) || this.scenarios[0];
+    if (!scenario) return;
 
     // Update active UI
     if (this.activeScenarioTitle) {
-      this.activeScenarioTitle.textContent = `${scenario.icon} ${scenario.title} (${scenario.titleJp})`;
+      this.activeScenarioTitle.textContent = `${scenario.icon || '💬'} ${scenario.title} (${scenario.titleJp || scenario.title})`;
     }
     if (this.activeScenarioRole) {
-      this.activeScenarioRole.textContent = `Partner: ${scenario.role} • ${scenario.description}`;
+      this.activeScenarioRole.textContent = `Partner: ${scenario.role || scenario.category || 'AI Partner'} • ${scenario.description || scenario.subtitle || ''}`;
     }
+
+    const starter = scenario.starterBotMessage || scenario.initialMessage || {
+      jp: 'こんにちは！今日はどのようなご用件でしょうか。',
+      romaji: 'Konnichiwa! Kyou wa dono you na go-youken deshou ka.',
+      en: 'Hello! How can I assist you today?',
+      furigana: 'こんにちは！今日はどのようなご用件でしょうか。',
+      breakdown: []
+    };
 
     // Reset messages with starter message
     this.messages = [
       {
         sender: 'bot',
-        jp: scenario.starterBotMessage.jp,
-        romaji: scenario.starterBotMessage.romaji,
-        en: scenario.starterBotMessage.en,
-        furigana: scenario.starterBotMessage.furigana,
-        breakdown: scenario.starterBotMessage.breakdown,
+        jp: starter.jp,
+        romaji: starter.romaji,
+        en: starter.en,
+        furigana: starter.furigana || starter.jp,
+        breakdown: starter.breakdown || [],
         showBreakdown: false,
         timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })
       }
@@ -176,10 +185,10 @@ export class ChatController {
 
     this.renderScenarioList();
     this.renderMessages();
-    this.renderQuickReplies(scenario.quickSuggestions);
+    this.renderQuickReplies(scenario.quickSuggestions || scenario.quickReplies || []);
 
     // Speak initial greeting if auto-play is preferred
-    audio.speak(scenario.starterBotMessage.jp);
+    audio.speak(starter.jp);
   }
 
   renderMessages() {

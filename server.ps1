@@ -31,6 +31,7 @@ while ($listener.IsListening) {
             ".svg"  { $response.ContentType = "image/svg+xml" }
             Default { $response.ContentType = "application/octet-stream" }
         }
+        $response.AddHeader("Cache-Control", "no-cache, no-store, must-revalidate")
 
         $bytes = [System.IO.File]::ReadAllBytes($filePath)
         $response.ContentLength64 = $bytes.Length
