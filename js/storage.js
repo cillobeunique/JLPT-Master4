@@ -1,4 +1,4 @@
-﻿/**
+/**
  * LocalStorage Manager for JLPT N5 Master App
  * Handles SRS levels, bookmarks, quiz history, streak counter, 30-day activity heatmap, and settings.
  */
@@ -253,7 +253,7 @@ class StorageManager {
   }
 
   // --- Overall Stats Summary ---
-  getStats(totalKanji = 100, totalVocab = 800) {
+  getStats(totalKanji = 300, totalVocab = 1500) {
     const kanjiSRS = this.getKanjiSRS();
     const vocabSRS = this.getVocabSRS();
     const history = this.getQuizHistory();

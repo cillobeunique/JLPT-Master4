@@ -3,7 +3,7 @@
  * Enables PWA standalone installation on iOS & Android, offline caching, and instant load.
  */
 
-const CACHE_NAME = 'jlpt-n4-master-v1';
+const CACHE_NAME = 'jlpt-n4-master-v2';
 
 const ASSETS_TO_CACHE = [
   './',

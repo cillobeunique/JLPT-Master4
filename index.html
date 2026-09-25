@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JLPT N4 Master - Flashcards, Quizzes, Official Mock Exam & AI Chat</title>
-  <meta name="description" content="Master 200 JLPT N4 Kanji, 800 Vocabulary items, Grammar, Official Mock Certification Exams, and practice Japanese conversation with AI Sensei.">
+  <meta name="description" content="Master 300 JLPT N4 Kanji, 1,500 Vocabulary items, Grammar, Official N5 & N4 Mock Certification Exams, and practice Japanese conversation with AI Sensei.">
   
   <!-- Favicon & Touch Icons -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -73,7 +73,7 @@
                 <div class="dropdown-link-icon">🔍</div>
                 <div class="dropdown-link-info">
                   <div class="dropdown-link-title">N4 Library Explorer</div>
-                  <div class="dropdown-link-sub">Search 363 Kanji & 800 Vocab</div>
+                  <div class="dropdown-link-sub">Search 300 Kanji & 1,500 Vocab</div>
                 </div>
               </a>
             </div>
@@ -96,8 +96,8 @@
               <a href="#mock-exam" class="dropdown-link nav-link" data-view="mock-exam">
                 <div class="dropdown-link-icon">🏆</div>
                 <div class="dropdown-link-info">
-                  <div class="dropdown-link-title">Official Mock Exam</div>
-                  <div class="dropdown-link-sub">Full 3-Section JLPT Test (180 pts)</div>
+                  <div class="dropdown-link-title">Official Mock Exams</div>
+                  <div class="dropdown-link-sub">Full 3-Section N4 & N5 JLPT Tests (180 pts)</div>
                 </div>
               </a>
             </div>
@@ -124,8 +124,8 @@
       <div class="hero-section">
         <div class="hero-text-content">
           <div class="hero-badge">⚡ Rapid Micro-Learning & Gamified Review</div>
-          <h1 class="hero-title">Master <span class="text-gradient">363 Kanji & 800 Vocab</span></h1>
-          <p class="hero-subtitle">High-speed 5-card micro-sessions, 2-minute timed blitz challenges, authentic JLPT N4 audio listening practice, and AI conversation.</p>
+          <h1 class="hero-title">Master <span class="text-gradient">300 Kanji & 1,500 Vocab</span></h1>
+          <p class="hero-subtitle">High-speed 5-card micro-sessions, 2-minute timed blitz challenges, authentic JLPT N5 & N4 audio listening practice, and AI conversation.</p>
           <div class="hero-cta-group">
             <button class="btn-primary hero-cta-btn" id="dashboard-quick-5-btn">⚡ Quick 5 Micro-Session</button>
             <button class="btn-primary hero-cta-btn" id="dashboard-blitz-btn" style="background: linear-gradient(135deg, #f59e0b, #ef4444); box-shadow: 0 0 20px rgba(245, 158, 11, 0.4);">⏱️ 2-Minute Blitz</button>
@@ -167,7 +167,7 @@
           <div class="stat-icon-wrapper blue">漢</div>
           <div class="stat-content">
             <div class="stat-label">Kanji Mastered</div>
-            <div class="stat-value" id="stat-kanji-mastered">0 / 200 (0%)</div>
+            <div class="stat-value" id="stat-kanji-mastered">0 / 300 (0%)</div>
             <div class="stat-progress-bg">
               <div class="stat-progress-fill blue" id="stat-kanji-bar" style="width: 0%;"></div>
             </div>
@@ -178,7 +178,7 @@
           <div class="stat-icon-wrapper purple">語</div>
           <div class="stat-content">
             <div class="stat-label">Vocab Mastered</div>
-            <div class="stat-value" id="stat-vocab-mastered">0 / 800 (0%)</div>
+            <div class="stat-value" id="stat-vocab-mastered">0 / 1,500 (0%)</div>
             <div class="stat-progress-bg">
               <div class="stat-progress-fill" id="stat-vocab-bar" style="width: 0%;"></div>
             </div>
@@ -313,8 +313,8 @@
           </select>
 
           <select id="fc-type-select" class="styled-select">
-            <option value="kanji">100 N4 Kanji</option>
-            <option value="vocab">800 N4 Vocabulary</option>
+            <option value="kanji">300 N4 Kanji</option>
+            <option value="vocab">1,500 N4 Vocabulary</option>
             <option value="grammar">Grammar Points</option>
           </select>
 
@@ -538,11 +538,11 @@
           <div class="setup-field">
             <label for="quiz-type-select">Quiz Topic</label>
             <select id="quiz-type-select" class="styled-select" style="width: 100%;">
-              <option value="kanji">Kanji (100 N4 Kanji)</option>
-              <option value="vocab" selected>Vocabulary (800 N4 Words)</option>
+              <option value="kanji">Kanji (300 N4 Kanji)</option>
+              <option value="vocab" selected>Vocabulary (1,500 N4 Words)</option>
               <option value="grammar">Grammar & Particles</option>
               <option value="listening_scenarios">🎧 JLPT N4 Listening (24 Test Scenarios)</option>
-              <option value="mixed">Mixed JLPT N4 Challenge</option>
+              <option value="mixed">Mixed JLPT Challenge</option>
             </select>
           </div>
 
@@ -771,8 +771,19 @@
       <div id="exam-intro-view" class="quiz-card-wrapper">
         <div class="exam-intro-header">
           <div class="hero-badge" style="background: rgba(6, 182, 212, 0.15); color: var(--accent-cyan); border-color: rgba(6, 182, 212, 0.4);">Official Test Simulation</div>
-          <h2 style="font-size: 2rem; font-weight: 900; margin-bottom: 0.6rem;">🏆 JLPT N4 Official Mock Certification Exam</h2>
-          <p style="color: var(--text-secondary); font-size: 1.05rem;">
+          
+          <!-- Exam Level Switcher -->
+          <div class="exam-level-switcher" style="display: flex; gap: 0.85rem; justify-content: center; margin: 1.25rem 0 1rem 0;">
+            <button id="exam-level-n4-btn" class="level-tab-btn active" style="padding: 0.65rem 1.6rem; font-weight: 700; border-radius: 9999px; border: 1px solid var(--accent-primary); background: var(--accent-primary); color: white; cursor: pointer; transition: all 0.2s;">
+              🎯 JLPT N4 Mock Exam (Full 180 Pts)
+            </button>
+            <button id="exam-level-n5-btn" class="level-tab-btn" style="padding: 0.65rem 1.6rem; font-weight: 700; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.15); background: var(--bg-card); color: var(--text-secondary); cursor: pointer; transition: all 0.2s;">
+              🌱 JLPT N5 Mock Exam (Full 180 Pts)
+            </button>
+          </div>
+
+          <h2 id="exam-intro-title" style="font-size: 2rem; font-weight: 900; margin-bottom: 0.6rem;">🏆 JLPT N4 Official Mock Certification Exam</h2>
+          <p id="exam-intro-desc" style="color: var(--text-secondary); font-size: 1.05rem;">
             Test your comprehensive Japanese language proficiency under official JLPT test conditions.
           </p>
         </div>
@@ -781,30 +792,30 @@
           <div class="exam-structure-card">
             <div class="sec-badge">Section 1</div>
             <h3>言語知識（文字・語彙）</h3>
-            <p>Kanji & Vocabulary (25 Questions • 60 Pts)</p>
+            <p>Kanji & Vocabulary (60 Pts)</p>
             <div class="sec-tags">Kanji Reading • Orthography • Context • Synonyms</div>
           </div>
 
           <div class="exam-structure-card">
             <div class="sec-badge">Section 2</div>
             <h3>言語知識（文法）・読解</h3>
-            <p>Grammar & Reading (20 Questions • 60 Pts)</p>
+            <p>Grammar & Reading (60 Pts)</p>
             <div class="sec-tags">Particle Blanks • ★ Star Sentence Ordering • Reading Passages</div>
           </div>
 
           <div class="exam-structure-card">
             <div class="sec-badge">Section 3</div>
             <h3>聴解 (Listening)</h3>
-            <p>Listening Comprehension (15 Questions • 60 Pts)</p>
+            <p>Listening Comprehension (60 Pts)</p>
             <div class="sec-tags">Task Comprehension • Key Points • Quick Responses (Audio)</div>
           </div>
         </div>
 
         <div class="exam-rules-banner">
           <h4>📋 Official JLPT Scoring & Standards</h4>
-          <ul>
-            <li><strong>Total Score:</strong> 180 Points (60 min timer).</li>
-            <li><strong>Passing Criteria:</strong> Overall score of <strong>80 / 180 (44.4%)</strong> or higher.</li>
+          <ul id="exam-rules-list">
+            <li><strong>Total Score:</strong> 180 Points (75 min timer).</li>
+            <li><strong>Passing Criteria:</strong> Overall score of <strong>90 / 180 (50%)</strong> or higher.</li>
             <li><strong>Sectional Minimum:</strong> At least <strong>19 / 60 points</strong> in every individual section.</li>
           </ul>
         </div>
@@ -1045,8 +1056,8 @@
       <div class="explore-top-bar">
         <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
           <div class="explore-tabs">
-            <button class="explore-tab-btn active" data-tab="kanji" id="explore-tab-kanji-btn">363 Kanji</button>
-            <button class="explore-tab-btn" data-tab="vocab">800 Vocabulary</button>
+            <button class="explore-tab-btn active" data-tab="kanji" id="explore-tab-kanji-btn">300 Kanji</button>
+            <button class="explore-tab-btn" data-tab="vocab">1,500 Vocabulary</button>
             <button class="explore-tab-btn" data-tab="grammar">Grammar Points</button>
             <button class="explore-tab-btn" data-tab="listening" id="explore-tab-listening-btn">🎧 Audio Practice (24 聴解 Scenarios)</button>
           </div>
@@ -1154,7 +1165,7 @@
 
   <!-- Footer -->
   <footer class="app-footer">
-    <p>© 2026 JLPT N4 Master • Full JLPT Suite (363 Kanji, 800 Vocab, Official Mock Exam & AI Chatbot)</p>
+    <p>© 2026 JLPT N4 Master • Full JLPT Suite (300 Kanji, 1,500 Vocab, Official N5 & N4 Mock Exams & AI Chatbot)</p>
   </footer>
 
   <!-- Floating PWA Install Prompt Banner -->
@@ -1163,7 +1174,7 @@
       <img src="icon-192.png" alt="JLPT N4 Master App Icon" class="pwa-banner-icon" width="46" height="46">
       <div class="pwa-banner-info">
         <div class="pwa-banner-title">Install JLPT N4 Master</div>
-        <div class="pwa-banner-subtitle">Fast offline access, 363 Kanji, 800 Vocab & audio practice directly from your home screen.</div>
+        <div class="pwa-banner-subtitle">Fast offline access, 300 Kanji, 1,500 Vocab & audio practice directly from your home screen.</div>
       </div>
     </div>
     <div class="pwa-banner-actions">

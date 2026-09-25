@@ -2,12 +2,13 @@
  * JLPT N5 Official Mock Certification Exam Controller
  * Full Exam Lifecycle, Section Jumping, Audio Prompt Player, Official JLPT 180-Point Scoring & Analysis
  */
-import { JLPT_N4_MOCK_EXAM } from './data/mock-exam.js';
+import { JLPT_N4_MOCK_EXAM, JLPT_N5_MOCK_EXAM, JLPT_MOCK_EXAMS } from './data/mock-exam.js';
 import { audio } from './audio.js';
 import { storage } from './storage.js';
 
 export class MockExamController {
   constructor() {
+    this.currentLevel = 'n4'; // 'n4' | 'n5'
     this.exam = JLPT_N4_MOCK_EXAM;
     this.currentSectionIndex = 0;
     this.currentQuestionIndex = 0;
@@ -16,17 +17,24 @@ export class MockExamController {
     this.isExamActive = false;
     this.isSubmitted = false;
 
-    this.timerSeconds = this.exam.durationMinutes * 60; // 60 minutes
+    this.timerSeconds = this.exam.durationMinutes * 60;
     this.timerInterval = null;
 
     this.initElements();
     this.bindEvents();
+    this.updateIntroUI();
   }
 
   initElements() {
     this.introView = document.getElementById('exam-intro-view');
     this.activeView = document.getElementById('exam-active-view');
     this.resultsView = document.getElementById('exam-results-view');
+
+    this.levelN4Btn = document.getElementById('exam-level-n4-btn');
+    this.levelN5Btn = document.getElementById('exam-level-n5-btn');
+    this.introTitle = document.getElementById('exam-intro-title');
+    this.introDesc = document.getElementById('exam-intro-desc');
+    this.introRulesList = document.getElementById('exam-rules-list');
 
     this.startBtn = document.getElementById('exam-start-btn');
     this.timerDisplay = document.getElementById('exam-timer-display');
@@ -61,6 +69,14 @@ export class MockExamController {
   }
 
   bindEvents() {
+    if (this.levelN4Btn) {
+      this.levelN4Btn.addEventListener('click', () => this.setLevel('n4'));
+    }
+
+    if (this.levelN5Btn) {
+      this.levelN5Btn.addEventListener('click', () => this.setLevel('n5'));
+    }
+
     if (this.startBtn) {
       this.startBtn.addEventListener('click', () => this.startExam());
     }
@@ -111,6 +127,41 @@ export class MockExamController {
       this.restartBtn.addEventListener('click', () => {
         this.showIntro();
       });
+    }
+  }
+
+  setLevel(level) {
+    if (!JLPT_MOCK_EXAMS[level]) return;
+    this.currentLevel = level;
+    this.exam = JLPT_MOCK_EXAMS[level];
+
+    if (this.levelN4Btn) {
+      this.levelN4Btn.style.background = level === 'n4' ? 'var(--accent-primary)' : 'var(--bg-card)';
+      this.levelN4Btn.style.color = level === 'n4' ? 'white' : 'var(--text-secondary)';
+      this.levelN4Btn.style.borderColor = level === 'n4' ? 'var(--accent-primary)' : 'rgba(255,255,255,0.15)';
+    }
+    if (this.levelN5Btn) {
+      this.levelN5Btn.style.background = level === 'n5' ? 'var(--accent-primary)' : 'var(--bg-card)';
+      this.levelN5Btn.style.color = level === 'n5' ? 'white' : 'var(--text-secondary)';
+      this.levelN5Btn.style.borderColor = level === 'n5' ? 'var(--accent-primary)' : 'rgba(255,255,255,0.15)';
+    }
+
+    this.updateIntroUI();
+  }
+
+  updateIntroUI() {
+    if (this.introTitle) {
+      this.introTitle.textContent = `🏆 JLPT ${this.exam.level} Official Mock Certification Exam`;
+    }
+    if (this.startBtn) {
+      this.startBtn.textContent = `🏁 Begin Official JLPT ${this.exam.level} Exam`;
+    }
+    if (this.introRulesList) {
+      this.introRulesList.innerHTML = `
+        <li><strong>Total Score:</strong> ${this.exam.totalPoints} Points (${this.exam.durationMinutes} min timer).</li>
+        <li><strong>Passing Criteria:</strong> Overall score of <strong>${this.exam.passingScore} / ${this.exam.totalPoints} (${Math.round((this.exam.passingScore / this.exam.totalPoints) * 100)}%)</strong> or higher.</li>
+        <li><strong>Sectional Minimum:</strong> At least <strong>${this.exam.sectionPassingScore} / 60 points</strong> in every individual section.</li>
+      `;
     }
   }
 
@@ -400,8 +451,8 @@ export class MockExamController {
 
     if (this.resPassingNotice) {
       this.resPassingNotice.innerHTML = `
-        JLPT N5 Passing Standard: <strong>${this.exam.passingScore}/${this.exam.totalPoints}</strong> points with at least <strong>${this.exam.sectionPassingScore}/60</strong> points in every section.<br>
-        ${isPassedOverall ? '🌟 Congratulations! You have met all requirements to pass the JLPT N5 Certification.' : '💪 Keep practicing! Review your missed questions below to strengthen weak areas.'}
+        JLPT ${this.exam.level} Passing Standard: <strong>${this.exam.passingScore}/${this.exam.totalPoints}</strong> points with at least <strong>${this.exam.sectionPassingScore}/60</strong> points in every section.<br>
+        ${isPassedOverall ? `🌟 Congratulations! You have met all requirements to pass the JLPT ${this.exam.level} Certification.` : '💪 Keep practicing! Review your missed questions below to strengthen weak areas.'}
       `;
     }
 

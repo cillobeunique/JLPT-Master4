@@ -1,9 +1,9 @@
 ﻿/**
- * JLPT N4 Master Kanji Dataset (200 Core N4 Kanji)
+ * JLPT N4 Master Kanji Dataset (300 Core N4 Kanji)
  * Complete official coverage for JLPT N4 curriculum, quizzes & mock exam.
  */
 export const KANJI_DATA = [
-  {
+{
     id: 1,
     kanji: "会",
     meaning: "To meet / Society",
@@ -3533,20 +3533,20 @@ export const KANJI_DATA = [
   },
   {
     id: 198,
-    kanji: "直",
-    meaning: "Fix / Direct / Straight",
-    onyomi: "チョク, ジキ",
-    kunyomi: "なお・す, なお・る",
-    onyomiRomaji: "choku, jiki",
-    kunyomiRomaji: "naosu, naoru",
-    romaji: "choku / naosu",
-    strokes: 8,
-    radical: "目",
-    category: "Actions & Verbs",
+    kanji: "換",
+    meaning: "Exchange / Replace",
+    onyomi: "カン",
+    kunyomi: "か・える, か・わる",
+    onyomiRomaji: "kan",
+    kunyomiRomaji: "kaeru, kawaru",
+    romaji: "kan / kaeru",
+    strokes: 12,
+    radical: "扌",
+    category: "Actions & Movement",
     examples: [
-      { word: "直す", reading: "なおす", romaji: "naosu", meaning: "to repair / correct (tr.)" },
-      { word: "直る", reading: "なおる", romaji: "naoru", meaning: "to be repaired (intr.)" },
-      { word: "直ぐ", reading: "すぐ", romaji: "sugu", meaning: "immediately / right away" }
+      { word: "乗り換える", reading: "のりかえる", romaji: "norikaeru", meaning: "to transfer (trains)" },
+      { word: "両替", reading: "りょうがえ", romaji: "ryougae", meaning: "currency exchange" },
+      { word: "交換", reading: "こうかん", romaji: "koukan", meaning: "exchange / swap" }
     ]
   },
   {
@@ -3585,4 +3585,1802 @@ export const KANJI_DATA = [
       { word: "忘年会", reading: "ぼうねんかい", romaji: "bounenkai", meaning: "year-end party" }
     ]
   },
+  {
+    id: 201,
+    kanji: "晴",
+    meaning: "Clear / Sunny",
+    onyomi: "セイ",
+    kunyomi: "は・れる, は・らす",
+    onyomiRomaji: "sei",
+    kunyomiRomaji: "hareru, harasu",
+    romaji: "sei / hareru",
+    strokes: 12,
+    radical: "日",
+    category: "Nature & Weather",
+    examples: [
+      { word: "晴れる", reading: "はれる", romaji: "hareru", meaning: "to clear up / be sunny" },
+      { word: "晴天", reading: "せいてん", romaji: "seiten", meaning: "fine weather" },
+      { word: "秋晴れ", reading: "あきばれ", romaji: "akibare", meaning: "clear autumn weather" }
+    ]
+  },
+  {
+    id: 202,
+    kanji: "曇",
+    meaning: "Cloudy",
+    onyomi: "ドン",
+    kunyomi: "くも・る",
+    onyomiRomaji: "don",
+    kunyomiRomaji: "kumoru",
+    romaji: "don / kumoru",
+    strokes: 16,
+    radical: "日",
+    category: "Nature & Weather",
+    examples: [
+      { word: "曇る", reading: "くもる", romaji: "kumoru", meaning: "to become cloudy" },
+      { word: "曇り", reading: "くもり", romaji: "kumori", meaning: "cloudy weather" },
+      { word: "曇り空", reading: "くもりぞら", romaji: "kumorizora", meaning: "cloudy sky" }
+    ]
+  },
+  {
+    id: 203,
+    kanji: "返",
+    meaning: "Return / Repay",
+    onyomi: "ヘン",
+    kunyomi: "かえ・す, かえ・る",
+    onyomiRomaji: "hen",
+    kunyomiRomaji: "kaesu, kaeru",
+    romaji: "hen / kaesu",
+    strokes: 7,
+    radical: "辶",
+    category: "Actions & Movement",
+    examples: [
+      { word: "返す", reading: "かえす", romaji: "kaesu", meaning: "to return (something)" },
+      { word: "返事", reading: "へんじ", romaji: "henji", meaning: "reply / answer" },
+      { word: "返却", reading: "へんきゃく", romaji: "henkyaku", meaning: "return of items" }
+    ]
+  },
+  {
+    id: 204,
+    kanji: "遊",
+    meaning: "Play / Idle",
+    onyomi: "ユウ",
+    kunyomi: "あそ・ぶ",
+    onyomiRomaji: "yuu",
+    kunyomiRomaji: "asobu",
+    romaji: "yuu / asobu",
+    strokes: 12,
+    radical: "辶",
+    category: "Social & Entertainment",
+    examples: [
+      { word: "遊ぶ", reading: "あそぶ", romaji: "asobu", meaning: "to play / visit" },
+      { word: "遊園地", reading: "ゆうえんち", romaji: "yuuenchi", meaning: "amusement park" },
+      { word: "遊び", reading: "あそび", romaji: "asobi", meaning: "play / game" }
+    ]
+  },
+  {
+    id: 205,
+    kanji: "迎",
+    meaning: "Welcome / Greet",
+    onyomi: "ゲイ",
+    kunyomi: "むか・える",
+    onyomiRomaji: "gei",
+    kunyomiRomaji: "mukaeru",
+    romaji: "gei / mukaeru",
+    strokes: 7,
+    radical: "辶",
+    category: "Social & Etiquette",
+    examples: [
+      { word: "迎える", reading: "むかえる", romaji: "mukaeru", meaning: "to welcome / greet" },
+      { word: "出迎え", reading: "でむかえ", romaji: "demukae", meaning: "meeting arrival" },
+      { word: "歓迎", reading: "かんげい", romaji: "kangei", meaning: "welcome reception" }
+    ]
+  },
+  {
+    id: 206,
+    kanji: "追",
+    meaning: "Chase / Pursue",
+    onyomi: "ツイ",
+    kunyomi: "お・う",
+    onyomiRomaji: "tsui",
+    kunyomiRomaji: "ou",
+    romaji: "tsui / ou",
+    strokes: 9,
+    radical: "辶",
+    category: "Actions & Movement",
+    examples: [
+      { word: "追う", reading: "おう", romaji: "ou", meaning: "to chase / pursue" },
+      { word: "追加", reading: "ついか", romaji: "tsuika", meaning: "addition" },
+      { word: "追い越す", reading: "おいこす", romaji: "oikosu", meaning: "to pass / overtake" }
+    ]
+  },
+  {
+    id: 207,
+    kanji: "越",
+    meaning: "Cross over / Exceed",
+    onyomi: "エツ",
+    kunyomi: "こ・す, こ・える",
+    onyomiRomaji: "etsu",
+    kunyomiRomaji: "kosu, koeru",
+    romaji: "etsu / kosu",
+    strokes: 12,
+    radical: "走",
+    category: "Actions & Movement",
+    examples: [
+      { word: "越える", reading: "こえる", romaji: "koeru", meaning: "to cross over / exceed" },
+      { word: "引越し", reading: "ひっこし", romaji: "hikkoshi", meaning: "moving house" },
+      { word: "乗り越える", reading: "のりこえる", romaji: "norikoeru", meaning: "to overcome" }
+    ]
+  },
+  {
+    id: 208,
+    kanji: "渡",
+    meaning: "Cross / Hand over",
+    onyomi: "ト",
+    kunyomi: "わた・る, わた・す",
+    onyomiRomaji: "to",
+    kunyomiRomaji: "wataru, watasu",
+    romaji: "to / wataru",
+    strokes: 12,
+    radical: "氵",
+    category: "Actions & Movement",
+    examples: [
+      { word: "渡る", reading: "わたる", romaji: "wataru", meaning: "to cross (bridge/road)" },
+      { word: "渡す", reading: "わたす", romaji: "watasu", meaning: "to hand over" },
+      { word: "見渡す", reading: "みわたす", romaji: "miwatasu", meaning: "to overlook" }
+    ]
+  },
+  {
+    id: 209,
+    kanji: "退",
+    meaning: "Retreat / Leave",
+    onyomi: "タイ",
+    kunyomi: "しりぞ・く",
+    onyomiRomaji: "tai",
+    kunyomiRomaji: "shirizoku",
+    romaji: "tai / shirizoku",
+    strokes: 9,
+    radical: "辶",
+    category: "Work & Society",
+    examples: [
+      { word: "退院", reading: "たいいん", romaji: "taiin", meaning: "leaving hospital" },
+      { word: "退屈", reading: "たいくつ", romaji: "taikutsu", meaning: "boredom" },
+      { word: "退職", reading: "たいしょく", romaji: "taishoku", meaning: "retirement" }
+    ]
+  },
+  {
+    id: 210,
+    kanji: "起",
+    meaning: "Wake up / Rouse",
+    onyomi: "キ",
+    kunyomi: "お・きる, お・こす",
+    onyomiRomaji: "ki",
+    kunyomiRomaji: "okiru, okosu",
+    romaji: "ki / okiru",
+    strokes: 10,
+    radical: "走",
+    category: "Daily Life & Routines",
+    examples: [
+      { word: "起きる", reading: "おきる", romaji: "okiru", meaning: "to wake up / get up" },
+      { word: "起こす", reading: "おこす", romaji: "okosu", meaning: "to wake someone up" },
+      { word: "早起き", reading: "はやおき", romaji: "hayaoki", meaning: "early riser" }
+    ]
+  },
+  {
+    id: 211,
+    kanji: "寝",
+    meaning: "Sleep / Lie down",
+    onyomi: "シン",
+    kunyomi: "ね・る, ね・かす",
+    onyomiRomaji: "shin",
+    kunyomiRomaji: "neru, nekasu",
+    romaji: "shin / neru",
+    strokes: 13,
+    radical: "宀",
+    category: "Daily Life & Routines",
+    examples: [
+      { word: "寝る", reading: "ねる", romaji: "neru", meaning: "to sleep / go to bed" },
+      { word: "昼寝", reading: "ひるね", romaji: "hirune", meaning: "nap" },
+      { word: "寝室", reading: "しんしつ", romaji: "shinshitsu", meaning: "bedroom" }
+    ]
+  },
+  {
+    id: 212,
+    kanji: "浴",
+    meaning: "Bathe / Bask",
+    onyomi: "ヨク",
+    kunyomi: "あ・びる",
+    onyomiRomaji: "yoku",
+    kunyomiRomaji: "abiru",
+    romaji: "yoku / abiru",
+    strokes: 10,
+    radical: "氵",
+    category: "Daily Life & Routines",
+    examples: [
+      { word: "浴びる", reading: "あびる", romaji: "abiru", meaning: "to shower / bathe" },
+      { word: "水浴び", reading: "みずあび", romaji: "mizuabi", meaning: "splashing in water" },
+      { word: "海水浴", reading: "かいすいよく", romaji: "kaisuiyoku", meaning: "sea bathing" }
+    ]
+  },
+  {
+    id: 213,
+    kanji: "連",
+    meaning: "Lead / Connect",
+    onyomi: "レン",
+    kunyomi: "つら・なる, つ・れる",
+    onyomiRomaji: "ren",
+    kunyomiRomaji: "tsuranaru, tsureru",
+    romaji: "ren / tsureru",
+    strokes: 10,
+    radical: "辶",
+    category: "Social & People",
+    examples: [
+      { word: "連れて行く", reading: "つれていく", romaji: "tsureteiku", meaning: "to take (someone) along" },
+      { word: "連絡", reading: "れんらく", romaji: "renraku", meaning: "contact / message" },
+      { word: "連休", reading: "れんきゅう", romaji: "renkyuu", meaning: "consecutive holidays" }
+    ]
+  },
+  {
+    id: 214,
+    kanji: "絡",
+    meaning: "Entangle / Connect",
+    onyomi: "ラク",
+    kunyomi: "から・む",
+    onyomiRomaji: "raku",
+    kunyomiRomaji: "karamu",
+    romaji: "raku / karamu",
+    strokes: 12,
+    radical: "糸",
+    category: "Social & People",
+    examples: [
+      { word: "連絡", reading: "れんらく", romaji: "renraku", meaning: "contact / connection" },
+      { word: "絡む", reading: "からむ", romaji: "karamu", meaning: "to get involved with" },
+      { word: "脈絡", reading: "みゃくらく", romaji: "myakuraku", meaning: "context" }
+    ]
+  },
+  {
+    id: 215,
+    kanji: "席",
+    meaning: "Seat",
+    onyomi: "セキ",
+    kunyomi: "",
+    onyomiRomaji: "seki",
+    kunyomiRomaji: "",
+    romaji: "seki",
+    strokes: 10,
+    radical: "巾",
+    category: "School & Public",
+    examples: [
+      { word: "席", reading: "せき", romaji: "seki", meaning: "seat" },
+      { word: "出席", reading: "しゅっせき", romaji: "shusseki", meaning: "attendance" },
+      { word: "欠席", reading: "けっせき", romaji: "kesseki", meaning: "absence" }
+    ]
+  },
+  {
+    id: 216,
+    kanji: "礼",
+    meaning: "Etiquette / Bow / Thanks",
+    onyomi: "レイ, ライ",
+    kunyomi: "",
+    onyomiRomaji: "rei, rai",
+    kunyomiRomaji: "",
+    romaji: "rei",
+    strokes: 5,
+    radical: "示",
+    category: "Social & Etiquette",
+    examples: [
+      { word: "お礼", reading: "おれい", romaji: "orei", meaning: "gratitude / thanks" },
+      { word: "失礼", reading: "しつれい", romaji: "shitsurei", meaning: "rude / excuse me" },
+      { word: "礼儀", reading: "れいぎ", romaji: "reigi", meaning: "etiquette" }
+    ]
+  },
+  {
+    id: 217,
+    kanji: "払",
+    meaning: "Pay / Brush off",
+    onyomi: "フツ",
+    kunyomi: "はら・う",
+    onyomiRomaji: "futsu",
+    kunyomiRomaji: "harau",
+    romaji: "futsu / harau",
+    strokes: 5,
+    radical: "扌",
+    category: "Daily Life & Money",
+    examples: [
+      { word: "払う", reading: "はらう", romaji: "harau", meaning: "to pay" },
+      { word: "支払い", reading: "しはらい", romaji: "shiharai", meaning: "payment" },
+      { word: "払い戻し", reading: "はらいもどし", romaji: "haraimodoshi", meaning: "refund" }
+    ]
+  },
+  {
+    id: 218,
+    kanji: "配",
+    meaning: "Distribute / Match",
+    onyomi: "ハイ",
+    kunyomi: "くば・る",
+    onyomiRomaji: "hai",
+    kunyomiRomaji: "kubaru",
+    romaji: "hai / kubaru",
+    strokes: 10,
+    radical: "酉",
+    category: "Actions & Verbs",
+    examples: [
+      { word: "配る", reading: "くばる", romaji: "kubaru", meaning: "to distribute" },
+      { word: "心配", reading: "しんぱい", romaji: "shinpai", meaning: "worry / concern" },
+      { word: "配達", reading: "はいたつ", romaji: "haitatsu", meaning: "delivery" }
+    ]
+  },
+  {
+    id: 219,
+    kanji: "届",
+    meaning: "Deliver / Reach",
+    onyomi: "カイ",
+    kunyomi: "とど・ける, とど・く",
+    onyomiRomaji: "kai",
+    kunyomiRomaji: "todokeru, todoku",
+    romaji: "kai / todokeru",
+    strokes: 8,
+    radical: "尸",
+    category: "Actions & Movement",
+    examples: [
+      { word: "届ける", reading: "とどける", romaji: "todokeru", meaning: "to deliver (tr.)" },
+      { word: "届く", reading: "とどく", romaji: "todoku", meaning: "to arrive (intr.)" },
+      { word: "届け出", reading: "とどけで", romaji: "todokede", meaning: "notification" }
+    ]
+  },
+  {
+    id: 220,
+    kanji: "拾",
+    meaning: "Pick up / Find",
+    onyomi: "シュウ, ジュウ",
+    kunyomi: "ひろ・う",
+    onyomiRomaji: "shuu, juu",
+    kunyomiRomaji: "hirou",
+    romaji: "shuu / hirou",
+    strokes: 9,
+    radical: "扌",
+    category: "Actions & Movement",
+    examples: [
+      { word: "拾う", reading: "ひろう", romaji: "hirou", meaning: "to pick up" },
+      { word: "拾得物", reading: "しゅうとくぶつ", romaji: "shuutokubutsu", meaning: "found article" },
+      { word: "命拾い", reading: "いのちびろい", romaji: "inochibiroi", meaning: "narrow escape" }
+    ]
+  },
+  {
+    id: 221,
+    kanji: "捨",
+    meaning: "Discard / Throw away",
+    onyomi: "シャ",
+    kunyomi: "す・てる",
+    onyomiRomaji: "sha",
+    kunyomiRomaji: "suteru",
+    romaji: "sha / suteru",
+    strokes: 11,
+    radical: "扌",
+    category: "Daily Life & Routines",
+    examples: [
+      { word: "捨てる", reading: "すてる", romaji: "suteru", meaning: "to throw away" },
+      { word: "見捨てる", reading: "みすてる", romaji: "misuteru", meaning: "to abandon" },
+      { word: "四捨五入", reading: "ししゃごにゅう", romaji: "shishagonyuu", meaning: "rounding off" }
+    ]
+  },
+  {
+    id: 222,
+    kanji: "折",
+    meaning: "Fold / Break",
+    onyomi: "セツ",
+    kunyomi: "お・る, お・れる",
+    onyomiRomaji: "setsu",
+    kunyomiRomaji: "oru, oreru",
+    romaji: "setsu / oru",
+    strokes: 7,
+    radical: "扌",
+    category: "Actions & Verbs",
+    examples: [
+      { word: "折る", reading: "おる", romaji: "oru", meaning: "to fold / break (tr.)" },
+      { word: "折れる", reading: "おれる", romaji: "oreru", meaning: "to break (intr.)" },
+      { word: "折り紙", reading: "おりがみ", romaji: "origami", meaning: "origami" }
+    ]
+  },
+  {
+    id: 223,
+    kanji: "割",
+    meaning: "Divide / Break",
+    onyomi: "カツ",
+    kunyomi: "わ・る, わ・れる, わり",
+    onyomiRomaji: "katsu",
+    kunyomiRomaji: "waru, wareru",
+    romaji: "katsu / waru",
+    strokes: 12,
+    radical: "刀",
+    category: "Actions & Verbs",
+    examples: [
+      { word: "割る", reading: "わる", romaji: "waru", meaning: "to divide / break (tr.)" },
+      { word: "割れる", reading: "われる", romaji: "wareru", meaning: "to break / shatter (intr.)" },
+      { word: "割引", reading: "わりびき", romaji: "waribiki", meaning: "discount" }
+    ]
+  },
+  {
+    id: 224,
+    kanji: "押",
+    meaning: "Push / Press",
+    onyomi: "オウ",
+    kunyomi: "お・す, お・さえる",
+    onyomiRomaji: "ou",
+    kunyomiRomaji: "osu, osaeru",
+    romaji: "ou / osu",
+    strokes: 8,
+    radical: "扌",
+    category: "Actions & Movement",
+    examples: [
+      { word: "押す", reading: "おす", romaji: "osu", meaning: "to push / press" },
+      { word: "押入れ", reading: "おしいれ", romaji: "oshiire", meaning: "closet" },
+      { word: "押さえる", reading: "おさえる", romaji: "osaeru", meaning: "to hold down" }
+    ]
+  },
+  {
+    id: 225,
+    kanji: "抜",
+    meaning: "Extract / Pull out",
+    onyomi: "バツ",
+    kunyomi: "ぬ・く, ぬ・ける",
+    onyomiRomaji: "batsu",
+    kunyomiRomaji: "nuku, nukeru",
+    romaji: "batsu / nuku",
+    strokes: 7,
+    radical: "扌",
+    category: "Actions & Verbs",
+    examples: [
+      { word: "抜く", reading: "ぬく", romaji: "nuku", meaning: "to extract / pull out" },
+      { word: "抜ける", reading: "ぬける", romaji: "nakenu", meaning: "to come out / fall out" },
+      { word: "追い抜く", reading: "おいぬく", romaji: "oinuku", meaning: "to surpass / overtake" }
+    ]
+  },
+  {
+    id: 226,
+    kanji: "残",
+    meaning: "Remain / Left over",
+    onyomi: "ザン",
+    kunyomi: "のこ・る, のこ・す",
+    onyomiRomaji: "zan",
+    kunyomiRomaji: "nokoru, nokosu",
+    romaji: "zan / nokoru",
+    strokes: 10,
+    radical: "歹",
+    category: "States & Quantities",
+    examples: [
+      { word: "残る", reading: "のこる", romaji: "nokoru", meaning: "to remain (intr.)" },
+      { word: "残す", reading: "のこす", romaji: "nokosu", meaning: "to leave behind (tr.)" },
+      { word: "残業", reading: "ざんぎょう", romaji: "zangyou", meaning: "overtime work" }
+    ]
+  },
+  {
+    id: 227,
+    kanji: "念",
+    meaning: "Thought / Sense / Wish",
+    onyomi: "ネン",
+    kunyomi: "",
+    onyomiRomaji: "nen",
+    kunyomiRomaji: "",
+    romaji: "nen",
+    strokes: 8,
+    radical: "心",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "残念", reading: "ざんねん", romaji: "zannen", meaning: "unfortunate / regrettable" },
+      { word: "記念", reading: "きねん", romaji: "kinen", meaning: "commemoration" },
+      { word: "専念", reading: "せんねん", romaji: "sennen", meaning: "dedication" }
+    ]
+  },
+  {
+    id: 228,
+    kanji: "感",
+    meaning: "Feeling / Sensation",
+    onyomi: "カン",
+    kunyomi: "かん・じる",
+    onyomiRomaji: "kan",
+    kunyomiRomaji: "kanjiru",
+    romaji: "kan / kanjiru",
+    strokes: 13,
+    radical: "心",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "感じる", reading: "かんじる", romaji: "kanjiru", meaning: "to feel / sense" },
+      { word: "感謝", reading: "かんしゃ", romaji: "kansha", meaning: "gratitude" },
+      { word: "感想", reading: "かんそう", romaji: "kansou", meaning: "impressions / thoughts" }
+    ]
+  },
+  {
+    id: 229,
+    kanji: "情",
+    meaning: "Emotion / Condition",
+    onyomi: "ジョウ, セイ",
+    kunyomi: "なさ・け",
+    onyomiRomaji: "jou, sei",
+    kunyomiRomaji: "nasake",
+    romaji: "jou / nasake",
+    strokes: 11,
+    radical: "忄",
+    category: "Mind & Society",
+    examples: [
+      { word: "情報", reading: "じょうほう", romaji: "jouhou", meaning: "information" },
+      { word: "表情", reading: "ひょうじょう", romaji: "hyoujou", meaning: "facial expression" },
+      { word: "事情", reading: "じじょう", romaji: "jijou", meaning: "circumstances" }
+    ]
+  },
+  {
+    id: 230,
+    kanji: "最",
+    meaning: "Utmost / Most",
+    onyomi: "サイ",
+    kunyomi: "もっと・も",
+    onyomiRomaji: "sai",
+    kunyomiRomaji: "mottomo",
+    romaji: "sai / mottomo",
+    strokes: 12,
+    radical: "曰",
+    category: "Degree & Order",
+    examples: [
+      { word: "最も", reading: "もっとも", romaji: "mottomo", meaning: "most / extremely" },
+      { word: "最初", reading: "さいしょ", romaji: "saisho", meaning: "beginning / first" },
+      { word: "最後", reading: "さいご", romaji: "saigo", meaning: "last / end" }
+    ]
+  },
+  {
+    id: 231,
+    kanji: "初",
+    meaning: "First / Beginning",
+    onyomi: "ショ",
+    kunyomi: "はじ・め, はつ",
+    onyomiRomaji: "sho",
+    kunyomiRomaji: "hajime, hatsu",
+    romaji: "sho / hajime",
+    strokes: 7,
+    radical: "刀",
+    category: "Time & Order",
+    examples: [
+      { word: "初めて", reading: "はじめて", romaji: "hajimete", meaning: "for the first time" },
+      { word: "初め", reading: "はじめ", romaji: "hajime", meaning: "the beginning" },
+      { word: "初詣", reading: "はつもうで", romaji: "hatsumoude", meaning: "first shrine visit" }
+    ]
+  },
+  {
+    id: 232,
+    kanji: "次",
+    meaning: "Next / Order",
+    onyomi: "ジ",
+    kunyomi: "つぎ, つ・ぐ",
+    onyomiRomaji: "ji",
+    kunyomiRomaji: "tsugi",
+    romaji: "ji / tsugi",
+    strokes: 6,
+    radical: "欠",
+    category: "Time & Order",
+    examples: [
+      { word: "次", reading: "つぎ", romaji: "tsugi", meaning: "next" },
+      { word: "次第", reading: "しだい", romaji: "shidai", meaning: "depending on" },
+      { word: "次回", reading: "じかい", romaji: "jikai", meaning: "next time" }
+    ]
+  },
+  {
+    id: 233,
+    kanji: "続",
+    meaning: "Continue / Series",
+    onyomi: "ゾク",
+    kunyomi: "つづ・く, つづ・ける",
+    onyomiRomaji: "zoku",
+    kunyomiRomaji: "tsuzuku, tsuzukeru",
+    romaji: "zoku / tsuzuku",
+    strokes: 13,
+    radical: "糸",
+    category: "Actions & States",
+    examples: [
+      { word: "続く", reading: "つづく", romaji: "tsuzuku", meaning: "to continue (intr.)" },
+      { word: "続ける", reading: "つづける", romaji: "tsuzukeru", meaning: "to continue (tr.)" },
+      { word: "手続き", reading: "てつづき", romaji: "tetsuzuki", meaning: "paperwork / procedure" }
+    ]
+  },
+  {
+    id: 234,
+    kanji: "予",
+    meaning: "In advance / Previous",
+    onyomi: "ヨ",
+    kunyomi: "あらかじ・め",
+    onyomiRomaji: "yo",
+    kunyomiRomaji: "arakajime",
+    romaji: "yo",
+    strokes: 4,
+    radical: "亅",
+    category: "Time & Planning",
+    examples: [
+      { word: "予定", reading: "よてい", romaji: "yotei", meaning: "plan / schedule" },
+      { word: "予約", reading: "よやく", romaji: "yoyaku", meaning: "reservation" },
+      { word: "天気予報", reading: "てんきよほう", romaji: "tenkiyohou", meaning: "weather forecast" }
+    ]
+  },
+  {
+    id: 235,
+    kanji: "定",
+    meaning: "Determine / Fix",
+    onyomi: "テイ, ジョウ",
+    kunyomi: "さだ・める",
+    onyomiRomaji: "tei, jou",
+    kunyomiRomaji: "sadameru",
+    romaji: "tei / sadameru",
+    strokes: 8,
+    radical: "宀",
+    category: "Mind & Planning",
+    examples: [
+      { word: "定期券", reading: "ていきけん", romaji: "teikiken", meaning: "commuter pass" },
+      { word: "定食", reading: "ていしょく", romaji: "teishoku", meaning: "set meal" },
+      { word: "安定", reading: "あんてい", romaji: "antei", meaning: "stability" }
+    ]
+  },
+  {
+    id: 236,
+    kanji: "約",
+    meaning: "Promise / Approx",
+    onyomi: "ヤク",
+    kunyomi: "",
+    onyomiRomaji: "yaku",
+    kunyomiRomaji: "",
+    romaji: "yaku",
+    strokes: 9,
+    radical: "糸",
+    category: "Social & Numbers",
+    examples: [
+      { word: "約束", reading: "やくそく", romaji: "yakusoku", meaning: "promise" },
+      { word: "約", reading: "やく", romaji: "yaku", meaning: "approximately" },
+      { word: "婚約", reading: "こんやく", romaji: "konyaku", meaning: "engagement" }
+    ]
+  },
+  {
+    id: 237,
+    kanji: "束",
+    meaning: "Bundle / Tie",
+    onyomi: "ソク",
+    kunyomi: "たば",
+    onyomiRomaji: "soku",
+    kunyomiRomaji: "taba",
+    romaji: "soku / taba",
+    strokes: 7,
+    radical: "木",
+    category: "Objects & Measures",
+    examples: [
+      { word: "約束", reading: "やくそく", romaji: "yakusoku", meaning: "promise" },
+      { word: "花束", reading: "はなたば", romaji: "hanataba", meaning: "bouquet" },
+      { word: "束ねる", reading: "たばねる", romaji: "tabaneru", meaning: "to tie up / bundle" }
+    ]
+  },
+  {
+    id: 238,
+    kanji: "記",
+    meaning: "Record / Scribe",
+    onyomi: "キ",
+    kunyomi: "しる・す",
+    onyomiRomaji: "ki",
+    kunyomiRomaji: "shirusu",
+    romaji: "ki / shirusu",
+    strokes: 10,
+    radical: "言",
+    category: "Work & Writing",
+    examples: [
+      { word: "日記", reading: "にっき", romaji: "nikki", meaning: "diary" },
+      { word: "記事", reading: "きじ", romaji: "kiji", meaning: "article / news story" },
+      { word: "記入", reading: "きにゅう", romaji: "kinyuu", meaning: "filling in (form)" }
+    ]
+  },
+  {
+    id: 239,
+    kanji: "録",
+    meaning: "Record",
+    onyomi: "ロク",
+    kunyomi: "",
+    onyomiRomaji: "roku",
+    kunyomiRomaji: "",
+    romaji: "roku",
+    strokes: 16,
+    radical: "金",
+    category: "Work & Media",
+    examples: [
+      { word: "記録", reading: "きろく", romaji: "kiroku", meaning: "record / document" },
+      { word: "録音", reading: "ろくおん", romaji: "rokuon", meaning: "sound recording" },
+      { word: "登録", reading: "とうろく", romaji: "touroku", meaning: "registration" }
+    ]
+  },
+  {
+    id: 240,
+    kanji: "登",
+    meaning: "Climb / Register",
+    onyomi: "トウ, ト",
+    kunyomi: "のぼ・る",
+    onyomiRomaji: "tou, to",
+    kunyomiRomaji: "noboru",
+    romaji: "tou / noboru",
+    strokes: 12,
+    radical: "癶",
+    category: "Actions & Movement",
+    examples: [
+      { word: "登る", reading: "のぼる", romaji: "noboru", meaning: "to climb" },
+      { word: "登山", reading: "とざん", romaji: "tozan", meaning: "mountain climbing" },
+      { word: "登校", reading: "とうこう", romaji: "toukou", meaning: "going to school" }
+    ]
+  },
+  {
+    id: 241,
+    kanji: "結",
+    meaning: "Tie / Bind",
+    onyomi: "ケツ",
+    kunyomi: "むす・ぶ, ゆ・う",
+    onyomiRomaji: "ketsu",
+    kunyomiRomaji: "musubu",
+    romaji: "ketsu / musubu",
+    strokes: 12,
+    radical: "糸",
+    category: "Social & Objects",
+    examples: [
+      { word: "結婚", reading: "けっこん", romaji: "kekkon", meaning: "marriage" },
+      { word: "結ぶ", reading: "むすぶ", romaji: "musubu", meaning: "to tie / connect" },
+      { word: "結果", reading: "けっか", romaji: "kekka", meaning: "result / outcome" }
+    ]
+  },
+  {
+    id: 242,
+    kanji: "婚",
+    meaning: "Marriage",
+    onyomi: "コン",
+    kunyomi: "",
+    onyomiRomaji: "kon",
+    kunyomiRomaji: "",
+    romaji: "kon",
+    strokes: 11,
+    radical: "女",
+    category: "Social & Family",
+    examples: [
+      { word: "結婚", reading: "けっこん", romaji: "kekkon", meaning: "marriage" },
+      { word: "離婚", reading: "りこん", romaji: "rikon", meaning: "divorce" },
+      { word: "新婚", reading: "しんこん", romaji: "shinkon", meaning: "newlywed" }
+    ]
+  },
+  {
+    id: 243,
+    kanji: "紹",
+    meaning: "Introduce",
+    onyomi: "ショウ",
+    kunyomi: "",
+    onyomiRomaji: "shou",
+    kunyomiRomaji: "",
+    romaji: "shou",
+    strokes: 11,
+    radical: "糸",
+    category: "Social & Communication",
+    examples: [
+      { word: "紹介", reading: "しょうかい", romaji: "shoukai", meaning: "introduction" },
+      { word: "自己紹介", reading: "じこしょうかい", romaji: "jikoshoukai", meaning: "self-introduction" },
+      { word: "紹介状", reading: "しょうかいじょう", romaji: "shoukaijou", meaning: "letter of introduction" }
+    ]
+  },
+  {
+    id: 244,
+    kanji: "介",
+    meaning: "Mediate / Jammed between",
+    onyomi: "カイ",
+    kunyomi: "",
+    onyomiRomaji: "kai",
+    kunyomiRomaji: "",
+    romaji: "kai",
+    strokes: 4,
+    radical: "人",
+    category: "Social & Communication",
+    examples: [
+      { word: "紹介", reading: "しょうかい", romaji: "shoukai", meaning: "introduction" },
+      { word: "介入", reading: "かいにゅう", romaji: "kainyuu", meaning: "intervention" },
+      { word: "魚介", reading: "ぎょかい", romaji: "gyokai", meaning: "seafood" }
+    ]
+  },
+  {
+    id: 245,
+    kanji: "案",
+    meaning: "Plan / Guide / Suggest",
+    onyomi: "アン",
+    kunyomi: "",
+    onyomiRomaji: "an",
+    kunyomiRomaji: "",
+    romaji: "an",
+    strokes: 10,
+    radical: "木",
+    category: "Work & Thinking",
+    examples: [
+      { word: "案内", reading: "あんない", romaji: "annai", meaning: "guidance / tour" },
+      { word: "案", reading: "あん", romaji: "an", meaning: "plan / proposal" },
+      { word: "提案", reading: "ていあん", romaji: "teian", meaning: "suggestion" }
+    ]
+  },
+  {
+    id: 246,
+    kanji: "内",
+    meaning: "Inside / Within",
+    onyomi: "ナイ, ダイ",
+    kunyomi: "うち",
+    onyomiRomaji: "nai, dai",
+    kunyomiRomaji: "uchi",
+    romaji: "nai / uchi",
+    strokes: 4,
+    radical: "冂",
+    category: "Space & Direction",
+    examples: [
+      { word: "案内", reading: "あんない", romaji: "annai", meaning: "guidance" },
+      { word: "内側", reading: "うちがわ", romaji: "uchigawa", meaning: "inside" },
+      { word: "家内", reading: "かない", romaji: "kanai", meaning: "my wife" }
+    ]
+  },
+  {
+    id: 247,
+    kanji: "側",
+    meaning: "Side",
+    onyomi: "ソク",
+    kunyomi: "がわ, そば",
+    onyomiRomaji: "soku",
+    kunyomiRomaji: "gawa",
+    romaji: "soku / gawa",
+    strokes: 11,
+    radical: "亻",
+    category: "Space & Direction",
+    examples: [
+      { word: "右側", reading: "みぎがわ", romaji: "migigawa", meaning: "right side" },
+      { word: "外側", reading: "そとがわ", romaji: "sotogawa", meaning: "outside" },
+      { word: "側面", reading: "そくめん", romaji: "sokumen", meaning: "profile / flank" }
+    ]
+  },
+  {
+    id: 248,
+    kanji: "向",
+    meaning: "Turn toward / Facing",
+    onyomi: "コウ",
+    kunyomi: "む・く, む・かう",
+    onyomiRomaji: "kou",
+    kunyomiRomaji: "muku, mukau",
+    romaji: "kou / mukau",
+    strokes: 6,
+    radical: "口",
+    category: "Space & Direction",
+    examples: [
+      { word: "向かう", reading: "むかう", romaji: "mukau", meaning: "to face / head toward" },
+      { word: "向こう", reading: "むこう", romaji: "mukou", meaning: "over there" },
+      { word: "方向", reading: "ほうこう", romaji: "houkou", meaning: "direction" }
+    ]
+  },
+  {
+    id: 249,
+    kanji: "太",
+    meaning: "Thick / Fat",
+    onyomi: "タイ, タ",
+    kunyomi: "ふと・い, ふと・る",
+    onyomiRomaji: "tai, ta",
+    kunyomiRomaji: "futoi, futoru",
+    romaji: "tai / futoi",
+    strokes: 4,
+    radical: "大",
+    category: "Adjectives & States",
+    examples: [
+      { word: "太い", reading: "ふとい", romaji: "futoi", meaning: "thick / fat" },
+      { word: "太る", reading: "ふとる", romaji: "futoru", meaning: "to gain weight" },
+      { word: "太陽", reading: "たいよう", romaji: "taiyou", meaning: "sun" }
+    ]
+  },
+  {
+    id: 250,
+    kanji: "細",
+    meaning: "Thin / Slender / Fine",
+    onyomi: "サイ",
+    kunyomi: "ほそ・い, こま・かい",
+    onyomiRomaji: "sai",
+    kunyomiRomaji: "hosoi, komakai",
+    romaji: "sai / hosoi",
+    strokes: 11,
+    radical: "糸",
+    category: "Adjectives & States",
+    examples: [
+      { word: "細い", reading: "ほそい", romaji: "hosoi", meaning: "thin / slender" },
+      { word: "細かい", reading: "こまかい", romaji: "komakai", meaning: "small / fine / detailed" },
+      { word: "詳細", reading: "しょうさい", romaji: "shousai", meaning: "details" }
+    ]
+  },
+  {
+    id: 251,
+    kanji: "深",
+    meaning: "Deep",
+    onyomi: "シン",
+    kunyomi: "ふか・い",
+    onyomiRomaji: "shin",
+    kunyomiRomaji: "fukai",
+    romaji: "shin / fukai",
+    strokes: 11,
+    radical: "氵",
+    category: "Adjectives & States",
+    examples: [
+      { word: "深い", reading: "ふかい", romaji: "fukai", meaning: "deep" },
+      { word: "深刻", reading: "しんこく", romaji: "shinkoku", meaning: "serious / grave" },
+      { word: "深夜", reading: "しんや", romaji: "shinya", meaning: "late night" }
+    ]
+  },
+  {
+    id: 252,
+    kanji: "浅",
+    meaning: "Shallow",
+    onyomi: "セン",
+    kunyomi: "あさ・い",
+    onyomiRomaji: "sen",
+    kunyomiRomaji: "asai",
+    romaji: "sen / asai",
+    strokes: 9,
+    radical: "氵",
+    category: "Adjectives & States",
+    examples: [
+      { word: "浅い", reading: "あさい", romaji: "asai", meaning: "shallow" },
+      { word: "遠浅", reading: "とおあさ", romaji: "tooasa", meaning: "shallow water" },
+      { word: "浅見", reading: "せんけん", romaji: "senken", meaning: "shallow view" }
+    ]
+  },
+  {
+    id: 253,
+    kanji: "熱",
+    meaning: "Heat / Fever",
+    onyomi: "ネツ",
+    kunyomi: "あつ・い",
+    onyomiRomaji: "netsu",
+    kunyomiRomaji: "atsui",
+    romaji: "netsu / atsui",
+    strokes: 15,
+    radical: "灬",
+    category: "Nature & Health",
+    examples: [
+      { word: "熱", reading: "ねつ", romaji: "netsu", meaning: "fever / heat" },
+      { word: "熱い", reading: "あつい", romaji: "atsui", meaning: "hot (to touch)" },
+      { word: "熱心", reading: "ねっしん", romaji: "nesshin", meaning: "enthusiastic" }
+    ]
+  },
+  {
+    id: 254,
+    kanji: "冷",
+    meaning: "Cold / Chill",
+    onyomi: "レイ",
+    kunyomi: "つめ・たい, ひ・える, さ・める",
+    onyomiRomaji: "rei",
+    kunyomiRomaji: "tsumetai, hieru",
+    romaji: "rei / tsumetai",
+    strokes: 7,
+    radical: "冫",
+    category: "Nature & States",
+    examples: [
+      { word: "冷たい", reading: "つめたい", romaji: "tsumetai", meaning: "cold (to touch)" },
+      { word: "冷やす", reading: "ひやす", romaji: "hiyasu", meaning: "to chill" },
+      { word: "冷蔵庫", reading: "れいぞうこ", romaji: "reizouko", meaning: "refrigerator" }
+    ]
+  },
+  {
+    id: 255,
+    kanji: "温",
+    meaning: "Warm",
+    onyomi: "オン",
+    kunyomi: "あたた・かい, あたた・まる",
+    onyomiRomaji: "on",
+    kunyomiRomaji: "atatakai",
+    romaji: "on / atatakai",
+    strokes: 12,
+    radical: "氵",
+    category: "Nature & States",
+    examples: [
+      { word: "温かい", reading: "あたたかい", romaji: "atatakai", meaning: "warm" },
+      { word: "温度", reading: "おんど", romaji: "ondo", meaning: "temperature" },
+      { word: "温泉", reading: "おんせん", romaji: "onsen", meaning: "hot spring" }
+    ]
+  },
+  {
+    id: 256,
+    kanji: "涼",
+    meaning: "Cool / Refreshing",
+    onyomi: "リョウ",
+    kunyomi: "すず・しい",
+    onyomiRomaji: "ryou",
+    kunyomiRomaji: "suzushii",
+    romaji: "ryou / suzushii",
+    strokes: 11,
+    radical: "氵",
+    category: "Nature & States",
+    examples: [
+      { word: "涼しい", reading: "すずしい", romaji: "suzushii", meaning: "cool (weather)" },
+      { word: "夕涼み", reading: "ゆうすずみ", romaji: "yuusuzumi", meaning: "evening cool" },
+      { word: "清涼", reading: "せいりょう", romaji: "seiryou", meaning: "refreshing" }
+    ]
+  },
+  {
+    id: 257,
+    kanji: "痛",
+    meaning: "Pain / Hurt",
+    onyomi: "ツウ",
+    kunyomi: "いた・い, いた・む",
+    onyomiRomaji: "tsuu",
+    kunyomiRomaji: "itai",
+    romaji: "tsuu / itai",
+    strokes: 12,
+    radical: "疒",
+    category: "Health & Body",
+    examples: [
+      { word: "痛い", reading: "いたい", romaji: "itai", meaning: "painful / hurts" },
+      { word: "頭痛", reading: "ずつう", romaji: "zutsuu", meaning: "headache" },
+      { word: "腹痛", reading: "ふくつう", romaji: "fukutsuu", meaning: "stomachache" }
+    ]
+  },
+  {
+    id: 258,
+    kanji: "疲",
+    meaning: "Tired / Fatigued",
+    onyomi: "ヒ",
+    kunyomi: "つか・れる",
+    onyomiRomaji: "hi",
+    kunyomiRomaji: "tsukareru",
+    romaji: "hi / tsukareru",
+    strokes: 10,
+    radical: "疒",
+    category: "Health & Body",
+    examples: [
+      { word: "疲れる", reading: "つかれる", romaji: "tsukareru", meaning: "to get tired" },
+      { word: "疲労", reading: "ひろう", romaji: "hirou", meaning: "fatigue" },
+      { word: "気疲れ", reading: "きづかれ", romaji: "kizukare", meaning: "mental exhaustion" }
+    ]
+  },
+  {
+    id: 259,
+    kanji: "勝",
+    meaning: "Win / Victory",
+    onyomi: "ショウ",
+    kunyomi: "か・つ",
+    onyomiRomaji: "shou",
+    kunyomiRomaji: "katsu",
+    romaji: "shou / katsu",
+    strokes: 12,
+    radical: "力",
+    category: "Games & Society",
+    examples: [
+      { word: "勝つ", reading: "かつ", romaji: "katsu", meaning: "to win" },
+      { word: "勝利", reading: "しょうり", romaji: "shouri", meaning: "victory" },
+      { word: "勝手", reading: "かって", romaji: "katte", meaning: "selfish / one's way" }
+    ]
+  },
+  {
+    id: 260,
+    kanji: "負",
+    meaning: "Lose / Defeat",
+    onyomi: "フ",
+    kunyomi: "ま・ける, お・う",
+    onyomiRomaji: "fu",
+    kunyomiRomaji: "makeru",
+    romaji: "fu / makeru",
+    strokes: 9,
+    radical: "貝",
+    category: "Games & Society",
+    examples: [
+      { word: "負ける", reading: "まける", romaji: "makeru", meaning: "to lose / be beaten" },
+      { word: "勝負", reading: "しょうぶ", romaji: "shoubu", meaning: "match / contest" },
+      { word: "負担", reading: "ふたん", romaji: "futan", meaning: "burden / load" }
+    ]
+  },
+  {
+    id: 261,
+    kanji: "喜",
+    meaning: "Joy / Delight",
+    onyomi: "キ",
+    kunyomi: "よろこ・ぶ",
+    onyomiRomaji: "ki",
+    kunyomiRomaji: "yorokobu",
+    romaji: "ki / yorokobu",
+    strokes: 12,
+    radical: "口",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "喜ぶ", reading: "よろこぶ", romaji: "yorokobu", meaning: "to be glad" },
+      { word: "大喜び", reading: "おおよろこび", romaji: "ooyorokobi", meaning: "great joy" },
+      { word: "喜劇", reading: "きげき", romaji: "kigeki", meaning: "comedy" }
+    ]
+  },
+  {
+    id: 262,
+    kanji: "怒",
+    meaning: "Angry / Rage",
+    onyomi: "ド",
+    kunyomi: "おこ・る, いか・る",
+    onyomiRomaji: "do",
+    kunyomiRomaji: "okoru",
+    romaji: "do / okoru",
+    strokes: 9,
+    radical: "心",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "怒る", reading: "おこる", romaji: "okoru", meaning: "to get angry" },
+      { word: "怒り", reading: "いかり", romaji: "ikari", meaning: "anger / wrath" },
+      { word: "激怒", reading: "げきど", romaji: "gekido", meaning: "furious rage" }
+    ]
+  },
+  {
+    id: 263,
+    kanji: "泣",
+    meaning: "Cry / Weep",
+    onyomi: "キュウ",
+    kunyomi: "な・く",
+    onyomiRomaji: "kyuu",
+    kunyomiRomaji: "naku",
+    romaji: "kyuu / naku",
+    strokes: 8,
+    radical: "氵",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "泣く", reading: "なく", romaji: "naku", meaning: "to cry / weep" },
+      { word: "泣き声", reading: "なきごえ", romaji: "nakigoe", meaning: "crying voice" },
+      { word: "号泣", reading: "ごうきゅう", romaji: "goukyuu", meaning: "wailing" }
+    ]
+  },
+  {
+    id: 264,
+    kanji: "笑",
+    meaning: "Laugh / Smile",
+    onyomi: "ショウ",
+    kunyomi: "わら・う, え・む",
+    onyomiRomaji: "shou",
+    kunyomiRomaji: "warau",
+    romaji: "shou / warau",
+    strokes: 10,
+    radical: "竹",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "笑う", reading: "わらう", romaji: "warau", meaning: "to laugh / smile" },
+      { word: "笑顔", reading: "えがお", romaji: "egao", meaning: "smiling face" },
+      { word: "微笑み", reading: "ほほえみ", romaji: "hohoemi", meaning: "gentle smile" }
+    ]
+  },
+  {
+    id: 265,
+    kanji: "悲",
+    meaning: "Sad / Sorrow",
+    onyomi: "ヒ",
+    kunyomi: "かな・しい, かな・しむ",
+    onyomiRomaji: "hi",
+    kunyomiRomaji: "kanashii",
+    romaji: "hi / kanashii",
+    strokes: 12,
+    radical: "心",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "悲しい", reading: "かなしい", romaji: "kanashii", meaning: "sad / sorrowful" },
+      { word: "悲しむ", reading: "かなしむ", romaji: "kanashimu", meaning: "to grieve / mourn" },
+      { word: "悲劇", reading: "ひげき", romaji: "higeki", meaning: "tragedy" }
+    ]
+  },
+  {
+    id: 266,
+    kanji: "苦",
+    meaning: "Bitter / Suffer / Pain",
+    onyomi: "ク",
+    kunyomi: "くる・しい, にが・い",
+    onyomiRomaji: "ku",
+    kunyomiRomaji: "kurushii, nigai",
+    romaji: "ku / kurushii",
+    strokes: 8,
+    radical: "艹",
+    category: "Mind & Feelings",
+    examples: [
+      { word: "苦しい", reading: "くるしい", romaji: "kurushii", meaning: "painful / difficult" },
+      { word: "苦い", reading: "にがい", romaji: "nigai", meaning: "bitter" },
+      { word: "苦手", reading: "にがて", romaji: "nigate", meaning: "weak point / poor at" }
+    ]
+  },
+  {
+    id: 267,
+    kanji: "眠",
+    meaning: "Sleep / Slumber",
+    onyomi: "ミン",
+    kunyomi: "ねむ・る, ねむ・い",
+    onyomiRomaji: "min",
+    kunyomiRomaji: "nemuru, nemui",
+    romaji: "min / nemuru",
+    strokes: 10,
+    radical: "目",
+    category: "Daily Life & Routines",
+    examples: [
+      { word: "眠い", reading: "ねむい", romaji: "nemui", meaning: "sleepy" },
+      { word: "眠る", reading: "ねむる", romaji: "nemuru", meaning: "to sleep" },
+      { word: "睡眠", reading: "すいみん", romaji: "suimin", meaning: "sleep" }
+    ]
+  },
+  {
+    id: 268,
+    kanji: "呼",
+    meaning: "Call / Invite",
+    onyomi: "コ",
+    kunyomi: "よ・ぶ",
+    onyomiRomaji: "ko",
+    kunyomiRomaji: "yobu",
+    romaji: "ko / yobu",
+    strokes: 8,
+    radical: "口",
+    category: "Actions & Speech",
+    examples: [
+      { word: "呼ぶ", reading: "よぶ", romaji: "yobu", meaning: "to call / invite" },
+      { word: "呼吸", reading: "こきゅう", romaji: "kokyuu", meaning: "breathing" },
+      { word: "呼び出す", reading: "よびだす", romaji: "yobidasu", meaning: "to summon / call out" }
+    ]
+  },
+  {
+    id: 269,
+    kanji: "頼",
+    meaning: "Rely on / Request",
+    onyomi: "ライ",
+    kunyomi: "たの・む, たよ・る",
+    onyomiRomaji: "rai",
+    kunyomiRomaji: "tanomu, tayoru",
+    romaji: "rai / tanomu",
+    strokes: 16,
+    radical: "頁",
+    category: "Social & Etiquette",
+    examples: [
+      { word: "頼む", reading: "たのむ", romaji: "tanomu", meaning: "to ask / request" },
+      { word: "頼る", reading: "たよる", romaji: "tayoru", meaning: "to depend / rely on" },
+      { word: "信頼", reading: "しんらい", romaji: "shinrai", meaning: "trust / confidence" }
+    ]
+  },
+  {
+    id: 270,
+    kanji: "困",
+    meaning: "Trouble / Distress",
+    onyomi: "コン",
+    kunyomi: "こま・る",
+    onyomiRomaji: "kon",
+    kunyomiRomaji: "komaru",
+    romaji: "kon / komaru",
+    strokes: 7,
+    radical: "囗",
+    category: "Mind & Circumstances",
+    examples: [
+      { word: "困る", reading: "こまる", romaji: "komaru", meaning: "to be troubled" },
+      { word: "困難", reading: "こんなん", romaji: "konnan", meaning: "hardship / difficulty" },
+      { word: "貧困", reading: "ひんこん", romaji: "hinkon", meaning: "poverty" }
+    ]
+  },
+  {
+    id: 271,
+    kanji: "探",
+    meaning: "Search / Look for",
+    onyomi: "タン",
+    kunyomi: "さが・す, さぐ・る",
+    onyomiRomaji: "tan",
+    kunyomiRomaji: "sagasu",
+    romaji: "tan / sagasu",
+    strokes: 11,
+    radical: "扌",
+    category: "Actions & Verbs",
+    examples: [
+      { word: "探す", reading: "さがす", romaji: "sagasu", meaning: "to search / look for" },
+      { word: "探検", reading: "たんけん", romaji: "tanken", meaning: "exploration" },
+      { word: "手探り", reading: "てさぐり", romaji: "tesaguri", meaning: "fumbling" }
+    ]
+  },
+  {
+    id: 272,
+    kanji: "慣",
+    meaning: "Accustomed / Used to",
+    onyomi: "カン",
+    kunyomi: "な・れる, な・らす",
+    onyomiRomaji: "kan",
+    kunyomiRomaji: "nareru",
+    romaji: "kan / nareru",
+    strokes: 14,
+    radical: "忄",
+    category: "Mind & Habits",
+    examples: [
+      { word: "慣れる", reading: "なれる", romaji: "nareru", meaning: "to get accustomed to" },
+      { word: "習慣", reading: "しゅうかん", romaji: "shuukan", meaning: "habit / custom" },
+      { word: "見慣れる", reading: "みなれる", romaji: "minareru", meaning: "to become used to seeing" }
+    ]
+  },
+  {
+    id: 273,
+    kanji: "願",
+    meaning: "Wish / Request",
+    onyomi: "ガン",
+    kunyomi: "ねが・う",
+    onyomiRomaji: "gan",
+    kunyomiRomaji: "negau",
+    romaji: "gan / negau",
+    strokes: 19,
+    radical: "頁",
+    category: "Mind & Etiquette",
+    examples: [
+      { word: "お願い", reading: "おねがい", romaji: "onegai", meaning: "request / please" },
+      { word: "願う", reading: "ねがう", romaji: "negau", meaning: "to wish / desire" },
+      { word: "願書", reading: "がんしょ", romaji: "gansho", meaning: "application form" }
+    ]
+  },
+  {
+    id: 274,
+    kanji: "助",
+    meaning: "Help / Rescue",
+    onyomi: "ジョ",
+    kunyomi: "たす・ける, たす・かる",
+    onyomiRomaji: "jo",
+    kunyomiRomaji: "tasukeru, tasukaru",
+    romaji: "jo / tasukeru",
+    strokes: 7,
+    radical: "力",
+    category: "Social & People",
+    examples: [
+      { word: "助ける", reading: "たすける", romaji: "tasukeru", meaning: "to help (tr.)" },
+      { word: "助かる", reading: "たすかる", romaji: "tasukaru", meaning: "to be helped (intr.)" },
+      { word: "助手", reading: "じょしゅ", romaji: "joshu", meaning: "assistant" }
+    ]
+  },
+  {
+    id: 275,
+    kanji: "守",
+    meaning: "Protect / Obey",
+    onyomi: "シュ, ス",
+    kunyomi: "まも・る",
+    onyomiRomaji: "shu, su",
+    kunyomiRomaji: "mamoru",
+    romaji: "shu / mamoru",
+    strokes: 6,
+    radical: "宀",
+    category: "Actions & Society",
+    examples: [
+      { word: "守る", reading: "まもる", romaji: "mamoru", meaning: "to protect / keep (promise)" },
+      { word: "留守", reading: "るす", romaji: "rusu", meaning: "absence from home" },
+      { word: "お守り", reading: "おまもり", romaji: "omamori", meaning: "amulet / charm" }
+    ]
+  },
+  {
+    id: 276,
+    kanji: "警",
+    meaning: "Police / Guard / Warn",
+    onyomi: "ケイ",
+    kunyomi: "",
+    onyomiRomaji: "kei",
+    kunyomiRomaji: "",
+    romaji: "kei",
+    strokes: 19,
+    radical: "言",
+    category: "Society & Public",
+    examples: [
+      { word: "警察", reading: "けいさつ", romaji: "keisatsu", meaning: "police" },
+      { word: "警官", reading: "けいかん", romaji: "keikan", meaning: "police officer" },
+      { word: "警告", reading: "けいこく", romaji: "keikoku", meaning: "warning" }
+    ]
+  },
+  {
+    id: 277,
+    kanji: "察",
+    meaning: "Inspect / Police / Guess",
+    onyomi: "サツ",
+    kunyomi: "",
+    onyomiRomaji: "satsu",
+    kunyomiRomaji: "",
+    romaji: "satsu",
+    strokes: 14,
+    radical: "宀",
+    category: "Society & Public",
+    examples: [
+      { word: "警察", reading: "けいさつ", romaji: "keisatsu", meaning: "police" },
+      { word: "観察", reading: "かんさつ", romaji: "kansatsu", meaning: "observation" },
+      { word: "診察", reading: "しんさつ", romaji: "shinsatsu", meaning: "medical exam" }
+    ]
+  },
+  {
+    id: 278,
+    kanji: "練",
+    meaning: "Practice / Drill",
+    onyomi: "レン",
+    kunyomi: "ね・る",
+    onyomiRomaji: "ren",
+    kunyomiRomaji: "neru",
+    romaji: "ren / neru",
+    strokes: 14,
+    radical: "糸",
+    category: "School & Study",
+    examples: [
+      { word: "練習", reading: "れんしゅう", romaji: "renshuu", meaning: "practice" },
+      { word: "訓練", reading: "くんれん", romaji: "kunren", meaning: "training" },
+      { word: "練る", reading: "ねる", romaji: "neru", meaning: "to knead / polish" }
+    ]
+  },
+  {
+    id: 279,
+    kanji: "植",
+    meaning: "Plant / Sow",
+    onyomi: "ショク",
+    kunyomi: "う・える, う・わる",
+    onyomiRomaji: "shoku",
+    kunyomiRomaji: "ueru",
+    romaji: "shoku / ueru",
+    strokes: 12,
+    radical: "木",
+    category: "Nature & Plants",
+    examples: [
+      { word: "植える", reading: "うえる", romaji: "ueru", meaning: "to plant" },
+      { word: "植物", reading: "しょくぶつ", romaji: "shokubutsu", meaning: "plant / flora" },
+      { word: "植木", reading: "うえき", romaji: "ueki", meaning: "potted plant / shrub" }
+    ]
+  },
+  {
+    id: 280,
+    kanji: "咲",
+    meaning: "Bloom / Blossom",
+    onyomi: "ショウ",
+    kunyomi: "さ・く",
+    onyomiRomaji: "shou",
+    kunyomiRomaji: "saku",
+    romaji: "shou / saku",
+    strokes: 9,
+    radical: "口",
+    category: "Nature & Plants",
+    examples: [
+      { word: "咲く", reading: "さく", romaji: "saku", meaning: "to bloom" },
+      { word: "満開", reading: "まんかい", romaji: "mankai", meaning: "full bloom" },
+      { word: "返り咲く", reading: "かえりざく", romaji: "kaerizaku", meaning: "to bloom again" }
+    ]
+  },
+  {
+    id: 281,
+    kanji: "散",
+    meaning: "Scatter / Disperse / Stroll",
+    onyomi: "サン",
+    kunyomi: "ち・る, ち・らかす",
+    onyomiRomaji: "san",
+    kunyomiRomaji: "chiru, chirakasu",
+    romaji: "san / chiru",
+    strokes: 12,
+    radical: "攵",
+    category: "Daily Life & Actions",
+    examples: [
+      { word: "散歩", reading: "さんぽ", romaji: "sanpo", meaning: "walk / stroll" },
+      { word: "散らかる", reading: "ちらかる", romaji: "chirakaru", meaning: "to be untidy" },
+      { word: "解散", reading: "かいさん", romaji: "kaisan", meaning: "breakup / dismissal" }
+    ]
+  },
+  {
+    id: 282,
+    kanji: "整",
+    meaning: "Organize / Tidy / Prepare",
+    onyomi: "セイ",
+    kunyomi: "ととの・える, ととの・う",
+    onyomiRomaji: "sei",
+    kunyomiRomaji: "totonoeru",
+    romaji: "sei / totonoeru",
+    strokes: 16,
+    radical: "攵",
+    category: "Daily Life & Work",
+    examples: [
+      { word: "整理", reading: "せいり", romaji: "seiri", meaning: "organizing / sorting" },
+      { word: "整える", reading: "ととのえる", romaji: "totonoeru", meaning: "to put in order" },
+      { word: "調整", reading: "ちょうせい", romaji: "chousei", meaning: "adjustment" }
+    ]
+  },
+  {
+    id: 283,
+    kanji: "調",
+    meaning: "Investigate / Tune / Tone",
+    onyomi: "チョウ",
+    kunyomi: "しら・べる, ととの・う",
+    onyomiRomaji: "chou",
+    kunyomiRomaji: "shiraberu",
+    romaji: "chou / shiraberu",
+    strokes: 15,
+    radical: "言",
+    category: "Work & Study",
+    examples: [
+      { word: "調べる", reading: "しらべる", romaji: "shiraberu", meaning: "to look up / investigate" },
+      { word: "調子", reading: "ちょうし", romaji: "choushi", meaning: "condition / tune" },
+      { word: "強調", reading: "きょうちょう", romaji: "kyouchou", meaning: "emphasis" }
+    ]
+  },
+  {
+    id: 284,
+    kanji: "査",
+    meaning: "Inspect / Survey",
+    onyomi: "サ",
+    kunyomi: "",
+    onyomiRomaji: "sa",
+    kunyomiRomaji: "",
+    romaji: "sa",
+    strokes: 9,
+    radical: "木",
+    category: "Work & Study",
+    examples: [
+      { word: "調査", reading: "ちょうさ", romaji: "chousa", meaning: "survey / inquiry" },
+      { word: "検査", reading: "けんさ", romaji: "kensa", meaning: "inspection / examination" },
+      { word: "審査", reading: "しんさ", romaji: "shinsa", meaning: "screening / judging" }
+    ]
+  },
+  {
+    id: 285,
+    kanji: "横",
+    meaning: "Side / Horizontal",
+    onyomi: "オウ",
+    kunyomi: "よこ",
+    onyomiRomaji: "ou",
+    kunyomiRomaji: "yoko",
+    romaji: "ou / yoko",
+    strokes: 15,
+    radical: "木",
+    category: "Space & Direction",
+    examples: [
+      { word: "横", reading: "よこ", romaji: "yoko", meaning: "side / width" },
+      { word: "横断歩道", reading: "おうだんほどう", romaji: "oudanhodou", meaning: "pedestrian crosswalk" },
+      { word: "横切る", reading: "よこぎる", romaji: "yokogiru", meaning: "to cross (street)" }
+    ]
+  },
+  {
+    id: 286,
+    kanji: "断",
+    meaning: "Sever / Refuse / Decide",
+    onyomi: "ダン",
+    kunyomi: "ことわ・る, た・つ",
+    onyomiRomaji: "dan",
+    kunyomiRomaji: "kotowaru",
+    romaji: "dan / kotowaru",
+    strokes: 11,
+    radical: "斤",
+    category: "Mind & Actions",
+    examples: [
+      { word: "断る", reading: "ことわる", romaji: "kotowaru", meaning: "to refuse / decline" },
+      { word: "横断", reading: "おうだん", romaji: "oudan", meaning: "crossing / traverse" },
+      { word: "判断", reading: "はんだん", romaji: "handan", meaning: "judgment / decision" }
+    ]
+  },
+  {
+    id: 287,
+    kanji: "信",
+    meaning: "Faith / Trust / Signal",
+    onyomi: "シン",
+    kunyomi: "",
+    onyomiRomaji: "shin",
+    kunyomiRomaji: "",
+    romaji: "shin",
+    strokes: 9,
+    radical: "亻",
+    category: "Mind & Communication",
+    examples: [
+      { word: "信じる", reading: "しんじる", romaji: "shinjiru", meaning: "to believe / trust" },
+      { word: "信号", reading: "しんごう", romaji: "shingou", meaning: "traffic light" },
+      { word: "自信", reading: "じしん", romaji: "jishin", meaning: "confidence" }
+    ]
+  },
+  {
+    id: 288,
+    kanji: "号",
+    meaning: "Number / Signal / Item",
+    onyomi: "ゴウ",
+    kunyomi: "",
+    onyomiRomaji: "gou",
+    kunyomiRomaji: "",
+    romaji: "gou",
+    strokes: 5,
+    radical: "口",
+    category: "Numbers & Media",
+    examples: [
+      { word: "信号", reading: "しんごう", romaji: "shingou", meaning: "traffic light" },
+      { word: "番号", reading: "ばんごう", romaji: "bangou", meaning: "number" },
+      { word: "記号", reading: "きごう", romaji: "kigou", meaning: "symbol / mark" }
+    ]
+  },
+  {
+    id: 289,
+    kanji: "変",
+    meaning: "Change / Strange",
+    onyomi: "ヘン",
+    kunyomi: "か・わる, か・える",
+    onyomiRomaji: "hen",
+    kunyomiRomaji: "kawaru, kaeru",
+    romaji: "hen / kawaru",
+    strokes: 9,
+    radical: "夂",
+    category: "States & Changes",
+    examples: [
+      { word: "変わる", reading: "かわる", romaji: "kawaru", meaning: "to change (intr.)" },
+      { word: "変える", reading: "かえる", romaji: "kaeru", meaning: "to change (tr.)" },
+      { word: "大変", reading: "たいへん", romaji: "taihen", meaning: "tough / very" }
+    ]
+  },
+  {
+    id: 290,
+    kanji: "化",
+    meaning: "Change / Transform",
+    onyomi: "カ, ケ",
+    kunyomi: "ば・ける",
+    onyomiRomaji: "ka, ke",
+    kunyomiRomaji: "bakeru",
+    romaji: "ka / bakeru",
+    strokes: 4,
+    radical: "匕",
+    category: "States & Changes",
+    examples: [
+      { word: "文化", reading: "ぶんか", romaji: "bunka", meaning: "culture" },
+      { word: "変化", reading: "へんか", romaji: "henka", meaning: "change / variation" },
+      { word: "化学", reading: "かがく", romaji: "kagaku", meaning: "chemistry" }
+    ]
+  },
+  {
+    id: 291,
+    kanji: "比",
+    meaning: "Compare",
+    onyomi: "ヒ",
+    kunyomi: "くら・べる",
+    onyomiRomaji: "hi",
+    kunyomiRomaji: "kuraberu",
+    romaji: "hi / kuraberu",
+    strokes: 4,
+    radical: "比",
+    category: "Thinking & Measures",
+    examples: [
+      { word: "比べる", reading: "くらべる", romaji: "kuraberu", meaning: "to compare" },
+      { word: "比較", reading: "ひかく", romaji: "hikaku", meaning: "comparison" },
+      { word: "比例", reading: "ひれい", romaji: "hirei", meaning: "proportion" }
+    ]
+  },
+  {
+    id: 292,
+    kanji: "較",
+    meaning: "Contrast / Compare",
+    onyomi: "カク",
+    kunyomi: "",
+    onyomiRomaji: "kaku",
+    kunyomiRomaji: "",
+    romaji: "kaku",
+    strokes: 13,
+    radical: "車",
+    category: "Thinking & Measures",
+    examples: [
+      { word: "比較", reading: "ひかく", romaji: "hikaku", meaning: "comparison" },
+      { word: "比較的", reading: "ひかくてき", romaji: "hikakuteki", meaning: "comparatively" }
+    ]
+  },
+  {
+    id: 293,
+    kanji: "各",
+    meaning: "Each / Every",
+    onyomi: "カク",
+    kunyomi: "おのおの",
+    onyomiRomaji: "kaku",
+    kunyomiRomaji: "onoono",
+    romaji: "kaku",
+    strokes: 6,
+    radical: "口",
+    category: "Quantity & People",
+    examples: [
+      { word: "各自", reading: "かくじ", romaji: "kakuji", meaning: "each individual" },
+      { word: "各地", reading: "かくち", romaji: "kakuchi", meaning: "every locality" },
+      { word: "各駅停車", reading: "かくえきていしゃ", romaji: "kakuekiteisha", meaning: "local train" }
+    ]
+  },
+  {
+    id: 294,
+    kanji: "位",
+    meaning: "Rank / Position / About",
+    onyomi: "イ",
+    kunyomi: "くらい, ぐらい",
+    onyomiRomaji: "i",
+    kunyomiRomaji: "kurai",
+    romaji: "i / kurai",
+    strokes: 7,
+    radical: "亻",
+    category: "Numbers & Society",
+    examples: [
+      { word: "位置", reading: "いち", romaji: "ichi", meaning: "position / location" },
+      { word: "第一位", reading: "だいいちい", romaji: "daiichii", meaning: "first place" },
+      { word: "位", reading: "くらい", romaji: "kurai", meaning: "approximate rank" }
+    ]
+  },
+  {
+    id: 295,
+    kanji: "存",
+    meaning: "Know / Exist (humble/polite)",
+    onyomi: "ソン, ゾン",
+    kunyomi: "",
+    onyomiRomaji: "son, zon",
+    kunyomiRomaji: "",
+    romaji: "son, zon",
+    strokes: 6,
+    radical: "子",
+    category: "Keigo & Mind",
+    examples: [
+      { word: "ご存じ", reading: "ごぞんじ", romaji: "gozonji", meaning: "knowing (honorific)" },
+      { word: "存じる", reading: "ぞんじる", romaji: "zonjiru", meaning: "to know / think (humble)" },
+      { word: "保存", reading: "ほぞん", romaji: "hozon", meaning: "preservation" }
+    ]
+  },
+  {
+    id: 296,
+    kanji: "申",
+    meaning: "Say / Humble speech",
+    onyomi: "シン",
+    kunyomi: "もう・す",
+    onyomiRomaji: "shin",
+    kunyomiRomaji: "mousu",
+    romaji: "shin / mousu",
+    strokes: 5,
+    radical: "田",
+    category: "Keigo & Speech",
+    examples: [
+      { word: "申す", reading: "もうす", romaji: "mousu", meaning: "to say / be named (humble)" },
+      { word: "申し上げる", reading: "もうしあげる", romaji: "moushiageru", meaning: "to state (humble)" },
+      { word: "申込", reading: "もうしこみ", romaji: "moushikomi", meaning: "application" }
+    ]
+  },
+  {
+    id: 297,
+    kanji: "致",
+    meaning: "Do / Cause (humble)",
+    onyomi: "チ",
+    kunyomi: "いた・す",
+    onyomiRomaji: "chi",
+    kunyomiRomaji: "itasu",
+    romaji: "chi / itasu",
+    strokes: 10,
+    radical: "至",
+    category: "Keigo & Actions",
+    examples: [
+      { word: "致します", reading: "いたします", romaji: "itashimasu", meaning: "to do (humble polite)" },
+      { word: "一致", reading: "いっち", romaji: "icchi", meaning: "agreement / match" },
+      { word: "致命的", reading: "ちめいてき", romaji: "chimeiteki", meaning: "fatal / lethal" }
+    ]
+  },
+  {
+    id: 298,
+    kanji: "召",
+    meaning: "Summon / Partake (honorific)",
+    onyomi: "ショウ",
+    kunyomi: "め・す",
+    onyomiRomaji: "shou",
+    kunyomiRomaji: "mesu",
+    romaji: "shou / mesu",
+    strokes: 5,
+    radical: "口",
+    category: "Keigo & Food",
+    examples: [
+      { word: "召し上がる", reading: "めしあがる", romaji: "meshiagaru", meaning: "to eat / drink (honorific)" },
+      { word: "お召し物", reading: "おめしもの", romaji: "omeshimono", meaning: "clothing (honorific)" }
+    ]
+  },
+  {
+    id: 299,
+    kanji: "御",
+    meaning: "Honorable prefix",
+    onyomi: "ギョ, ゴ",
+    kunyomi: "おん, お",
+    onyomiRomaji: "gyo, go",
+    kunyomiRomaji: "on, o",
+    romaji: "go / o",
+    strokes: 12,
+    radical: "彳",
+    category: "Keigo & Etiquette",
+    examples: [
+      { word: "御飯", reading: "ごはん", romaji: "gohan", meaning: "cooked rice / meal" },
+      { word: "御手洗", reading: "おてあらい", romaji: "otearai", meaning: "restroom" },
+      { word: "御礼", reading: "おれい", romaji: "orei", meaning: "thanks / gratitude" }
+    ]
+  },
+  {
+    id: 300,
+    kanji: "様",
+    meaning: "Honorific title / State / Manner",
+    onyomi: "ヨウ",
+    kunyomi: "さま",
+    onyomiRomaji: "you",
+    kunyomiRomaji: "sama",
+    romaji: "you / sama",
+    strokes: 14,
+    radical: "木",
+    category: "Keigo & Etiquette",
+    examples: [
+      { word: "お客様", reading: "おきゃくさま", romaji: "okyakusama", meaning: "honored customer" },
+      { word: "皆様", reading: "みなさま", romaji: "minasama", meaning: "everyone (polite)" },
+      { word: "様子", reading: "ようす", romaji: "yousu", meaning: "appearance / situation" }
+    ]
+  }
 ];

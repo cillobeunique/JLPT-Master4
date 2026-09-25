@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Flashcard Engine
  * Supports:
  * - External Anki Deck Import (.txt, .tsv, .csv, .json, paste text)
@@ -284,8 +284,8 @@ export class FlashcardController {
     const customDecks = storage.getCustomDecks();
 
     let html = `
-      <option value="kanji" ${this.type === 'kanji' ? 'selected' : ''}>100 N5 Kanji</option>
-      <option value="vocab" ${this.type === 'vocab' ? 'selected' : ''}>800 N5 Vocabulary</option>
+      <option value="kanji" ${this.type === 'kanji' ? 'selected' : ''}>300 N4 Kanji</option>
+      <option value="vocab" ${this.type === 'vocab' ? 'selected' : ''}>1,500 N4 Vocabulary</option>
       <option value="grammar" ${this.type === 'grammar' ? 'selected' : ''}>Grammar Points</option>
     `;
 

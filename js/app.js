@@ -1,4 +1,4 @@
-﻿/**
+/**
  * JLPT N4 Master - Main Application Orchestrator
  */
 import { storage } from './storage.js';
@@ -9,6 +9,8 @@ import { GrammarTestController } from './grammar-test.js';
 import { ExploreController } from './explore.js';
 import { MockExamController } from './mock-exam.js';
 import { ChatController } from './chat.js';
+import { KANJI_DATA } from './data/kanji.js';
+import { VOCAB_DATA } from './data/vocab.js';
 
 class App {
   constructor() {
@@ -189,7 +191,7 @@ class App {
   }
 
   updateDashboardStats() {
-    const stats = storage.getStats(200, 208);
+    const stats = storage.getStats(KANJI_DATA.length, VOCAB_DATA.length);
 
     const streakEl = document.getElementById('stat-streak-val');
     const comboEl = document.getElementById('stat-highest-combo');
@@ -204,9 +206,9 @@ class App {
     if (streakEl) streakEl.textContent = `${stats.streak} Day${stats.streak === 1 ? '' : 's'}`;
     if (comboEl) comboEl.textContent = `${stats.highestCombo}x 🔥`;
     if (blitzEl) blitzEl.textContent = `${stats.blitzHighScore} Pts`;
-    if (kanjiMasteredEl) kanjiMasteredEl.textContent = `${stats.kanjiMastered} / 200 (${stats.kanjiPercent}%)`;
+    if (kanjiMasteredEl) kanjiMasteredEl.textContent = `${stats.kanjiMastered} / ${KANJI_DATA.length} (${stats.kanjiPercent}%)`;
     if (kanjiBarEl) kanjiBarEl.style.width = `${stats.kanjiPercent}%`;
-    if (vocabMasteredEl) vocabMasteredEl.textContent = `${stats.vocabMastered} / 800 (${stats.vocabPercent}%)`;
+    if (vocabMasteredEl) vocabMasteredEl.textContent = `${stats.vocabMastered} / ${VOCAB_DATA.length} (${stats.vocabPercent}%)`;
     if (vocabBarEl) vocabBarEl.style.width = `${stats.vocabPercent}%`;
     if (accuracyEl) accuracyEl.textContent = `${stats.averageAccuracy}%`;
     if (totalReviewsEl) totalReviewsEl.textContent = `${stats.totalReviews} Cards`;

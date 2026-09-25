@@ -1,4 +1,4 @@
-﻿/**
+/**
  * Advanced Interactive Quiz Engine & 2-Minute Blitz Mode
  * Supports:
  * - 2-Minute Blitz Mode (Continuous 120s rapid-fire challenge)
@@ -297,26 +297,36 @@ export class QuizEngine {
     if (this.rangeBatchSelect) {
       if (type === 'kanji') {
         this.rangeBatchSelect.innerHTML = `
-          <option value="1-25">Kanji 1 - 25 (Numbers & Basics)</option>
-          <option value="26-50">Kanji 26 - 50 (Nature & Time)</option>
-          <option value="51-75">Kanji 51 - 75 (Places & People)</option>
-          <option value="76-100">Kanji 76 - 100 (Actions & Advanced)</option>
+          <option value="1-50">Kanji 1 - 50 (Numbers & Basics)</option>
+          <option value="51-100">Kanji 51 - 100 (Nature, Time & Places)</option>
+          <option value="101-150">Kanji 101 - 150 (People, Body & Daily Actions)</option>
+          <option value="151-200">Kanji 151 - 200 (Movement, Society & Life)</option>
+          <option value="201-250">Kanji 201 - 250 (School, Business & Relations)</option>
+          <option value="251-300">Kanji 251 - 300 (Intermediate & Abstract Concepts)</option>
         `;
       } else if (type === 'vocab') {
         this.rangeBatchSelect.innerHTML = `
-          <option value="1-100">Vocab 1 - 100 (Greetings & Time)</option>
-          <option value="101-200">Vocab 101 - 200 (People, Family & Food)</option>
-          <option value="201-300">Vocab 201 - 300 (Daily Life & Home)</option>
-          <option value="301-400">Vocab 301 - 400 (School & Work)</option>
-          <option value="401-500">Vocab 401 - 500 (Travel, Town & Nature)</option>
-          <option value="501-600">Vocab 501 - 600 (Core Verbs 1)</option>
-          <option value="601-700">Vocab 601 - 700 (Core Verbs 2 & Adjectives)</option>
-          <option value="701-800">Vocab 701 - 800 (Adverbs & Expressions)</option>
+          <option value="1-100">Vocab 1 - 100 (Verbs & Everyday Actions)</option>
+          <option value="101-200">Vocab 101 - 200 (Transitive/Intransitive & Daily Verbs)</option>
+          <option value="201-300">Vocab 201 - 300 (Nature, Weather & Calendar)</option>
+          <option value="301-400">Vocab 301 - 400 (Core Suru Verbs & Expressions)</option>
+          <option value="401-500">Vocab 401 - 500 (N4 Adjectives & Adverbs)</option>
+          <option value="501-600">Vocab 501 - 600 (Food, Cooking & Tableware)</option>
+          <option value="601-700">Vocab 601 - 700 (Society, Work & Careers)</option>
+          <option value="701-800">Vocab 701 - 800 (Education, School & Studies)</option>
+          <option value="801-900">Vocab 801 - 900 (Town, Directions & Transport)</option>
+          <option value="901-1000">Vocab 901 - 1000 (Travel, Sightseeing & Culture)</option>
+          <option value="1001-1100">Vocab 1001 - 1100 (Health, Medical & Safety)</option>
+          <option value="1101-1200">Vocab 1101 - 1200 (Home Appliances, Living & Housing)</option>
+          <option value="1201-1300">Vocab 1201 - 1300 (Clothing, Fashion & Personal Items)</option>
+          <option value="1301-1400">Vocab 1301 - 1400 (Tools, Stationery & Daily Goods)</option>
+          <option value="1401-1500">Vocab 1401 - 1500 (Keigo, Polite Expressions & Emotions)</option>
         `;
       } else {
         this.rangeBatchSelect.innerHTML = `
           <option value="1-20">Grammar Batch 1 (1 - 20)</option>
           <option value="21-40">Grammar Batch 2 (21 - 40)</option>
+          <option value="41-60">Grammar Batch 3 (41 - 60)</option>
         `;
       }
     }

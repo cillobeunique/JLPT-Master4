@@ -1,17 +1,17 @@
 # JLPT N4 Master 🌊
 
-A modern web application designed for mastering Japanese Language Proficiency Test (JLPT) N4 level Kanji, Vocabulary, Grammar, Chōkai Listening, Official Mock Certification Exams, and Conversational Practice.
+A modern, comprehensive web application designed for mastering Japanese Language Proficiency Test (JLPT) N4 level Kanji (300 Kanji), Vocabulary (1,500 Words), Grammar, Chōkai Listening, Official N5 & N4 Mock Certification Exams, and Conversational Practice.
 
 ## ✨ Features
 
-- **🎴 3D Interactive Flashcards**: Study N4 Kanji and Vocabulary with spaced repetition (SRS), 3D flipping animations, and progress tracking.
-- **🔊 Native Audio Speech & SFX**: Built-in Japanese speech synthesis for pronunciation and custom Web Audio API sound effects.
-- **📝 Timed Quiz Challenges**: Multiple quiz modes including Kanji meanings, Kanji readings, Vocabulary, Audio listening, Sentence scramble, Typing challenge, and Blitz speed drills.
+- **🎴 3D Interactive Flashcards**: Study 300 N4 Kanji and 1,500 N4 Vocabulary words with spaced repetition (SRS), 3D flipping animations, and progress tracking.
+- **🔊 Native Audio Speech & SFX**: Built-in Japanese speech synthesis for pronunciation across all 1,500 words & 300 kanji, plus custom Web Audio API sound effects.
+- **📝 Timed Quiz Challenges**: Multiple quiz modes including Kanji meanings, Kanji readings, Vocabulary, Audio listening, Sentence scramble, Typing challenge, and Blitz speed drills. Full batch range support up to 300 Kanji and 1,500 Vocabulary.
 - **📖 N4 Grammar Lessons & Tests**: 45+ official JLPT N4 grammar points (Passives, Causatives, Conditionals たら/ば/なら/と, Giving/Receiving 授受表現, Keigo 敬語, etc.) with 60+ practice drills.
-- **🎧 Authentic Audio Listening (聴解 - Chōkai)**: 4 official JLPT test sections (Task-Based Comprehension, Key Points, Utterance Expressions, and Quick Response) with multi-speaker dialogue.
-- **🏆 Official Mock Certification Exam**: Complete 3-section simulation (Kanji & Vocab, Grammar & Reading passages, Listening) scored out of 180 points with official 90-point pass threshold.
+- **🎧 Authentic Audio Listening (聴解 - Chōkai)**: 4 official JLPT test sections (Task-Based Comprehension, Key Points, Utterance Expressions, and Quick Response) with multi-speaker dialogue and audio playback.
+- **🏆 Official N4 & N5 Mock Certification Exams**: Full 3-section simulation (Kanji & Vocab, Grammar & Reading passages, Listening) scored out of 180 points with official passing thresholds (N4: 90/180, N5: 80/180).
 - **💬 AI Sensei Conversational Chat**: 7 interactive situational roleplay scenarios (Train delay, Ryokan check-in, Job interview, Doctor clinic, etc.) with voice input, furigana breakdowns, and in-depth grammar guides.
-- **🔍 Comprehensive N4 Library Explorer**: Search and filter N4 Kanji and Vocabulary with instant radical, stroke count, and example lookups.
+- **🔍 Comprehensive N4 Library Explorer**: Search and filter 300 N4 Kanji and 1,500 Vocabulary with instant radical, stroke count, audio pronunciation, and example lookups.
 - **📊 Progress Dashboard**: Track mastery percentage, streaks, and quiz statistics with isolated LocalStorage persistence.
 - **🌗 Dark / Light Mode**: Beautiful UI with responsive themes and PWA offline capability.
 
