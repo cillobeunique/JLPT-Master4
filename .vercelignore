@@ -1,0 +1,13 @@
+# Git and CI/CD
+.git/
+.github/
+
+# Development helper scripts & icon generators
+server.ps1
+generate_icons.html
+render_icon.html
+render_maskable.html
+
+# Local caches
+.vercel/
+*.log
