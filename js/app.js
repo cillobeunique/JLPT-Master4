@@ -147,6 +147,8 @@ class App {
       this.explore.render();
     } else if (viewName === 'mock-exam' && this.mockExam && !this.mockExam.isExamActive && !this.mockExam.isSubmitted) {
       this.mockExam.showIntro();
+    } else if (viewName === 'quiz' && this.quiz) {
+      this.quiz.updateQuestionCountOptions();
     }
   }
 

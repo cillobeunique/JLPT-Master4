@@ -600,14 +600,32 @@
           </div>
 
           <!-- Number of Questions -->
-          <div class="setup-field">
-            <label for="quiz-count-select">Number of Questions</label>
+          <div class="setup-field" id="quiz-count-setup-field">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.35rem;">
+              <label for="quiz-count-select" style="margin-bottom: 0;">Number of Questions</label>
+              <span id="quiz-available-count-badge" style="font-size: 0.78rem; font-weight: 700; color: var(--accent-primary); background: rgba(99, 102, 241, 0.12); padding: 0.15rem 0.55rem; border-radius: 999px; border: 1px solid rgba(99, 102, 241, 0.25);">
+                Available: 1,500 Items
+              </span>
+            </div>
             <select id="quiz-count-select" class="styled-select" style="width: 100%;">
-              <option value="5" selected>⚡ 5 Questions (Micro-Quiz)</option>
-              <option value="10">10 Questions (Standard)</option>
-              <option value="20">20 Questions</option>
-              <option value="50">50 Questions (Deep Study)</option>
+              <option value="5">⚡ 5 Questions (Micro-Quiz)</option>
+              <option value="10" selected>📝 10 Questions (Standard)</option>
+              <option value="20">🎯 20 Questions</option>
+              <option value="50">📚 50 Questions (Deep Study)</option>
+              <option value="100">💯 100 Questions (Century Challenge)</option>
+              <option value="max">🔥 All / Max (1,500 Questions)</option>
+              <option value="custom">✏️ Custom Count...</option>
             </select>
+            <div id="quiz-count-custom-row" class="hidden" style="margin-top: 0.5rem; display: flex; gap: 0.5rem; align-items: center;">
+              <input type="number" id="quiz-count-custom-input" class="styled-input" style="flex: 1;" placeholder="Enter question count" min="1" max="1500" value="10">
+              <button type="button" id="quiz-count-quick-max-btn" class="btn-secondary" style="padding: 0.5rem 0.9rem; font-size: 0.85rem; white-space: nowrap; font-weight: 600;">
+                Set Max
+              </button>
+            </div>
+            <div id="quiz-starred-empty-notice" class="hidden" style="margin-top: 0.5rem; font-size: 0.82rem; color: #f59e0b; background: rgba(245, 158, 11, 0.1); padding: 0.45rem 0.7rem; border-radius: 8px; border: 1px solid rgba(245, 158, 11, 0.25); display: flex; align-items: center; gap: 0.4rem;">
+              <span>⭐</span>
+              <span>No items starred yet. Click the star button (⭐) in Flashcards or Explore to pin favorites!</span>
+            </div>
           </div>
 
           <!-- Question Sequencing Algorithm -->

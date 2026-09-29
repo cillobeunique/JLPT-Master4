@@ -69,6 +69,11 @@ export class QuizEngine {
     this.rangeCategorySelect = document.getElementById('quiz-range-category-select');
 
     this.countSelect = document.getElementById('quiz-count-select');
+    this.countAvailableBadge = document.getElementById('quiz-available-count-badge');
+    this.countCustomRow = document.getElementById('quiz-count-custom-row');
+    this.countCustomInput = document.getElementById('quiz-count-custom-input');
+    this.countQuickMaxBtn = document.getElementById('quiz-count-quick-max-btn');
+    this.starredEmptyNotice = document.getElementById('quiz-starred-empty-notice');
     this.algoSelect = document.getElementById('quiz-algo-select');
     this.timerToggle = document.getElementById('quiz-timer-toggle');
     this.startBtn = document.getElementById('quiz-start-btn');
@@ -127,13 +132,61 @@ export class QuizEngine {
 
   bindEvents() {
     if (this.rangeSelect) {
-      this.rangeSelect.addEventListener('change', () => this.updateRangeControlsUI());
+      this.rangeSelect.addEventListener('change', () => {
+        this.updateRangeControlsUI();
+        this.updateQuestionCountOptions();
+      });
     }
 
     if (this.typeSelect) {
       this.typeSelect.addEventListener('change', () => {
         this.updateRangeOptionsForType();
         this.updateRangeControlsUI();
+        this.updateQuestionCountOptions();
+      });
+    }
+
+    if (this.rangeBatchSelect) {
+      this.rangeBatchSelect.addEventListener('change', () => this.updateQuestionCountOptions());
+    }
+
+    if (this.rangeStartInput) {
+      this.rangeStartInput.addEventListener('input', () => this.updateQuestionCountOptions());
+    }
+
+    if (this.rangeEndInput) {
+      this.rangeEndInput.addEventListener('input', () => this.updateQuestionCountOptions());
+    }
+
+    if (this.rangeCategorySelect) {
+      this.rangeCategorySelect.addEventListener('change', () => this.updateQuestionCountOptions());
+    }
+
+    if (this.countSelect) {
+      this.countSelect.addEventListener('change', () => {
+        const isCustom = this.countSelect.value === 'custom';
+        if (this.countCustomRow) {
+          this.countCustomRow.classList.toggle('hidden', !isCustom);
+          if (isCustom && this.countCustomInput) {
+            this.countCustomInput.focus();
+          }
+        }
+      });
+    }
+
+    if (this.countQuickMaxBtn) {
+      this.countQuickMaxBtn.addEventListener('click', () => {
+        const max = this.getAvailablePoolCount();
+        if (this.countCustomInput) this.countCustomInput.value = max;
+      });
+    }
+
+    if (this.countCustomInput) {
+      this.countCustomInput.addEventListener('input', () => {
+        const max = this.getAvailablePoolCount();
+        let val = parseInt(this.countCustomInput.value, 10);
+        if (val > max) this.countCustomInput.value = max;
+        if (val < 1 && this.countCustomInput.value !== '') this.countCustomInput.value = 1;
       });
     }
 
@@ -150,18 +203,30 @@ export class QuizEngine {
 
     if (this.startBtn) {
       this.startBtn.addEventListener('click', () => {
-        this.quizType = this.typeSelect ? this.typeSelect.value : 'kanji';
-        this.quizFormat = this.formatSelect ? this.formatSelect.value : 'mix';
-        this.quizRangeMode = this.rangeSelect ? this.rangeSelect.value : 'all';
-        this.sequenceAlgorithm = this.algoSelect ? this.algoSelect.value : 'smart_star';
-        this.questionCount = this.countSelect ? parseInt(this.countSelect.value, 10) : 10;
+        this.syncSetupState();
+
+        const maxAvailable = this.getAvailablePoolCount();
+        if (maxAvailable <= 0) {
+          alert("No questions matched your selected range/filter. Please choose a broader range or star some items first.");
+          return;
+        }
+
+        if (this.countSelect) {
+          if (this.countSelect.value === 'max') {
+            this.questionCount = maxAvailable;
+          } else if (this.countSelect.value === 'custom' && this.countCustomInput) {
+            const entered = parseInt(this.countCustomInput.value, 10);
+            this.questionCount = Math.max(1, Math.min(entered || maxAvailable, maxAvailable));
+          } else {
+            const parsed = parseInt(this.countSelect.value, 10);
+            this.questionCount = Math.min(parsed || 10, maxAvailable);
+          }
+        } else {
+          this.questionCount = Math.min(10, maxAvailable);
+        }
+
         this.isTimerEnabled = this.timerToggle ? this.timerToggle.checked : false;
         this.isBlitzMode = false;
-
-        if (this.rangeBatchSelect) this.rangeBatch = this.rangeBatchSelect.value;
-        if (this.rangeStartInput) this.rangeStartId = parseInt(this.rangeStartInput.value, 10) || 1;
-        if (this.rangeEndInput) this.rangeEndId = parseInt(this.rangeEndInput.value, 10) || 100;
-        if (this.rangeCategorySelect) this.selectedCategory = this.rangeCategorySelect.value;
 
         this.startQuiz();
       });
@@ -266,6 +331,8 @@ export class QuizEngine {
     });
 
     this.updateRangeOptionsForType();
+    this.updateRangeControlsUI();
+    this.updateQuestionCountOptions();
   }
 
   toggleZenMode() {
@@ -332,6 +399,133 @@ export class QuizEngine {
     }
   }
 
+  syncSetupState() {
+    if (this.typeSelect) this.quizType = this.typeSelect.value;
+    if (this.formatSelect) this.quizFormat = this.formatSelect.value;
+    if (this.rangeSelect) this.quizRangeMode = this.rangeSelect.value;
+    if (this.rangeBatchSelect) this.rangeBatch = this.rangeBatchSelect.value;
+    if (this.rangeStartInput) this.rangeStartId = parseInt(this.rangeStartInput.value, 10) || 1;
+    if (this.rangeEndInput) this.rangeEndId = parseInt(this.rangeEndInput.value, 10) || 100;
+    if (this.rangeCategorySelect) this.selectedCategory = this.rangeCategorySelect.value;
+    if (this.algoSelect) this.sequenceAlgorithm = this.algoSelect.value;
+  }
+
+  getAvailablePoolCount() {
+    this.syncSetupState();
+    const type = this.quizType;
+    if (type === 'mixed') {
+      const kPool = this.getFilteredItems('kanji');
+      const vPool = this.getFilteredItems('vocab');
+      const gPool = this.getFilteredItems('grammar');
+      const lPool = this.getFilteredItems('listening');
+      return kPool.length + vPool.length + gPool.length + lPool.length;
+    } else if (type === 'listening_scenarios') {
+      return this.getFilteredItems('listening').length;
+    } else {
+      return this.getFilteredItems(type).length;
+    }
+  }
+
+  updateQuestionCountOptions() {
+    this.syncSetupState();
+    const maxCount = this.getAvailablePoolCount();
+    const isStarred = this.quizRangeMode === 'bookmarked';
+
+    if (this.countAvailableBadge) {
+      if (isStarred) {
+        const typeLabel = this.quizType === 'kanji' ? 'Kanji' : (this.quizType === 'vocab' ? 'Vocab' : (this.quizType === 'grammar' ? 'Grammar' : 'Items'));
+        this.countAvailableBadge.textContent = maxCount === 1 ? '⭐ 1 Starred Item' : `⭐ ${maxCount} Starred ${typeLabel}`;
+        this.countAvailableBadge.style.color = '#f59e0b';
+        this.countAvailableBadge.style.background = 'rgba(245, 158, 11, 0.12)';
+        this.countAvailableBadge.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+      } else {
+        this.countAvailableBadge.textContent = `Available: ${maxCount.toLocaleString()} Items`;
+        this.countAvailableBadge.style.color = 'var(--accent-primary)';
+        this.countAvailableBadge.style.background = 'rgba(99, 102, 241, 0.12)';
+        this.countAvailableBadge.style.borderColor = 'rgba(99, 102, 241, 0.25)';
+      }
+    }
+
+    if (this.starredEmptyNotice) {
+      this.starredEmptyNotice.classList.toggle('hidden', !isStarred || maxCount > 0);
+    }
+
+    if (!this.countSelect) return;
+
+    const previousVal = this.countSelect.value;
+
+    if (maxCount <= 0) {
+      if (isStarred) {
+        this.countSelect.innerHTML = `<option value="0" selected disabled>⭐ 0 Starred Items (No items bookmarked yet)</option>`;
+      } else {
+        this.countSelect.innerHTML = `<option value="0" selected disabled>⚠️ 0 Items Available in Range</option>`;
+      }
+      if (this.countCustomRow) this.countCustomRow.classList.add('hidden');
+      if (this.startBtn) {
+        this.startBtn.disabled = true;
+        this.startBtn.style.opacity = '0.5';
+        this.startBtn.style.cursor = 'not-allowed';
+      }
+      return;
+    }
+
+    if (this.startBtn) {
+      this.startBtn.disabled = false;
+      this.startBtn.style.opacity = '1';
+      this.startBtn.style.cursor = 'pointer';
+    }
+
+    // Presets strictly smaller than maxCount
+    const allPresets = [5, 10, 20, 50, 100];
+    const validPresets = allPresets.filter(p => p < maxCount);
+
+    let optionsHtml = '';
+    validPresets.forEach(p => {
+      let label = '';
+      if (p === 5) label = '⚡ 5 Questions (Micro-Quiz)';
+      else if (p === 10) label = '📝 10 Questions (Standard)';
+      else if (p === 20) label = '🎯 20 Questions';
+      else if (p === 50) label = '📚 50 Questions (Deep Study)';
+      else if (p === 100) label = '💯 100 Questions (Century Challenge)';
+      optionsHtml += `<option value="${p}">${label}</option>`;
+    });
+
+    const maxLabel = isStarred
+      ? `⭐ All / Max (${maxCount} Starred ${maxCount === 1 ? 'Item' : 'Items'})`
+      : `🔥 All / Max (${maxCount.toLocaleString()} ${maxCount === 1 ? 'Question' : 'Questions'})`;
+
+    optionsHtml += `<option value="max">${maxLabel}</option>`;
+    optionsHtml += `<option value="custom">✏️ Custom Count...</option>`;
+
+    this.countSelect.innerHTML = optionsHtml;
+
+    // Pick appropriate selection
+    let valueToSelect = '10';
+    if (previousVal === 'max') {
+      valueToSelect = 'max';
+    } else if (previousVal === 'custom') {
+      valueToSelect = 'custom';
+    } else if (previousVal && validPresets.includes(parseInt(previousVal, 10))) {
+      valueToSelect = previousVal;
+    } else if (isStarred) {
+      valueToSelect = validPresets.includes(10) ? '10' : 'max';
+    } else {
+      valueToSelect = validPresets.includes(10) ? '10' : (validPresets.includes(5) ? '5' : 'max');
+    }
+
+    this.countSelect.value = valueToSelect;
+
+    if (this.countCustomRow) {
+      this.countCustomRow.classList.toggle('hidden', valueToSelect !== 'custom');
+    }
+    if (this.countCustomInput) {
+      this.countCustomInput.max = maxCount;
+      if (!this.countCustomInput.value || parseInt(this.countCustomInput.value, 10) > maxCount) {
+        this.countCustomInput.value = Math.min(10, maxCount);
+      }
+    }
+  }
+
   updateRangeControlsUI() {
     const rangeMode = this.rangeSelect ? this.rangeSelect.value : 'all';
 
@@ -353,6 +547,7 @@ export class QuizEngine {
     if (this.resultsView) this.resultsView.classList.add('hidden');
     clearInterval(this.timerInterval);
     clearInterval(this.blitzInterval);
+    this.updateQuestionCountOptions();
   }
 
   startBlitzMode() {
@@ -441,31 +636,39 @@ export class QuizEngine {
   }
 
   getFilteredItems(type) {
+    this.syncSetupState();
     let dataset = [];
     if (type === 'kanji') dataset = [...KANJI_DATA];
     else if (type === 'vocab') dataset = [...VOCAB_DATA];
+    else if (type === 'listening' || type === 'listening_scenarios') dataset = [...LISTENING_DATA];
     else dataset = [...GRAMMAR_QUIZ_QUESTIONS];
 
     if (this.quizRangeMode === 'batch') {
-      const parts = this.rangeBatch.split('-').map(n => parseInt(n, 10));
+      const parts = (this.rangeBatch || '1-50').split('-').map(n => parseInt(n, 10));
       const start = parts[0] || 1;
       const end = parts[1] || dataset.length;
-      return dataset.filter(item => item.id >= start && item.id <= end);
+      return dataset.filter(item => {
+        const id = typeof item.id === 'number' ? item.id : (parseInt(String(item.id).replace(/\D+/g, ''), 10) || 1);
+        return id >= start && id <= end;
+      });
     } else if (this.quizRangeMode === 'custom') {
       const start = this.rangeStartId || 1;
       const end = this.rangeEndId || dataset.length;
-      return dataset.filter(item => item.id >= start && item.id <= end);
+      return dataset.filter(item => {
+        const id = typeof item.id === 'number' ? item.id : (parseInt(String(item.id).replace(/\D+/g, ''), 10) || 1);
+        return id >= start && id <= end;
+      });
     } else if (this.quizRangeMode === 'category') {
-      if (this.selectedCategory === 'all') return dataset;
+      if (!this.selectedCategory || this.selectedCategory === 'all') return dataset;
       return dataset.filter(item => item.category === this.selectedCategory);
     } else if (this.quizRangeMode === 'bookmarked') {
-      const bookmarks = storage.getBookmarks(type);
-      const filtered = dataset.filter(item => bookmarks.has(item.id));
-      return filtered;
+      const bookmarkType = (type === 'listening_scenarios' ? 'listening' : type);
+      const bookmarks = storage.getBookmarks(bookmarkType);
+      return dataset.filter(item => bookmarks.has(item.id));
     } else if (this.quizRangeMode === 'unbookmarked') {
-      const bookmarks = storage.getBookmarks(type);
-      const filtered = dataset.filter(item => !bookmarks.has(item.id));
-      return filtered;
+      const bookmarkType = (type === 'listening_scenarios' ? 'listening' : type);
+      const bookmarks = storage.getBookmarks(bookmarkType);
+      return dataset.filter(item => !bookmarks.has(item.id));
     }
 
     return dataset;
@@ -583,8 +786,8 @@ export class QuizEngine {
         }
       });
     } else if (this.quizType === 'listening_scenarios') {
-      const listeningPool = [...LISTENING_DATA].sort(() => 0.5 - Math.random());
-      const selected = listeningPool.slice(0, Math.min(count, listeningPool.length));
+      const listeningPool = this.getFilteredItems('listening');
+      const selected = this.sequenceItems(listeningPool, 'listening', this.sequenceAlgorithm, count);
       selected.forEach(sc => {
         const q = this.buildListeningScenarioQuestion(sc);
         if (q) {
@@ -594,15 +797,60 @@ export class QuizEngine {
       });
     } else {
       // Mixed Mode (Kanji, Vocab, Grammar, & Listening Scenarios)
-      const kanjiCount = Math.max(1, Math.round(count * 0.35));
-      const vocabCount = Math.max(1, Math.round(count * 0.35));
-      const grammarCount = Math.max(1, Math.round(count * 0.15));
-      const listenCount = Math.max(1, count - kanjiCount - vocabCount - grammarCount);
+      const listenPool = this.getFilteredItems('listening');
+      const totalAvailable = kanjiPool.length + vocabPool.length + grammarPool.length + listenPool.length;
+      const targetCount = Math.min(count, totalAvailable);
 
-      const kItems = this.sequenceItems(kanjiPool, 'kanji', this.sequenceAlgorithm, kanjiCount);
-      const vItems = this.sequenceItems(vocabPool, 'vocab', this.sequenceAlgorithm, vocabCount);
-      const gItems = this.sequenceItems(grammarPool, 'grammar', this.sequenceAlgorithm, grammarCount);
-      const lItems = [...LISTENING_DATA].sort(() => 0.5 - Math.random()).slice(0, listenCount);
+      let kItems = [];
+      let vItems = [];
+      let gItems = [];
+      let lItems = [];
+
+      if (targetCount >= totalAvailable) {
+        kItems = this.sequenceItems(kanjiPool, 'kanji', this.sequenceAlgorithm, kanjiPool.length);
+        vItems = this.sequenceItems(vocabPool, 'vocab', this.sequenceAlgorithm, vocabPool.length);
+        gItems = this.sequenceItems(grammarPool, 'grammar', this.sequenceAlgorithm, grammarPool.length);
+        lItems = listenPool;
+      } else {
+        let kanjiCount = Math.round(targetCount * 0.35);
+        let vocabCount = Math.round(targetCount * 0.35);
+        let grammarCount = Math.round(targetCount * 0.15);
+        let listenCount = targetCount - kanjiCount - vocabCount - grammarCount;
+
+        kItems = this.sequenceItems(kanjiPool, 'kanji', this.sequenceAlgorithm, kanjiCount);
+        vItems = this.sequenceItems(vocabPool, 'vocab', this.sequenceAlgorithm, vocabCount);
+        gItems = this.sequenceItems(grammarPool, 'grammar', this.sequenceAlgorithm, grammarCount);
+        lItems = listenPool.slice(0, listenCount);
+
+        let currentTotal = kItems.length + vItems.length + gItems.length + lItems.length;
+        if (currentTotal < targetCount) {
+          const usedKanji = new Set(kItems.map(i => i.id));
+          const usedVocab = new Set(vItems.map(i => i.id));
+          const usedGrammar = new Set(gItems.map(i => i.id));
+          const usedListen = new Set(lItems.map(i => i.id));
+
+          const remK = kanjiPool.filter(i => !usedKanji.has(i.id));
+          const remV = vocabPool.filter(i => !usedVocab.has(i.id));
+          const remG = grammarPool.filter(i => !usedGrammar.has(i.id));
+          const remL = listenPool.filter(i => !usedListen.has(i.id));
+
+          const extras = [
+            ...remK.map(x => ({ type: 'kanji', item: x })),
+            ...remV.map(x => ({ type: 'vocab', item: x })),
+            ...remG.map(x => ({ type: 'grammar', item: x })),
+            ...remL.map(x => ({ type: 'listening', item: x }))
+          ].sort(() => 0.5 - Math.random());
+
+          for (const extra of extras) {
+            if (currentTotal >= targetCount) break;
+            if (extra.type === 'kanji') kItems.push(extra.item);
+            else if (extra.type === 'vocab') vItems.push(extra.item);
+            else if (extra.type === 'grammar') gItems.push(extra.item);
+            else if (extra.type === 'listening') lItems.push(extra.item);
+            currentTotal++;
+          }
+        }
+      }
 
       kItems.forEach(k => {
         const q = this.buildKanjiQuestion(k, getActiveFormat());
@@ -1402,7 +1650,7 @@ export class QuizEngine {
       storage.saveBlitzScore(this.score);
       this.triggerConfetti();
     } else if (accuracy === 100) {
-      badge = '🏆 JLPT N5 Master (Perfect Score!)';
+      badge = '🏆 JLPT N4 Master (Perfect Score!)';
       badgeColor = '#eab308';
       this.triggerConfetti();
     } else if (accuracy >= 80) {
